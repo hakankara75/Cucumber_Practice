@@ -25,23 +25,22 @@ public class KitapYurduStepDefinition {
     @Then("Kullanıcı {int} dropdown'indan {int} urun ayni anda goruntulenmesini secer tıklar")
     public void kullanıcı_dropdown_indan_urun_ayni_anda_goruntulenmesini_secer_tıklar(Integer int1, Integer int2) {
         kitapYurdu.varsayilan.click();
-        Select select=new Select(kitapYurdu.varsayilan);
-        select.selectByIndex(4);
+        ReusableMethods.ddmIndex(kitapYurdu.varsayilan, 5);
+
 
     }
     @Then("Kullanıcı varsayilan dropdown'indan ucuzdan pahaliya secenegini secer")
     public void kullanıcı_varsayilan_dropdown_indan_ucuzdan_pahaliya_secenegini_secer() {
         kitapYurdu.yirmiUrun.click();
+        ReusableMethods.ddmIndex(kitapYurdu.yirmiUrun, 4);
 
-        Select select=new Select(kitapYurdu.yirmiUrun);
-        select.selectByIndex(4);
 
     }
     @Then("Kullanıcı sayfadaki ilk urunun fiyatinin son urunun fiyatindan dusuk oldugunu dogrular")
     public void kullanıcı_sayfadaki_ilk_urunun_fiyatinin_son_urunun_fiyatindan_dusuk_oldugunu_dogrular() {
-        Integer ilkFiyat= Integer.valueOf(kitapYurdu.ilkUrun.getText().trim());
+        Integer ilkFiyat= Integer.valueOf(kitapYurdu.ilkUrun.getText().trim().replaceAll(",",""));
         System.out.println(ilkFiyat);
-        Integer sonFiyat= Integer.valueOf(kitapYurdu.sonUrun.getText().trim());
+        Integer sonFiyat= Integer.valueOf(kitapYurdu.sonUrun.getText().trim().replaceAll(",",""));
         System.out.println(sonFiyat);
         assertTrue(ilkFiyat<sonFiyat);
 
