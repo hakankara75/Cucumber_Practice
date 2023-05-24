@@ -2,6 +2,7 @@ package utilities;
 
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -129,7 +130,25 @@ public class ReusableMethods {
                JavascriptExecutor js= (JavascriptExecutor) Driver.getDriver();
         js.executeScript("window.scrollTo(0, document.body.scrollHeight);");
     }
+    /** Bu metot ile select objesinin indexi ile secim yapilir
+     *
+     * @param webElement elementin locatidir
+     * @param str   secilecek index numarasidir
+     */
+    public static void selectByIndexWithJavascript(WebElement webElement, String str) {
+        JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
+        js.executeScript("arguments[0].selectedIndex = "+str+"; arguments[0].dispatchEvent(new Event('change'))", webElement);
+    }
 
+    /** Bu metot ile select objesinin value'su ile secim yapilir
+     *
+     * @param webElement elementin locatidir
+     * @param str   gonderilecek value degeridir
+     */
+    public static void selectByValueWithJavascript(WebElement webElement, String str) {
+        JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
+        js.executeScript("arguments[0].value = "+str+"; arguments[0].dispatchEvent(new Event('change'))", webElement);
+    }
 
     //elemente JavascriptExecutor ile string gonderir(java sendkey() ile ayni)
     public static void sendKeyWithJavaScript(String string, WebElement webElement) {
@@ -197,7 +216,7 @@ public class ReusableMethods {
      * @param text elementin textidir
      * @return element locate döndürür
      */
-    public WebElement xpathContainsLocateAlma(String tag, String text){
+    public static WebElement xpathContainsLocateAlma(String tag, String text){
         WebElement element = Driver.getDriver().findElement(By.xpath("//"+tag+"[contains(text(),'"+text+"')]"));
         return element;
 
@@ -208,10 +227,24 @@ public class ReusableMethods {
      * Bu metot xpath contains ile bir textin locatini alıp geriye text dönderir.
      * @return
      */
-    public String xpathContainsTextAlma(String tag, String text){
+    public static String xpathContainsTextAlma(String tag, String text){
 
         WebElement element = Driver.getDriver().findElement(By.xpath("//"+tag+"[contains(text(),'"+text+"')]"));
         text = element.getText();
         return text;
+    }
+
+    /**
+     * Bu metot Action class kullanarak bir webelementin ustune gidip bekler
+     * @param element yerine webelement'in locate koyulmalidir
+     */
+    public static void moveToElementWithAction(WebElement element){
+        Actions action = new Actions(Driver.getDriver());
+        action.moveToElement(element).perform();
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 }
