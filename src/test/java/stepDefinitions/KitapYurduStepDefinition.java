@@ -4,6 +4,7 @@ import io.cucumber.java.en.Then;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import pages.KitapYurdu;
+import utilities.Driver;
 import utilities.ReusableMethods;
 
 import static org.junit.Assert.assertTrue;
@@ -23,17 +24,16 @@ public class KitapYurduStepDefinition {
     }
     @Then("Kullanıcı {int} dropdown'indan {int} urun ayni anda goruntulenmesini secer tıklar")
     public void kullanıcı_dropdown_indan_urun_ayni_anda_goruntulenmesini_secer_tıklar(Integer int1, Integer int2) {
-        kitapYurdu.yirmiUrun.click();
-        String locate="https://www.kitapyurdu.com/index.php?route=product/best_sellers&sort=p.price&order=ASC&list_id=16&filter_in_stock=1&filter_in_stock=1&limit=100";
-        ReusableMethods.ddmValue(kitapYurdu.yirmiUrun, locate );
+        kitapYurdu.varsayilan.click();
+        Select select=new Select(kitapYurdu.varsayilan);
+        select.selectByIndex(4);
 
     }
     @Then("Kullanıcı varsayilan dropdown'indan ucuzdan pahaliya secenegini secer")
     public void kullanıcı_varsayilan_dropdown_indan_ucuzdan_pahaliya_secenegini_secer() {
-        kitapYurdu.varsayilan.click();
-        WebElement locate=  ReusableMethods.xpathContainsLocateAlma("selected", "100");
-        System.out.println(locate.getLocation());
-        Select select=new Select(locate);
+        kitapYurdu.yirmiUrun.click();
+
+        Select select=new Select(kitapYurdu.yirmiUrun);
         select.selectByIndex(4);
 
     }
