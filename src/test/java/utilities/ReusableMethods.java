@@ -247,4 +247,15 @@ public class ReusableMethods {
             e.printStackTrace();
         }
     }
+
+    /**
+     * Bu metot bir elemente sag click yapar
+     * @param element ustunde sag click yapilacak webelement dir
+     */
+    public void sagClick(WebElement element){
+
+        Actions action = new Actions(Driver.getDriver());
+        action.contextClick(element).perform();
+
+    }
 }
