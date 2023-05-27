@@ -1,19 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Cucumber" time="60.412" tests="1" skipped="0" failures="0" errors="0">
-<testcase classname="Mynet sitesi" name="TC01 Mynet sitesi" time="60.216">
+<testsuite name="Cucumber" time="12.184" tests="1" skipped="0" failures="1" errors="0">
+<testcase classname="Twitter" name="TC01 Twitter" time="11.933">
+<failure type="org.openqa.selenium.NoSuchElementException" message="Unable to find element with locator By.xpath: //div[@class='css-901oao r-1awozwy r-jwli3a r-6koalj r-18u37iz r-16y2uox r-37j5jr r-a023e6 r-b88u0q r-1777fci r-rjixqe r-bcqeeo r-q4m81j r-qvutc0']
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: '4.8.3', revision: 'e5e76298c3'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '19.0.2'
+Driver info: driver.version: RemoteWebDriver">
+<![CDATA[org.openqa.selenium.NoSuchElementException: Unable to find element with locator By.xpath: //div[@class='css-901oao r-1awozwy r-jwli3a r-6koalj r-18u37iz r-16y2uox r-37j5jr r-a023e6 r-b88u0q r-1777fci r-rjixqe r-bcqeeo r-q4m81j r-qvutc0']
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: '4.8.3', revision: 'e5e76298c3'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '19.0.2'
+Driver info: driver.version: RemoteWebDriver
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:352)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:70)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:39)
+	at jdk.proxy2/jdk.proxy2.$Proxy24.click(Unknown Source)
+	at stepDefinitions.TwitterStepDefinitions.kullaniciGirisYapTusunaBasar(TwitterStepDefinitions.java:25)
+	at ✽.kullanici giris yap tusuna basar(file:///C:/Users/HakanBatirhan/IdeaProjects/Batch129Cucumber_Practice/src/test/resources/features/directory2/Twitter.feature:5)
+]]>
+</failure>
 <system-out><![CDATA[
-Given kullanici "https://www.mynet.com/" sitesine gider.....................passed
-Then kullanici egitim linkini tiklar........................................passed
-And 7 saniye bekle..........................................................passed
-And yeni acilan sayfaya gecis yapar.........................................passed
-Then yeni sayfaya gectigini dogrular........................................passed
-And universite taban puanlarina kadar sayfayi asagi goruturur...............passed
-And 3 saniye bekle..........................................................passed
-Then sayisal bolumlerin taban puanlari linkine tiklar.......................passed
-And acilan sayfanin "Sayısal Bölümler" icerdigini dogrular..................passed
-Then tip linkini tiklar.....................................................passed
-And sayfa basliginda "Tıp" oldugunu dogrular................................passed
-And testi bitirir...........................................................passed
+Given kullanici "twitter" sitesine gider....................................passed
+Then kullanici giris yap tusuna basar.......................................failed
+And 3 saniye bekle..........................................................skipped
+And kullanici eposta kutusuna mail adresini girer...........................skipped
+And kullanici ileri tusuna basar............................................skipped
+And kullanici password kutusuna sifresini girer.............................skipped
+And kullanici sifre girisi sonrasi giris yap tusuna basar...................skipped
+And kullanici ara tusuna basar..............................................skipped
+And kullanici hastagleri alir...............................................skipped
+And kullanici tweet at tusuna basar.........................................skipped
+And kullanici tweetini yazar ve atar........................................skipped
 ]]></system-out>
 </testcase>
 </testsuite>

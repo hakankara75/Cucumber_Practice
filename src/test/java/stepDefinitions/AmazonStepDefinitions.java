@@ -63,11 +63,7 @@ public class AmazonStepDefinitions {
         assertTrue(amazonPage.sonucYazisi.getText().contains(istenenKelime));
     }
 
-    @Given("kullanici {string} sayfasinda")
-    public void kullaniciSayfasinda(String istenenUrl) {
-        Driver.getDriver().get(ConfigReader.getProperty("kitapYurdu"));
 
-    }
 
     @Then("kullanici {int} sn bekler")
     public void kullaniciSnBekler(int istenenSaniye)  {

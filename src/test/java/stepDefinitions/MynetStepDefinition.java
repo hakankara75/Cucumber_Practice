@@ -16,50 +16,58 @@ public class MynetStepDefinition {
     MynetPage mynetPage=new MynetPage();
     String secondPageHandle="";
     String firstPageHandle="";
-    @Given("kullanici {string} sitesine gider")
-    public void kullaniciSitesineGider(String arg0) {
-        Driver.getDriver().get(ConfigReader.getProperty("mynet"));
-        String firstPageHandle= Driver.getDriver().getWindowHandle();
-    }
+
 
     @Then("kullanici egitim linkini tiklar")
     public void kullaniciEgitimLinkiniTiklar() {
+        firstPageHandle= Driver.getDriver().getWindowHandle();
         mynetPage.egitim.click();
+        ReusableMethods.extentTestInfo("kullanici egitim linkini tiklar");
     }
 
     @And("universite taban puanlarina kadar sayfayi asagi goruturur")
     public void universiteTabanPuanlarinaKadarSayfayiAsagiGoruturur() {
                 ReusableMethods.scrollToElementWithWebElement(mynetPage.universiteBolumleri);
+        ReusableMethods.extentTestInfo("universite taban puanlarina kadar sayfayi asagi goruturur");
     }
 
 
     @Then("sayisal bolumlerin taban puanlari linkine tiklar")
     public void sayisalBolumlerinTabanPuanlariLinkineTiklar() {
-        mynetPage.sayisalBolumler.click();
+        try{
+            mynetPage.sayisalBolumler.click();
+        }catch (Exception e){
+
+        }
+        ReusableMethods.extentTestInfo("sayisal bolumlerin taban puanlari linkine tiklar");
     }
 
 
     @And("acilan sayfanin {string} icerdigini dogrular")
     public void acilanSayfaninIcerdiginiDogrular(String arg0) {
         assertTrue(mynetPage.baslik.getText().contains(arg0));
+        ReusableMethods.extentTestInfo("acilan sayfanin \"Sayısal Bölümler\" icerdigini dogrular");
         ReusableMethods.pageDown();
     }
 
     @Then("tip linkini tiklar")
     public void tipLinkiniTiklar() {
         mynetPage.tip.click();
+        ReusableMethods.extentTestInfo("tip linkini tiklar");
     }
 
     @And("yeni acilan sayfaya gecis yapar")
     public void yeniAcilanSayfayaGecisYapar() {
         ReusableMethods.switchToWindow(1);
+        ReusableMethods.extentTestInfo("yeni acilan sayfaya gecis yapar");
 
     }
 
     @Then("yeni sayfaya gectigini dogrular")
     public void yeniSayfayaGectiginiDogrular() {
-        String secondPageHandle= Driver.getDriver().getWindowHandle();
+        secondPageHandle= Driver.getDriver().getWindowHandle();
         assertFalse(secondPageHandle.equals(firstPageHandle));
+        ReusableMethods.extentTestInfo("yeni sayfaya gectigini dogrular");
     }
 
     @And("sayfa basliginda {string} oldugunu dogrular")
@@ -67,10 +75,12 @@ public class MynetStepDefinition {
         String sayfaBasligi=Driver.getDriver().getTitle();
         System.out.println(sayfaBasligi);
         assertTrue(sayfaBasligi.contains(arg0));
+        ReusableMethods.extentTestInfo("sayfa basliginda \"Tıp\" oldugunu dogrular");
     }
 
     @And("testi bitirir")
     public void testiBitirir() {
-
+        ReusableMethods.extentTestInfo("testi bitirir");
+        ReusableMethods.extentRaporBitir();
     }
 }

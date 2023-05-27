@@ -1,7 +1,7 @@
 @mynet
   Feature: Mynet sitesi
     Scenario: TC01 Mynet sitesi
-      Given kullanici "https://www.mynet.com/" sitesine gider
+      Given kullanici "mynet" sitesine gider
       Then kullanici egitim linkini tiklar
       And 7 saniye bekle
       And yeni acilan sayfaya gecis yapar
