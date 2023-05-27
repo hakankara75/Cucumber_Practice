@@ -1,5 +1,8 @@
 package utilities;
 
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
@@ -16,9 +19,46 @@ import java.util.Date;
 import java.util.List;
 
 public class ReusableMethods {
-    //TestBase class'ından Obje oluşturmanın önüne geçilmesi için abstract yapılabilir
-    //Orn: TestBase base = new TestBase()
-    //Bu class'a extends ettiğimiz test classlarından ulaşabiliriz
+    protected static ExtentReports extentReports; //Raporlamayı başlatır
+    protected static ExtentHtmlReporter extentHtmlReporter;//Raporu HTML formatında düzenler
+    public static ExtentTest extentTest;//Tüm test aşamalarında extentTest objesi ile bilgi ekleriz
+    /**
+     bu metot ile extent rapor olusturulur
+     */
+    public static void extentReport() {
+
+        extentReports = new ExtentReports();
+        String tarih = new SimpleDateFormat("_hh_mm_ss_ddMMyyyy").format(new Date());
+        String dosyaYolu = "TestOutput/reports/extentReport_" + tarih + ".html";
+        extentHtmlReporter = new ExtentHtmlReporter(dosyaYolu);
+        extentReports.attachReporter(extentHtmlReporter);
+
+        extentReports.setSystemInfo("Browser", "Chrome");
+        extentReports.setSystemInfo("Tester", "Hakan");
+        extentHtmlReporter.config().setDocumentTitle("Extent Report");
+        extentHtmlReporter.config().setReportName("Smoke Test Raporu");
+        extentTest = extentReports.createTest("ExtentTest", "Test Raporu");
+
+    }
+    /**
+     bu metot ile extent rapora bilgi girisi saglanir
+     @param message
+     */
+    public static void extentTestInfo(String message) {
+        if (extentTest != null) {
+            extentTest.info(message);
+        }
+    }
+    /**
+     bu metot ile extent rapor bitirilir
+     */
+    public static void extentRaporBitir() {
+        if (extentReports != null) {
+            extentReports.flush();
+        }
+    }
+
+
 
     //HARD WAIT METHOD
     public static void bekle(int saniye){
@@ -119,6 +159,19 @@ public class ReusableMethods {
 
     }
 
+    /**  bu metot sayfayi girilen elemente goturur
+     * @param element girilmesi gereken locatidir
+     */
+    public static void scrollToElementWithWebElement(WebElement element) {
+        WebElement bottom = element;
+        Actions actions = new Actions(Driver.getDriver());
+        actions.scrollToElement(bottom).perform();
+    }
+
+    /**
+     * bu metot elementin ustune JavascriptExecutor ile goturur
+     @param webElement girilmesi gereken locate dir
+     */
     public static void scrollIntoViewByJavaScript(WebElement webElement){
         JavascriptExecutor jse=(JavascriptExecutor) Driver.getDriver();//Casting
         jse.executeScript("arguments[0].scrollIntoView(true);",webElement);
@@ -130,25 +183,7 @@ public class ReusableMethods {
                JavascriptExecutor js= (JavascriptExecutor) Driver.getDriver();
         js.executeScript("window.scrollTo(0, document.body.scrollHeight);");
     }
-    /** Bu metot ile select objesinin indexi ile secim yapilir
-     *
-     * @param webElement elementin locatidir
-     * @param str   secilecek index numarasidir
-     */
-    public static void selectByIndexWithJavascript(WebElement webElement, String str) {
-        JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
-        js.executeScript("arguments[0].selectedIndex = "+str+"; arguments[0].dispatchEvent(new Event('change'))", webElement);
-    }
 
-    /** Bu metot ile select objesinin value'su ile secim yapilir
-     *
-     * @param webElement elementin locatidir
-     * @param str   gonderilecek value degeridir
-     */
-    public static void selectByValueWithJavascript(WebElement webElement, String str) {
-        JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
-        js.executeScript("arguments[0].value = "+str+"; arguments[0].dispatchEvent(new Event('change'))", webElement);
-    }
 
     //elemente JavascriptExecutor ile string gonderir(java sendkey() ile ayni)
     public static void sendKeyWithJavaScript(String string, WebElement webElement) {
@@ -161,6 +196,48 @@ public class ReusableMethods {
         JavascriptExecutor js= (JavascriptExecutor) Driver.getDriver();
         js.executeScript("window.scrollTo(0, -document.body.scrollHeight);");
     }
+
+    /**
+     *  JavaScript ile webelement olusturma
+     * @param javascriptYolu internet sitesinden sag klik ile JS yolunu kopyala ile alınan metin olacak
+     */
+    public static WebElement webelementJavaScript(String javascriptYolu) {
+        JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
+        WebElement webElement = (WebElement) js.executeScript("return "+javascriptYolu+"");
+        return webElement;
+    }
+    /**
+     bu metot ekrani bir masue tekeri donmesi kadar asagi kaydirir
+     */
+    public static void pageDown() {
+        Actions actions = new Actions(Driver.getDriver());
+        actions.sendKeys(Keys.PAGE_DOWN).perform();
+    }
+
+    /**
+     bu metot ekrani bir masue tekeri donmesi kadar yukari kaydirir
+     */
+    public static void pageUp() {
+        Actions actions = new Actions(Driver.getDriver());
+        actions.sendKeys(Keys.PAGE_UP).perform();
+    }
+
+    /**
+     bu metot ekrani bir tik asagi kaydirir
+     */
+    public static void arrowDown() {
+        Actions actions = new Actions(Driver.getDriver());
+        actions.sendKeys(Keys.ARROW_DOWN).perform();
+    }
+
+    /**
+     bu metot ekrani bir tik yukari kaydirir
+     */
+    public static void arrowUp() {
+        Actions actions = new Actions(Driver.getDriver());
+        actions.sendKeys(Keys.ARROW_UP).perform();
+    }
+
 
     public static void typeWithJavaScript(WebElement webElement, String str){
         JavascriptExecutor js= (JavascriptExecutor) Driver.getDriver();
@@ -216,7 +293,7 @@ public class ReusableMethods {
      * @param text elementin textidir
      * @return element locate döndürür
      */
-    public static WebElement xpathContainsLocateAlma(String tag, String text){
+    public WebElement xpathContainsLocateAlma(String tag, String text){
         WebElement element = Driver.getDriver().findElement(By.xpath("//"+tag+"[contains(text(),'"+text+"')]"));
         return element;
 
@@ -227,7 +304,7 @@ public class ReusableMethods {
      * Bu metot xpath contains ile bir textin locatini alıp geriye text dönderir.
      * @return
      */
-    public static String xpathContainsTextAlma(String tag, String text){
+    public String xpathContainsTextAlma(String tag, String text){
 
         WebElement element = Driver.getDriver().findElement(By.xpath("//"+tag+"[contains(text(),'"+text+"')]"));
         text = element.getText();

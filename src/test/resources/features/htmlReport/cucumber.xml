@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Cucumber" time="60.412" tests="1" skipped="0" failures="0" errors="0">
+<testcase classname="Mynet sitesi" name="TC01 Mynet sitesi" time="60.216">
+<system-out><![CDATA[
+Given kullanici "https://www.mynet.com/" sitesine gider.....................passed
+Then kullanici egitim linkini tiklar........................................passed
+And 7 saniye bekle..........................................................passed
+And yeni acilan sayfaya gecis yapar.........................................passed
+Then yeni sayfaya gectigini dogrular........................................passed
+And universite taban puanlarina kadar sayfayi asagi goruturur...............passed
+And 3 saniye bekle..........................................................passed
+Then sayisal bolumlerin taban puanlari linkine tiklar.......................passed
+And acilan sayfanin "Sayısal Bölümler" icerdigini dogrular..................passed
+Then tip linkini tiklar.....................................................passed
+And sayfa basliginda "Tıp" oldugunu dogrular................................passed
+And testi bitirir...........................................................passed
+]]></system-out>
+</testcase>
+</testsuite>
