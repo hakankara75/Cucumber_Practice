@@ -1,5 +1,6 @@
 package stepDefinitions;
 
+import io.cucumber.java.an.E;
 import io.cucumber.java.en.*;
 import pages.Twitter;
 import utilities.ConfigReader;
@@ -22,8 +23,11 @@ public class TwitterStepDefinitions {
 
     @Then("kullanici giris yap tusuna basar")
     public void kullaniciGirisYapTusunaBasar() {
-         twitter.girisYap.click();
-    }
+        try{ twitter.girisYap.click();
+    }catch (Exception e){
+            twitter.giris.click();
+        }
+        }
 
     @And("kullanici eposta kutusuna mail adresini girer")
     public void kullaniciEpostaKutusunaMailAdresiniGirer() {
@@ -48,7 +52,7 @@ public class TwitterStepDefinitions {
 
     @And("kullanici ara tusuna basar")
     public void kullaniciAraTusunaBasar() {
-         twitter.ara.click();
+         twitter.dahaFazlaGoster.click();
     }
 
     @And("kullanici hastagleri alir")

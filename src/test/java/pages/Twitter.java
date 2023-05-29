@@ -14,7 +14,9 @@ public class Twitter {
 
     @FindBy(xpath = "//div[@class='css-901oao r-1awozwy r-jwli3a r-6koalj r-18u37iz r-16y2uox r-37j5jr r-a023e6 r-b88u0q r-1777fci r-rjixqe r-bcqeeo r-q4m81j r-qvutc0']")
     public WebElement girisYap;
-    @FindBy(xpath = "//div[@class='css-1dbjc4n r-mk0yit r-1f1sjgu r-13qz1uu']")
+    @FindBy(xpath = "/login")
+    public WebElement giris;
+    @FindBy(xpath = "//input[@autocapitalize='sentences']")
     public WebElement epostaGir;
     @FindBy(xpath = "//div[@class='css-18t94o4 css-1dbjc4n r-sdzlij r-1phboty r-rs99b7 r-ywje51 r-usiww2 r-2yi16 r-1qi8awa r-1ny4l3l r-ymttw5 r-o7ynqc r-6416eg r-lrvibr r-13qz1uu']")
     public WebElement ileri;
@@ -22,8 +24,8 @@ public class Twitter {
     public WebElement sifreGir;
     @FindBy(xpath = "//div[@data-testid='LoginForm_Login_Button']")
     public WebElement sifreSonrasiGirisYap;
-    @FindBy(xpath = "//a[@href='/explore']")
-    public WebElement ara;
+    @FindBy(xpath = "//a[@href='/i/trends']")
+    public WebElement dahaFazlaGoster;
     @FindBy(xpath = "(//div[@class='css-901oao r-18jsvk2 r-37j5jr r-a023e6 r-b88u0q r-rjixqe r-1bymd8e r-bcqeeo r-qvutc0'])[1]")
     public WebElement hastagBir;
     @FindBy(xpath = "(//div[@class='css-901oao r-18jsvk2 r-37j5jr r-a023e6 r-b88u0q r-rjixqe r-1bymd8e r-bcqeeo r-qvutc0'])[2]")
