@@ -24,8 +24,12 @@ public class Twitter {
     public WebElement sifreGir;
     @FindBy(xpath = "//div[@data-testid='LoginForm_Login_Button']")
     public WebElement sifreSonrasiGirisYap;
-    @FindBy(xpath = "//a[@href='/i/trends']")
-    public WebElement dahaFazlaGoster;
+    @FindBy(xpath = "//div[@class='css-901oao css-1hf3ou5 r-18jsvk2 r-37j5jr r-adyw6z r-16dba41 r-135wba7 r-1joea0r r-88pszg r-bcqeeo r-qvutc0']")
+    public WebElement ara;
+    @FindBy(xpath = "//a[@href='/explorer']")
+    public WebElement kesfet;
+    @FindBy(xpath = "(//div[@class='css-1dbjc4n'])[2]")
+    public WebElement home;
     @FindBy(xpath = "(//div[@class='css-901oao r-18jsvk2 r-37j5jr r-a023e6 r-b88u0q r-rjixqe r-1bymd8e r-bcqeeo r-qvutc0'])[1]")
     public WebElement hastagBir;
     @FindBy(xpath = "(//div[@class='css-901oao r-18jsvk2 r-37j5jr r-a023e6 r-b88u0q r-rjixqe r-1bymd8e r-bcqeeo r-qvutc0'])[2]")
@@ -36,9 +40,9 @@ public class Twitter {
     public WebElement hastagDort;
     @FindBy(xpath = "(//div[@class='css-901oao r-18jsvk2 r-37j5jr r-a023e6 r-b88u0q r-rjixqe r-1bymd8e r-bcqeeo r-qvutc0'])[5]")
     public WebElement hastagBes;
-    @FindBy(xpath = "//a[@class='css-4rbku5 css-18t94o4 css-1dbjc4n r-l5o3uw r-42olwf r-sdzlij r-1phboty r-rs99b7 r-1waj6vr r-1loqt21 r-19yznuf r-64el8z r-1ny4l3l r-o7ynqc r-6416eg r-lrvibr']")
+    @FindBy(xpath = "//a[@data-testid='SideNav_NewTweet_Button']")
     public WebElement tweetAt;
-    @FindBy(xpath = "(//div[@data-offset-key='97li8-0-0'])[1]")
+    @FindBy(xpath = "//div[@data-offset-key='900lo-0-0']")
     public WebElement tweetYaz;
     @FindBy(xpath = "//div[@class='css-901oao r-1awozwy r-jwli3a r-6koalj r-18u37iz r-16y2uox r-37j5jr r-a023e6 r-b88u0q r-1777fci r-rjixqe r-bcqeeo r-q4m81j r-qvutc0']")
     public WebElement tweetleTusu;

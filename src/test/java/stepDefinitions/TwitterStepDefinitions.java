@@ -52,8 +52,20 @@ public class TwitterStepDefinitions {
 
     @And("kullanici ara tusuna basar")
     public void kullaniciAraTusunaBasar() {
-         twitter.dahaFazlaGoster.click();
+
+
+        try{
+            twitter.home.click();
+        }catch (Exception e) {
+            twitter.ara.click();
+        }finally {
+            twitter.ara.click();
+        }
+
+
+
     }
+
 
     @And("kullanici hastagleri alir")
     public void kullaniciHastagleriAlir() {
@@ -96,5 +108,7 @@ public class TwitterStepDefinitions {
     }
 
 
-
+    @And("kullanici tweetini yazar ve atar")
+    public void kullaniciTweetiniYazarVeAtar() {
+    }
 }

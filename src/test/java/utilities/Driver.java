@@ -25,7 +25,7 @@ public class Driver {
                     driver = new ChromeDriver();
                     break;
 
-                case "safari":
+                case "tor":
                     WebDriverManager.safaridriver().setup();
                     driver = new SafariDriver();
                     break;
