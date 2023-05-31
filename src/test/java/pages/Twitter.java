@@ -42,7 +42,7 @@ public class Twitter {
     public WebElement hastagBes;
     @FindBy(xpath = "//a[@data-testid='SideNav_NewTweet_Button']")
     public WebElement tweetAt;
-    @FindBy(xpath = "//div[@data-offset-key='900lo-0-0']")
+    @FindBy(xpath = "(//div[@data-testid='tweetTextarea_0'])[1]")
     public WebElement tweetYaz;
     @FindBy(xpath = "//div[@class='css-901oao r-1awozwy r-jwli3a r-6koalj r-18u37iz r-16y2uox r-37j5jr r-a023e6 r-b88u0q r-1777fci r-rjixqe r-bcqeeo r-q4m81j r-qvutc0']")
     public WebElement tweetleTusu;
