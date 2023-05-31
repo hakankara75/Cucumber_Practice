@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Cucumber" time="6.293" tests="1" skipped="0" failures="1" errors="0">
+<testcase classname="US01 Class uyelerini sira ile secme" name="TC01 Class uyelerini sira ile secme" time="6.078">
+<failure/>
+<system-out><![CDATA[
+Given kullanici Amazon sayfasinda...........................................passed
+Then kullanici imagelerin gorunur oldugunu sirayla kontrol eder.............undefined
+]]></system-out>
+</testcase>
+</testsuite>

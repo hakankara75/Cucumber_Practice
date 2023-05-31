@@ -25,4 +25,14 @@ public class AmazonPage {
     public WebElement password;
     @FindBy (id = "signInSubmit")
     public WebElement signInSubmit;
+    @FindBy (xpath = "//*[@class='a-link-normal']//following::img[1]")
+    public WebElement image;
+    @FindBy (xpath = "//*[@class='a-link-normal']//following::img[2]")
+    public WebElement image2;
+    @FindBy (xpath = "//*[@class='a-link-normal']//following::img[3]")
+    public WebElement image3;
+    @FindBy (xpath = "//*[@class='a-link-normal']//following::img[4]")
+    public WebElement image4;
+    @FindBy (xpath = "//*[@class='a-link-normal']//following::img[5]")
+    public WebElement image5;
 }
