@@ -1,10 +1,8 @@
 package stepDefinitions;
 
-import io.cucumber.java.an.E;
 import io.cucumber.java.en.*;
 import pages.Twitter;
 import utilities.ConfigReader;
-import utilities.Driver;
 import utilities.ReusableMethods;
 
 public class TwitterStepDefinitions {
@@ -101,8 +99,31 @@ public class TwitterStepDefinitions {
                 default:
                     break;
             }
+//            String farkliYol= System.getProperty("user.home"); //C:\Users\Hakan Batirhan.DESKTOP-KA8SOKR
+//            String ortalYol= System.getProperty("/Desktop/Tiens/kordiseps.jpg");
+//            String dosyaYolu= farkliYol+ortalYol;
+
+            twitter.tweetYaz.sendKeys("TIENS Kordisep Mantarı  İçeren Kapsül Takviye Edici Gıda Kordiseps Mantarı, " +
+                    "olağanüstü doğal bir antibiyotiktir ve ünlü TIANSHI Kordiseps' inin hammaddesidir. " +
+                    "Bu mantar; astım, prostat, damar sertliği, bronşit, zatürre, tüberküloz, sarılık, " +
+                    "böbrek." +
+                    " ");
             twitter.tweetYaz.sendKeys(tweet);
-            twitter.tweetleTusu.click();
+            ReusableMethods.bekle(3);
+            twitter.tweetYaz.sendKeys(" " +
+                    "");
+            twitter.fotografEkle.click();
+            ReusableMethods.robotClassDosyaYukleme("C:\\Users\\Hakan Batirhan.DESKTOP-KA8SOKR\\Desktop\\Tiens\\kordiseps.jpg");
+
+            ReusableMethods.bekle(7);
+            ReusableMethods.scrollEndByJavaScript();
+            ReusableMethods.bekle(2);
+            try {
+                twitter.tweetleTus2.click();
+            }catch (Exception e) {
+                twitter.tweetleTusu.click();
+            }
+
         }
 
     }

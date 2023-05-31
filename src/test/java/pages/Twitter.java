@@ -46,7 +46,10 @@ public class Twitter {
     public WebElement tweetYaz;
     @FindBy(xpath = "//div[@class='css-901oao r-1awozwy r-jwli3a r-6koalj r-18u37iz r-16y2uox r-37j5jr r-a023e6 r-b88u0q r-1777fci r-rjixqe r-bcqeeo r-q4m81j r-qvutc0']")
     public WebElement tweetleTusu;
-
+    @FindBy(xpath = "//div[@class='css-18t94o4 css-1dbjc4n r-l5o3uw r-42olwf r-sdzlij r-1phboty r-rs99b7 r-19u6a5r r-2yi16 r-1qi8awa r-1ny4l3l r-ymttw5 r-o7ynqc r-6416eg r-lrvibr']")
+    public WebElement tweetleTus2;
     @FindBy(id = "reload-button")
     public WebElement yenile;
+    @FindBy(xpath = "(//div[@aria-label='Fotoğraf veya video ekle'])[1]")
+    public WebElement fotografEkle;
 }
