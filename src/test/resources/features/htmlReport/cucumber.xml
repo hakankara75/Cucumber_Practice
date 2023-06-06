@@ -1,30 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Cucumber" time="10.001" tests="1" skipped="0" failures="1" errors="0">
-<testcase classname="US01 Class uyelerini sira ile secme" name="TC01 Class uyelerini sira ile secme" time="9.825">
-<failure type="org.openqa.selenium.NoSuchElementException" message="Unable to find element with locator By.xpath: //*[@class='a-link-normal']//following::img[1]
-For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
-Build info: version: '4.8.3', revision: 'e5e76298c3'
-System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '19.0.2'
-Driver info: driver.version: RemoteWebDriver">
-<![CDATA[org.openqa.selenium.NoSuchElementException: Unable to find element with locator By.xpath: //*[@class='a-link-normal']//following::img[1]
-For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
-Build info: version: '4.8.3', revision: 'e5e76298c3'
-System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '19.0.2'
-Driver info: driver.version: RemoteWebDriver
-	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:352)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:70)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:39)
-	at jdk.proxy2/jdk.proxy2.$Proxy24.isDisplayed(Unknown Source)
-	at stepDefinitions.Amazon_Classtan_Elemen_Secme.kullanici_imagelerin_gorunur_oldugunu_sirayla_kontrol_eder(Amazon_Classtan_Elemen_Secme.java:14)
-	at ✽.kullanici imagelerin gorunur oldugunu sirayla kontrol eder(file:///C:/Users/HakanBatirhan/IdeaProjects/Batch129Cucumber_Practice/src/test/resources/features/directory2/Amazon_Classtan_Elemen_Secme.feature:6)
-]]>
-</failure>
+<testsuite name="Cucumber" time="58.478" tests="3" skipped="0" failures="0" errors="0">
+<testcase classname="US01 Cok satan edebiyat kitapları" name="TC02 Zaman Araligi dropdown  testi - Example #1.1" time="25.385">
 <system-out><![CDATA[
-Given kullanici Amazon sayfasinda...........................................passed
-Then kullanici imagelerin gorunur oldugunu sirayla kontrol eder.............failed
+Given Kullanici "url" e gider...............................................passed
+Then giris yap linkini tiklar...............................................passed
+And eposta kutusuna mailini girer...........................................passed
+And sifre kutusuna sifresini girer..........................................passed
+And giris yap butonunu tiklar...............................................passed
+Then kullanici cok satan kitaplar menusu ustune gelir.......................passed
+And 3 saniye bekleme yapar..................................................passed
+And cok satan edebiyat kitaplari linkini tiklar.............................passed
+Given kullanici zaman araligi dropdown'inin secilebilir oldugunu dogrular...passed
+And 1 saniye bekleme yapar..................................................passed
+And kullanici zaman araligi dropdown'inindan "Haftalık" secenegini secer....passed
+Then kullanici secim sonucu goruntulenen kitaplarin degistigini dogrular....passed
+]]></system-out>
+</testcase>
+<testcase classname="US01 Cok satan edebiyat kitapları" name="TC02 Zaman Araligi dropdown  testi - Example #1.2" time="16.667">
+<system-out><![CDATA[
+Given Kullanici "url" e gider...............................................passed
+Then giris yap linkini tiklar...............................................passed
+And eposta kutusuna mailini girer...........................................passed
+And sifre kutusuna sifresini girer..........................................passed
+And giris yap butonunu tiklar...............................................passed
+Then kullanici cok satan kitaplar menusu ustune gelir.......................passed
+And 3 saniye bekleme yapar..................................................passed
+And cok satan edebiyat kitaplari linkini tiklar.............................passed
+Given kullanici zaman araligi dropdown'inin secilebilir oldugunu dogrular...passed
+And 1 saniye bekleme yapar..................................................passed
+And kullanici zaman araligi dropdown'inindan "Aylık" secenegini secer.......passed
+Then kullanici secim sonucu goruntulenen kitaplarin degistigini dogrular....passed
+]]></system-out>
+</testcase>
+<testcase classname="US01 Cok satan edebiyat kitapları" name="TC02 Zaman Araligi dropdown  testi - Example #1.3" time="16.14">
+<system-out><![CDATA[
+Given Kullanici "url" e gider...............................................passed
+Then giris yap linkini tiklar...............................................passed
+And eposta kutusuna mailini girer...........................................passed
+And sifre kutusuna sifresini girer..........................................passed
+And giris yap butonunu tiklar...............................................passed
+Then kullanici cok satan kitaplar menusu ustune gelir.......................passed
+And 3 saniye bekleme yapar..................................................passed
+And cok satan edebiyat kitaplari linkini tiklar.............................passed
+Given kullanici zaman araligi dropdown'inin secilebilir oldugunu dogrular...passed
+And 1 saniye bekleme yapar..................................................passed
+And kullanici zaman araligi dropdown'inindan "Yıllık" secenegini secer......passed
+Then kullanici secim sonucu goruntulenen kitaplarin degistigini dogrular....passed
 ]]></system-out>
 </testcase>
 </testsuite>

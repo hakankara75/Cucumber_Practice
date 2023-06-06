@@ -1,1 +1,0 @@
-file:src/test/resources/features/directory2/Amazon_Classtan_Elemen_Secme.feature:4

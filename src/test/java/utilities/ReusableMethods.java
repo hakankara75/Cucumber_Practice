@@ -9,6 +9,7 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.AssertJUnit;
 
 import java.awt.*;
 import java.awt.datatransfer.StringSelection;
@@ -365,5 +366,14 @@ public class ReusableMethods {
             System.out.println("ENTER");
         }catch (Exception e){
         }
+    }
+    /**
+     *  JavaScript ile webelement olusturup isEnabled oldugunu sorgulama
+     * @param str internet sitesinden sag klik ile JS yolunu kopyala ile alınan metin olacak
+     */
+    public static void assertIsEnabled(String str){
+        JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
+        WebElement webElement = (WebElement) js.executeScript("return "+str+"");
+        AssertJUnit.assertTrue(webElement.isEnabled());
     }
 }
