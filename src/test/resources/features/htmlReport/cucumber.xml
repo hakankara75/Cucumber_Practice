@@ -1,51 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Cucumber" time="58.478" tests="3" skipped="0" failures="0" errors="0">
-<testcase classname="US01 Cok satan edebiyat kitapları" name="TC02 Zaman Araligi dropdown  testi - Example #1.1" time="25.385">
+<testsuite name="Cucumber" time="43.497" tests="3" skipped="0" failures="0" errors="0">
+<testcase classname="US01 Cok satan edebiyat kitapları" name="TC03 Zaman Araligi dropdown  testi - Example #1.1" time="18.352">
 <system-out><![CDATA[
 Given Kullanici "url" e gider...............................................passed
-Then giris yap linkini tiklar...............................................passed
-And eposta kutusuna mailini girer...........................................passed
-And sifre kutusuna sifresini girer..........................................passed
-And giris yap butonunu tiklar...............................................passed
 Then kullanici cok satan kitaplar menusu ustune gelir.......................passed
 And 3 saniye bekleme yapar..................................................passed
 And cok satan edebiyat kitaplari linkini tiklar.............................passed
 Given kullanici zaman araligi dropdown'inin secilebilir oldugunu dogrular...passed
 And 1 saniye bekleme yapar..................................................passed
-And kullanici zaman araligi dropdown'inindan "Haftalık" secenegini secer....passed
-Then kullanici secim sonucu goruntulenen kitaplarin degistigini dogrular....passed
+And kullanici zaman araligi dropdown'inindan "Haftalık" seceneklerini sirayla secer.passed
+Then kullanici secim sonucunda kitaplarin degistigini dogrular..............passed
 ]]></system-out>
 </testcase>
-<testcase classname="US01 Cok satan edebiyat kitapları" name="TC02 Zaman Araligi dropdown  testi - Example #1.2" time="16.667">
+<testcase classname="US01 Cok satan edebiyat kitapları" name="TC03 Zaman Araligi dropdown  testi - Example #1.2" time="12.465">
 <system-out><![CDATA[
 Given Kullanici "url" e gider...............................................passed
-Then giris yap linkini tiklar...............................................passed
-And eposta kutusuna mailini girer...........................................passed
-And sifre kutusuna sifresini girer..........................................passed
-And giris yap butonunu tiklar...............................................passed
 Then kullanici cok satan kitaplar menusu ustune gelir.......................passed
 And 3 saniye bekleme yapar..................................................passed
 And cok satan edebiyat kitaplari linkini tiklar.............................passed
 Given kullanici zaman araligi dropdown'inin secilebilir oldugunu dogrular...passed
 And 1 saniye bekleme yapar..................................................passed
-And kullanici zaman araligi dropdown'inindan "Aylık" secenegini secer.......passed
-Then kullanici secim sonucu goruntulenen kitaplarin degistigini dogrular....passed
+And kullanici zaman araligi dropdown'inindan "Aylık" seceneklerini sirayla secer.passed
+Then kullanici secim sonucunda kitaplarin degistigini dogrular..............passed
 ]]></system-out>
 </testcase>
-<testcase classname="US01 Cok satan edebiyat kitapları" name="TC02 Zaman Araligi dropdown  testi - Example #1.3" time="16.14">
+<testcase classname="US01 Cok satan edebiyat kitapları" name="TC03 Zaman Araligi dropdown  testi - Example #1.3" time="12.408">
 <system-out><![CDATA[
 Given Kullanici "url" e gider...............................................passed
-Then giris yap linkini tiklar...............................................passed
-And eposta kutusuna mailini girer...........................................passed
-And sifre kutusuna sifresini girer..........................................passed
-And giris yap butonunu tiklar...............................................passed
 Then kullanici cok satan kitaplar menusu ustune gelir.......................passed
 And 3 saniye bekleme yapar..................................................passed
 And cok satan edebiyat kitaplari linkini tiklar.............................passed
 Given kullanici zaman araligi dropdown'inin secilebilir oldugunu dogrular...passed
 And 1 saniye bekleme yapar..................................................passed
-And kullanici zaman araligi dropdown'inindan "Yıllık" secenegini secer......passed
-Then kullanici secim sonucu goruntulenen kitaplarin degistigini dogrular....passed
+And kullanici zaman araligi dropdown'inindan "Yıllık" seceneklerini sirayla secer.passed
+Then kullanici secim sonucunda kitaplarin degistigini dogrular..............passed
 ]]></system-out>
 </testcase>
 </testsuite>
