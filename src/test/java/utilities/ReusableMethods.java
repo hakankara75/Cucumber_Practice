@@ -411,22 +411,22 @@ public class ReusableMethods {
         }
     }
 
-    public static List<String> getColumnNames(String query) {
-        executeQuery(query);
-        List<String> columns = new ArrayList<>();
-        ResultSetMetaData rsmd;
+
+    public static void executeQuery(String query) {
         try {
-            rsmd = resultSet.getMetaData();
-            int columnCount = rsmd.getColumnCount();
-            for (int i = 1; i <= columnCount; i++) {
-                columns.add(rsmd.getColumnName(i));
-            }
+            statement = connection.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
         } catch (SQLException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
-        return columns;
+        try {
+            resultSet = statement.executeQuery(query);
+        } catch (SQLException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
     }
+
     public static List<Object> getColumnData(String query, String column) {
         executeQuery(query);
         List<Object> rowList = new ArrayList<>();
@@ -443,18 +443,23 @@ public class ReusableMethods {
         return rowList;
     }
 
-    public static void executeQuery(String query) {
+
+    public static List<String> getColumnNames(String query) {
+        executeQuery(query);
+        List<String> columns = new ArrayList<>();
+        ResultSetMetaData rsmd;
         try {
-            statement = connection.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+            rsmd = resultSet.getMetaData();
+            int columnCount = rsmd.getColumnCount();
+            for (int i = 1; i <= columnCount; i++) {
+                columns.add(rsmd.getColumnName(i));
+            }
         } catch (SQLException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
-        try {
-            resultSet = statement.executeQuery(query);
-        } catch (SQLException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
+        return columns;
     }
+
+
 }

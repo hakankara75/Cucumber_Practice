@@ -1,25 +1,34 @@
 package stepDefinitions;
 
-import io.cucumber.java.en.*;
+import io.cucumber.java.en.And;
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import pages.CokSatanKitaplar_Edebiyat_Kitapyurdu;
 import pojo.EdebiyatKitaplariPojo;
-import utilities.*;
+import utilities.ConfigReader;
 import utilities.Driver;
+import utilities.ExcelUtils;
+import utilities.ReusableMethods;
+
 import java.sql.*;
-import java.util.*;
-import static org.junit.Assert.*;
+import java.util.ArrayList;
+import java.util.List;
+
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 import static utilities.ReusableMethods.*;
 
 
 public class CokSatanKitaplar_Hakan_StepDefinition {
 
     CokSatanKitaplar_Edebiyat_Kitapyurdu locate = new CokSatanKitaplar_Edebiyat_Kitapyurdu();
-
-    Statement st;
-
+    private static Connection connection;
+    private static java.sql.Statement statement;
+    private static ResultSet resultSet;
 
     Select select;
     String selectZaman;
@@ -154,7 +163,7 @@ public class CokSatanKitaplar_Hakan_StepDefinition {
     }
 
     @And("kullanici zaman araligi dropdown'inindan {string} seceneklerini sirayla secer")
-    public void kullaniciZamanAraligiDropdownInindanSecenekleriniSiraylaSecer(String str) throws ClassNotFoundException, SQLException {
+    public void kullaniciZamanAraligiDropdownInindanSecenekleriniSiraylaSecer(String str) throws ClassNotFoundException, SQLException, SQLException, SQLException {
         List<EdebiyatKitaplariPojo> kayitlar = new ArrayList<>();
 
         Class.forName("org.postgresql.Driver");
@@ -166,7 +175,7 @@ public class CokSatanKitaplar_Hakan_StepDefinition {
                 "postgres",
                 ConfigReader.getProperty("postgresPassword"));
         //3. statement
-        st = con.createStatement();
+        java.sql.Statement st = con.createStatement();
 
         //4. adim edebiyatKitaplari tablosu olusturacagim
 
@@ -177,48 +186,16 @@ public class CokSatanKitaplar_Hakan_StepDefinition {
 
         }
 
+        PreparedStatement data = con.prepareStatement("insert into doctors values(?, ?, ?, ?)");
 
-        select = new Select(locate.zamanAraligi);
-        select.selectByVisibleText(str);
-        selectZaman = str;
-
-        //5.adim pojo class kullanarak tabloya veri ekleyecegim
-
-        if (selectZaman.equals("Haftalık")) {
-            try {
-                kayitlar.add(new EdebiyatKitaplariPojo(1, locate.kitaplar.getText()));
-            } catch (Exception e) {
-
-            }
-
-        }
-        if (selectZaman.equals("Aylık")) {
-            try {
-                kayitlar.add(new EdebiyatKitaplariPojo(2, locate.kitaplar.getText()));
-            } catch (Exception e) {
-
-            }
-        }
-        if (selectZaman.equals("Yıllık")) {
-            try {
-                kayitlar.add(new EdebiyatKitaplariPojo(3, locate.kitaplar.getText()));
-            } catch (Exception e) {
-
-            }
-        }
-
-        PreparedStatement data = con.prepareStatement("insert into edebiyatkitaplaripojo values(?, ?)");
-
-        for (EdebiyatKitaplariPojo each : kayitlar) {
-            data.setInt(1, each.getId());
-            data.setString(2, each.getIsim());
-            data.addBatch();    //Dataları bir araya getirir
-        }
         data.executeBatch(); //tek seferde datalari yollar
 
-
+        con.close();
+        data.close();
         closeConnection();  //2 kapatma komutu yerine bu tek metot yeter.
     }
+
+
 
 
     @Then("kullanici secim sonucunda kitaplarin degistigini dogrular")
