@@ -1,39 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Cucumber" time="48.989" tests="3" skipped="0" failures="0" errors="0">
-<testcase classname="US01 Cok satan edebiyat kitapları" name="TC03 Zaman Araligi dropdown  testi - Example #1.1" time="26.302">
+<testsuite name="Cucumber" time="31.857" tests="1" skipped="0" failures="1" errors="0">
+<testcase classname="KitapYurdu Cok Satan Edebiyat Kitaplari Yayincilar" name="TC04 KitapYurdu Cok Satan Edebiyat Kitaplari Yayincilar Secme" time="31.693">
+<failure type="org.openqa.selenium.ElementNotInteractableException" message="element not interactable
+  (Session info: MicrosoftEdge=114.0.1823.43)
+Build info: version: '4.8.3', revision: 'e5e76298c3'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '19.0.2'
+Driver info: org.openqa.selenium.edge.EdgeDriver
+Command: [8e045893b8161623375e208f23ba822f, clickElement {id=58B0CAFFE84D4A06588387B034625817_element_122}]
+Capabilities {acceptInsecureCerts: false, browserName: msedge, browserVersion: 114.0.1823.43, ms:edgeOptions: {debuggerAddress: localhost:56680}, msedge: {msedgedriverVersion: 114.0.1823.43 (ef5b3acd8c1d..., userDataDir: C:\Users\HAKANB~1.DES\AppDa...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:56680/devtoo..., se:cdpVersion: 114.0.1823.43, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[EdgeDriver: msedge on WINDOWS (8e045893b8161623375e208f23ba822f)] -&gt; xpath: (//div[@class='row']//span[text()=.])[202]]
+Session ID: 8e045893b8161623375e208f23ba822f">
+<![CDATA[org.openqa.selenium.ElementNotInteractableException: element not interactable
+  (Session info: MicrosoftEdge=114.0.1823.43)
+Build info: version: '4.8.3', revision: 'e5e76298c3'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '19.0.2'
+Driver info: org.openqa.selenium.edge.EdgeDriver
+Command: [8e045893b8161623375e208f23ba822f, clickElement {id=58B0CAFFE84D4A06588387B034625817_element_122}]
+Capabilities {acceptInsecureCerts: false, browserName: msedge, browserVersion: 114.0.1823.43, ms:edgeOptions: {debuggerAddress: localhost:56680}, msedge: {msedgedriverVersion: 114.0.1823.43 (ef5b3acd8c1d..., userDataDir: C:\Users\HAKANB~1.DES\AppDa...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:56680/devtoo..., se:cdpVersion: 114.0.1823.43, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[EdgeDriver: msedge on WINDOWS (8e045893b8161623375e208f23ba822f)] -> xpath: (//div[@class='row']//span[text()=.])[202]]
+Session ID: 8e045893b8161623375e208f23ba822f
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:67)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:484)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:193)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:183)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:158)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:257)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:78)
+	at stepDefinitions.KitapYurdu_Yayimcilar.kullaniciYayinciKategorisindenYayimevleriniSiraylaSecer(KitapYurdu_Yayimcilar.java:18)
+	at ✽.kullanici yayinci kategorisinden yayimevlerini sirayla secer(file:///C:/Users/HakanBatirhan/IdeaProjects/Batch129Cucumber_Practice/src/test/resources/features/directory03/KitapYurdu_ZamanAraligi_Yayincilar.feature:8)
+]]>
+</failure>
 <system-out><![CDATA[
 Given Kullanici "url" e gider...............................................passed
 Then kullanici cok satan kitaplar menusu ustune gelir.......................passed
 And 3 saniye bekleme yapar..................................................passed
 And cok satan edebiyat kitaplari linkini tiklar.............................passed
-Given kullanici zaman araligi dropdown'inin secilebilir oldugunu dogrular...passed
-And 1 saniye bekleme yapar..................................................passed
-And kullanici zaman araligi dropdown'inindan "Haftalık" seceneklerini sirayla secer.passed
-Then kullanici secim sonucunda kitaplarin degistigini dogrular..............passed
-]]></system-out>
-</testcase>
-<testcase classname="US01 Cok satan edebiyat kitapları" name="TC03 Zaman Araligi dropdown  testi - Example #1.2" time="11.404">
-<system-out><![CDATA[
-Given Kullanici "url" e gider...............................................passed
-Then kullanici cok satan kitaplar menusu ustune gelir.......................passed
-And 3 saniye bekleme yapar..................................................passed
-And cok satan edebiyat kitaplari linkini tiklar.............................passed
-Given kullanici zaman araligi dropdown'inin secilebilir oldugunu dogrular...passed
-And 1 saniye bekleme yapar..................................................passed
-And kullanici zaman araligi dropdown'inindan "Aylık" seceneklerini sirayla secer.passed
-Then kullanici secim sonucunda kitaplarin degistigini dogrular..............passed
-]]></system-out>
-</testcase>
-<testcase classname="US01 Cok satan edebiyat kitapları" name="TC03 Zaman Araligi dropdown  testi - Example #1.3" time="11.032">
-<system-out><![CDATA[
-Given Kullanici "url" e gider...............................................passed
-Then kullanici cok satan kitaplar menusu ustune gelir.......................passed
-And 3 saniye bekleme yapar..................................................passed
-And cok satan edebiyat kitaplari linkini tiklar.............................passed
-Given kullanici zaman araligi dropdown'inin secilebilir oldugunu dogrular...passed
-And 1 saniye bekleme yapar..................................................passed
-And kullanici zaman araligi dropdown'inindan "Yıllık" seceneklerini sirayla secer.passed
-Then kullanici secim sonucunda kitaplarin degistigini dogrular..............passed
+Then kullanici yayinci kategorisinden yayimevlerini sirayla secer...........failed
+And kullanici sectigi yayimciya gore goruntulenen kitaplarin degistigini dogrular.skipped
+And kullanici goruntulenen kitaplarin sectigi yayimcinin kitaplari oldugunu dogrular.skipped
 ]]></system-out>
 </testcase>
 </testsuite>

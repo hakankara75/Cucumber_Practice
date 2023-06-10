@@ -81,6 +81,7 @@ public class CokSatanKitaplar_Hakan_StepDefinition {
         int actualKitapSayisi = Driver.getDriver().findElements(By.xpath("//div[@class='image']")).size();
         assertTrue(expectedKitapSayisi == actualKitapSayisi);
 
+        Driver.closeDriver();
     }
 
     @Then("kullanici zaman araligi dropdown'inin secilebilir oldugunu dogrular")
@@ -157,6 +158,8 @@ public class CokSatanKitaplar_Hakan_StepDefinition {
             assertFalse(ilkKitapExcell.contains(ikinciKitapExcell));
             assertFalse(ilkKitapExcell.contains(ucuncuKitapExcell));
             assertFalse(ikinciKitapExcell.contains(ucuncuKitapExcell));
+
+            Driver.closeDriver();
         }
 
 
@@ -246,6 +249,9 @@ public class CokSatanKitaplar_Hakan_StepDefinition {
 
         }
         closeConnection();
+        Driver.closeDriver();
     }
+
+
 }
 
