@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Cucumber" time="31.857" tests="1" skipped="0" failures="1" errors="0">
-<testcase classname="KitapYurdu Cok Satan Edebiyat Kitaplari Yayincilar" name="TC04 KitapYurdu Cok Satan Edebiyat Kitaplari Yayincilar Secme" time="31.693">
-<failure type="org.openqa.selenium.ElementNotInteractableException" message="element not interactable
+<testsuite name="Cucumber" time="89.3" tests="1" skipped="0" failures="1" errors="0">
+<testcase classname="KitapYurdu Cok Satan Edebiyat Kitaplari Yayincilar" name="TC04 KitapYurdu Cok Satan Edebiyat Kitaplari Yayincilar Secme" time="89.089">
+<failure type="org.openqa.selenium.NoSuchElementException" message="no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;(//div[@id='faceted-search-group-2']//div[@class='row'])[36]&quot;}
   (Session info: MicrosoftEdge=114.0.1823.43)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
 Build info: version: '4.8.3', revision: 'e5e76298c3'
 System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '19.0.2'
 Driver info: org.openqa.selenium.edge.EdgeDriver
-Command: [8e045893b8161623375e208f23ba822f, clickElement {id=58B0CAFFE84D4A06588387B034625817_element_122}]
-Capabilities {acceptInsecureCerts: false, browserName: msedge, browserVersion: 114.0.1823.43, ms:edgeOptions: {debuggerAddress: localhost:56680}, msedge: {msedgedriverVersion: 114.0.1823.43 (ef5b3acd8c1d..., userDataDir: C:\Users\HAKANB~1.DES\AppDa...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:56680/devtoo..., se:cdpVersion: 114.0.1823.43, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[EdgeDriver: msedge on WINDOWS (8e045893b8161623375e208f23ba822f)] -&gt; xpath: (//div[@class='row']//span[text()=.])[202]]
-Session ID: 8e045893b8161623375e208f23ba822f">
-<![CDATA[org.openqa.selenium.ElementNotInteractableException: element not interactable
+Command: [7974df672ffe2b381680df7801b68227, findElement {using=xpath, value=(//div[@id='faceted-search-group-2']//div[@class='row'])[36]}]
+Capabilities {acceptInsecureCerts: false, browserName: msedge, browserVersion: 114.0.1823.43, ms:edgeOptions: {debuggerAddress: localhost:60468}, msedge: {msedgedriverVersion: 114.0.1823.43 (ef5b3acd8c1d..., userDataDir: C:\Users\HAKANB~1.DES\AppDa...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:60468/devtoo..., se:cdpVersion: 114.0.1823.43, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 7974df672ffe2b381680df7801b68227">
+<![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"(//div[@id='faceted-search-group-2']//div[@class='row'])[36]"}
   (Session info: MicrosoftEdge=114.0.1823.43)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
 Build info: version: '4.8.3', revision: 'e5e76298c3'
 System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '19.0.2'
 Driver info: org.openqa.selenium.edge.EdgeDriver
-Command: [8e045893b8161623375e208f23ba822f, clickElement {id=58B0CAFFE84D4A06588387B034625817_element_122}]
-Capabilities {acceptInsecureCerts: false, browserName: msedge, browserVersion: 114.0.1823.43, ms:edgeOptions: {debuggerAddress: localhost:56680}, msedge: {msedgedriverVersion: 114.0.1823.43 (ef5b3acd8c1d..., userDataDir: C:\Users\HAKANB~1.DES\AppDa...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:56680/devtoo..., se:cdpVersion: 114.0.1823.43, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[EdgeDriver: msedge on WINDOWS (8e045893b8161623375e208f23ba822f)] -> xpath: (//div[@class='row']//span[text()=.])[202]]
-Session ID: 8e045893b8161623375e208f23ba822f
+Command: [7974df672ffe2b381680df7801b68227, findElement {using=xpath, value=(//div[@id='faceted-search-group-2']//div[@class='row'])[36]}]
+Capabilities {acceptInsecureCerts: false, browserName: msedge, browserVersion: 114.0.1823.43, ms:edgeOptions: {debuggerAddress: localhost:60468}, msedge: {msedgedriverVersion: 114.0.1823.43 (ef5b3acd8c1d..., userDataDir: C:\Users\HAKANB~1.DES\AppDa...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:60468/devtoo..., se:cdpVersion: 114.0.1823.43, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 7974df672ffe2b381680df7801b68227
 	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:67)
 	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
 	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:484)
@@ -29,9 +29,11 @@ Session ID: 8e045893b8161623375e208f23ba822f
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:183)
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:158)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:257)
-	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:78)
-	at stepDefinitions.KitapYurdu_Yayimcilar.kullaniciYayinciKategorisindenYayimevleriniSiraylaSecer(KitapYurdu_Yayimcilar.java:18)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:352)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)
+	at stepDefinitions.KitapYurdu_Yayimcilar.kullaniciYayinciKategorisindenYayimevleriniSiraylaSecer(KitapYurdu_Yayimcilar.java:19)
 	at ✽.kullanici yayinci kategorisinden yayimevlerini sirayla secer(file:///C:/Users/HakanBatirhan/IdeaProjects/Batch129Cucumber_Practice/src/test/resources/features/directory03/KitapYurdu_ZamanAraligi_Yayincilar.feature:8)
 ]]>
 </failure>

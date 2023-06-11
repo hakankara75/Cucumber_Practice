@@ -14,9 +14,10 @@ public class KitapYurdu_Yayimcilar {
 
     @Then("kullanici yayinci kategorisinden yayimevlerini sirayla secer")
     public void kullaniciYayinciKategorisindenYayimevleriniSiraylaSecer() {
-        for (int i = 201; i < 362; i++) {
-            Driver.getDriver().findElement(By.xpath("(//div[@class='row']//span[text()=.])["+i+"]")).click();
-            System.out.println("edebiyatKitapyurdu.yayimevi = " + edebiyatKitapyurdu.yayimevi.getText());
+        for (int i = 1; i < 81; i++) {
+            Driver.getDriver().findElement(By.xpath("(//div[@id='faceted-search-group-2']//div[@class='row'])["+i+"]")).click();
+            Driver.getDriver().navigate().back();
+           // System.out.println("Driver.getDriver().findElement(By.xpath(\"//div[@class='publisher']//a[contains(@class,'alt')]//text()[normalize-space()][\"+i+\"]\")).getText() = " + Driver.getDriver().findElement(By.xpath("//div[@class='publisher']//a[contains(@class,'alt')]//text()[normalize-space()][" + i + "]")).getText());
         }
 
 
@@ -27,7 +28,7 @@ public class KitapYurdu_Yayimcilar {
 
         List<WebElement> kitaplarList= (List<WebElement>) edebiyatKitapyurdu.kitaplarList;
         for (WebElement kitaplar : kitaplarList){
-            kitaplar.getText();
+            System.out.println("kitaplar.getText() = " + kitaplar.getText());
 
         }
 

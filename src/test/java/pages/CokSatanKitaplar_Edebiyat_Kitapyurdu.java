@@ -33,7 +33,7 @@ public class CokSatanKitaplar_Edebiyat_Kitapyurdu {
     public WebElement kitaplar;
     @FindBy(xpath = "//div[@class='product-grid']")
     public WebElement kitaplarList;
-    @FindBy(xpath = "(//div[@class='publisher']//span)[2]")
+    @FindBy(xpath = "(//div[@class='publisher'])[2]")
     public WebElement yayimevi;
 }
 
