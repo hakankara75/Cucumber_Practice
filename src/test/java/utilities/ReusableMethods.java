@@ -4,6 +4,8 @@ import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 import org.apache.commons.io.FileUtils;
+import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.*;
@@ -476,6 +478,28 @@ public class ReusableMethods {
         // Kapat
         outputStream.close();
         workbook.close();
+    }
+
+    public void excelDosyasiVeSayfasiOlusturma(String dosyaAdi, String sayfaAdi,int sayfayaEkOlacakSayi) throws IOException {
+        String dosyaYolu = "src/test/java/resources/"+dosyaAdi+".xlsx";
+
+        FileOutputStream fileOutputStream = null;
+        try {
+            Workbook workbook = new XSSFWorkbook();
+            for (int i = 1; i <= sayfayaEkOlacakSayi; i++) {
+                String sheetName = sayfaAdi + i;
+                Sheet sheet = workbook.createSheet(sheetName);
+                // Sayfaya istediğiniz verileri ekleyebilirsiniz
+            }
+
+            fileOutputStream = new FileOutputStream(new File(dosyaYolu));
+            workbook.write(fileOutputStream);
+            fileOutputStream.close();
+            System.out.println("Excel dosyası oluşturuldu.");
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
 }

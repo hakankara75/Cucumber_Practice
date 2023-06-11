@@ -1,18 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Cucumber" time="7.122" tests="1" skipped="0" failures="1" errors="0">
-<testcase classname="deneme" name="deneme" time="6.93">
-<failure type="java.io.FileNotFoundException" message="src\test\java\resources\Book1.xlsx (Sistem belirtilen dosyayı bulamıyor)">
-<![CDATA[java.io.FileNotFoundException: src\test\java\resources\Book1.xlsx (Sistem belirtilen dosyayı bulamıyor)
-	at java.base/java.io.FileInputStream.open0(Native Method)
-	at java.base/java.io.FileInputStream.open(FileInputStream.java:219)
-	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:158)
-	at stepDefinitions.Deneme.excel(Deneme.java:31)
-	at ✽.excel(file:///C:/Users/HakanBatirhan/IdeaProjects/Batch129Cucumber_Practice/src/test/resources/features/directory03/deneme.feature:5)
+<testsuite name="Cucumber" time="19.311" tests="1" skipped="0" failures="1" errors="0">
+<testcase classname="KitapYurdu Cok Satan Edebiyat Kitaplari Yayincilar" name="TC04 KitapYurdu Cok Satan Edebiyat Kitaplari Yayincilar Secme" time="19.096">
+<failure type="java.lang.IndexOutOfBoundsException" message="Index 20 out of bounds for length 20">
+<![CDATA[java.lang.IndexOutOfBoundsException: Index 20 out of bounds for length 20
+	at java.base/jdk.internal.util.Preconditions.outOfBounds(Preconditions.java:100)
+	at java.base/jdk.internal.util.Preconditions.outOfBoundsCheckIndex(Preconditions.java:106)
+	at java.base/jdk.internal.util.Preconditions.checkIndex(Preconditions.java:302)
+	at java.base/java.util.Objects.checkIndex(Objects.java:385)
+	at java.base/java.util.ArrayList.get(ArrayList.java:427)
+	at stepDefinitions.KitapYurdu_Yayimcilar.kullaniciYayinciKategorisindenYayimevleriniSiraylaSecer(KitapYurdu_Yayimcilar.java:35)
+	at ✽.kullanici yayinci kategorisinden yayimevlerini sirayla secer(file:///C:/Users/HakanBatirhan/IdeaProjects/Batch129Cucumber_Practice/src/test/resources/features/directory03/KitapYurdu_ZamanAraligi_Yayincilar.feature:8)
 ]]>
 </failure>
 <system-out><![CDATA[
-Given Kullanici kitap "url" e gider.........................................passed
-Then excel..................................................................failed
+Given Kullanici "url" e gider...............................................passed
+Then kullanici cok satan kitaplar menusu ustune gelir.......................passed
+And 3 saniye bekleme yapar..................................................passed
+And cok satan edebiyat kitaplari linkini tiklar.............................passed
+Then kullanici yayinci kategorisinden yayimevlerini sirayla secer...........failed
+And kullanici sectigi yayimciya gore goruntulenen kitaplarin degistigini dogrular.skipped
+And kullanici goruntulenen kitaplarin sectigi yayimcinin kitaplari oldugunu dogrular.skipped
 ]]></system-out>
 </testcase>
 </testsuite>

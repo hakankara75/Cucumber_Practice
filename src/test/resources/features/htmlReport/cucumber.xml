@@ -1,9 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Cucumber" time="56.687" tests="1" skipped="0" failures="0" errors="0">
-<testcase classname="deneme" name="deneme" time="56.486">
+<testsuite name="Cucumber" time="22.856" tests="1" skipped="0" failures="1" errors="0">
+<testcase classname="KitapYurdu Cok Satan Edebiyat Kitaplari Yayincilar" name="TC04 KitapYurdu Cok Satan Edebiyat Kitaplari Yayincilar Secme" time="22.665">
+<failure type="java.lang.IllegalArgumentException" message="Invalid char (?) found at index (11) in sheet name 'İnsan Nedir? (Cep Boy…5'">
+<![CDATA[java.lang.IllegalArgumentException: Invalid char (?) found at index (11) in sheet name 'İnsan Nedir? (Cep Boy…5'
+	at org.apache.poi.ss.util.WorkbookUtil.validateSheetName(WorkbookUtil.java:150)
+	at org.apache.poi.xssf.usermodel.XSSFWorkbook.createSheet(XSSFWorkbook.java:911)
+	at stepDefinitions.KitapYurdu_Yayimcilar.kullaniciYayinciKategorisindenYayimevleriniSiraylaSecer(KitapYurdu_Yayimcilar.java:36)
+	at ✽.kullanici yayinci kategorisinden yayimevlerini sirayla secer(file:///C:/Users/HakanBatirhan/IdeaProjects/Batch129Cucumber_Practice/src/test/resources/features/directory03/KitapYurdu_ZamanAraligi_Yayincilar.feature:8)
+]]>
+</failure>
 <system-out><![CDATA[
-Given Kullanici kitap "url" e gider.........................................passed
-Then excel..................................................................passed
+Given Kullanici "url" e gider...............................................passed
+Then kullanici cok satan kitaplar menusu ustune gelir.......................passed
+And 3 saniye bekleme yapar..................................................passed
+And cok satan edebiyat kitaplari linkini tiklar.............................passed
+Then kullanici yayinci kategorisinden yayimevlerini sirayla secer...........failed
+And kullanici sectigi yayimciya gore goruntulenen kitaplarin degistigini dogrular.skipped
+And kullanici goruntulenen kitaplarin sectigi yayimcinin kitaplari oldugunu dogrular.skipped
 ]]></system-out>
 </testcase>
 </testsuite>
