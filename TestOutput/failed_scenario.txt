@@ -1,1 +1,0 @@
-file:src/test/resources/features/directory03/KitapYurdu_ZamanAraligi_Yayincilar.feature:3

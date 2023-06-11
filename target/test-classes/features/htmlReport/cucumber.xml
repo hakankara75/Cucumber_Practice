@@ -1,50 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Cucumber" time="33.192" tests="1" skipped="0" failures="1" errors="0">
-<testcase classname="KitapYurdu Cok Satan Edebiyat Kitaplari Yayincilar" name="TC04 KitapYurdu Cok Satan Edebiyat Kitaplari Yayincilar Secme" time="32.958">
-<failure type="org.openqa.selenium.NoSuchElementException" message="no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;(//div[@id='faceted-search-group-2']//div[@class='row'])[2]&quot;}
-  (Session info: MicrosoftEdge=114.0.1823.43)
-For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
-Build info: version: '4.8.3', revision: 'e5e76298c3'
-System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '19.0.2'
-Driver info: org.openqa.selenium.edge.EdgeDriver
-Command: [4822f66b6bbe04c7bea4cb4fe5270fb7, findElement {using=xpath, value=(//div[@id='faceted-search-group-2']//div[@class='row'])[2]}]
-Capabilities {acceptInsecureCerts: false, browserName: msedge, browserVersion: 114.0.1823.43, ms:edgeOptions: {debuggerAddress: localhost:60283}, msedge: {msedgedriverVersion: 114.0.1823.43 (ef5b3acd8c1d..., userDataDir: C:\Users\HAKANB~1.DES\AppDa...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:60283/devtoo..., se:cdpVersion: 114.0.1823.43, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 4822f66b6bbe04c7bea4cb4fe5270fb7">
-<![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"(//div[@id='faceted-search-group-2']//div[@class='row'])[2]"}
-  (Session info: MicrosoftEdge=114.0.1823.43)
-For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
-Build info: version: '4.8.3', revision: 'e5e76298c3'
-System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '19.0.2'
-Driver info: org.openqa.selenium.edge.EdgeDriver
-Command: [4822f66b6bbe04c7bea4cb4fe5270fb7, findElement {using=xpath, value=(//div[@id='faceted-search-group-2']//div[@class='row'])[2]}]
-Capabilities {acceptInsecureCerts: false, browserName: msedge, browserVersion: 114.0.1823.43, ms:edgeOptions: {debuggerAddress: localhost:60283}, msedge: {msedgedriverVersion: 114.0.1823.43 (ef5b3acd8c1d..., userDataDir: C:\Users\HAKANB~1.DES\AppDa...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:60283/devtoo..., se:cdpVersion: 114.0.1823.43, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 4822f66b6bbe04c7bea4cb4fe5270fb7
-	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:67)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:484)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:193)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:183)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:158)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
-	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
-	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:352)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)
-	at stepDefinitions.KitapYurdu_Yayimcilar.kullaniciYayinciKategorisindenYayimevleriniSiraylaSecer(KitapYurdu_Yayimcilar.java:18)
-	at ✽.kullanici yayinci kategorisinden yayimevlerini sirayla secer(file:///C:/Users/HakanBatirhan/IdeaProjects/Batch129Cucumber_Practice/src/test/resources/features/directory03/KitapYurdu_ZamanAraligi_Yayincilar.feature:8)
+<testsuite name="Cucumber" time="7.122" tests="1" skipped="0" failures="1" errors="0">
+<testcase classname="deneme" name="deneme" time="6.93">
+<failure type="java.io.FileNotFoundException" message="src\test\java\resources\Book1.xlsx (Sistem belirtilen dosyayı bulamıyor)">
+<![CDATA[java.io.FileNotFoundException: src\test\java\resources\Book1.xlsx (Sistem belirtilen dosyayı bulamıyor)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:219)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:158)
+	at stepDefinitions.Deneme.excel(Deneme.java:31)
+	at ✽.excel(file:///C:/Users/HakanBatirhan/IdeaProjects/Batch129Cucumber_Practice/src/test/resources/features/directory03/deneme.feature:5)
 ]]>
 </failure>
 <system-out><![CDATA[
-Given Kullanici "url" e gider...............................................passed
-Then kullanici cok satan kitaplar menusu ustune gelir.......................passed
-And 3 saniye bekleme yapar..................................................passed
-And cok satan edebiyat kitaplari linkini tiklar.............................passed
-Then kullanici yayinci kategorisinden yayimevlerini sirayla secer...........failed
-And kullanici sectigi yayimciya gore goruntulenen kitaplarin degistigini dogrular.skipped
-And kullanici goruntulenen kitaplarin sectigi yayimcinin kitaplari oldugunu dogrular.skipped
+Given Kullanici kitap "url" e gider.........................................passed
+Then excel..................................................................failed
 ]]></system-out>
 </testcase>
 </testsuite>

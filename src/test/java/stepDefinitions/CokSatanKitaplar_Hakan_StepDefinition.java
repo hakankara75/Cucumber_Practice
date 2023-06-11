@@ -95,6 +95,8 @@ public class CokSatanKitaplar_Hakan_StepDefinition {
         select = new Select(locate.zamanAraligi);
         select.selectByVisibleText(str);
         selectZaman = str;
+
+        //select sonucu olusan veriyi excel'e yukleyip kaydetme
         ExcelUtils excelUtils = new ExcelUtils("src/test/java/techproed/resources/mysmoketestdata.xlsx", "sayfa");
         if (selectZaman.equals("Haftalık")) {
             excelUtils.setCellData("", 1, 0);

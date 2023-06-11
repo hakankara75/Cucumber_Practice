@@ -1,9 +1,6 @@
 package utilities;
 
-import org.apache.poi.ss.usermodel.Cell;
-import org.apache.poi.ss.usermodel.Sheet;
-import org.apache.poi.ss.usermodel.Workbook;
-import org.apache.poi.ss.usermodel.WorkbookFactory;
+import org.apache.poi.ss.usermodel.*;
 
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -60,6 +57,10 @@ public class ExcelUtils {
     }
     //=========Deger, Satir, Sutun girindiginde, O satır ve sutuna girilen veriyi ekler===============//
     public void setCellData(String value, int rowNum, int colNum) {
+        Row row = sheet.getRow(rowNum);
+        if (row == null) {
+            row = sheet.createRow(rowNum);
+        }
         try {
             sheet.getRow(rowNum).createCell(colNum).setCellValue(value);
             FileOutputStream fos = new FileOutputStream(path);
@@ -74,4 +75,5 @@ public class ExcelUtils {
         int column = getColumnsNames().indexOf(columnName);
         setCellData(value, row, column);
     }
+
 }

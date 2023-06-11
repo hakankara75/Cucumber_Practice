@@ -4,6 +4,8 @@ import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 import org.apache.commons.io.FileUtils;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -15,6 +17,7 @@ import java.awt.*;
 import java.awt.datatransfer.StringSelection;
 import java.awt.event.KeyEvent;
 import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.sql.*;
 import java.text.SimpleDateFormat;
@@ -461,5 +464,18 @@ public class ReusableMethods {
         return columns;
     }
 
+    public static void addSheetToExcel(String fileName, String sheetName) throws Exception {
+        // Dosya ve çalışma kitabı objelerini oluştur
+        FileOutputStream outputStream = new FileOutputStream(fileName);
+        XSSFWorkbook workbook = new XSSFWorkbook();
+
+        // Sayfayı oluştur ve kitaba ekle
+        XSSFSheet sheet = workbook.createSheet(sheetName);
+        workbook.write(outputStream);
+
+        // Kapat
+        outputStream.close();
+        workbook.close();
+    }
 
 }
