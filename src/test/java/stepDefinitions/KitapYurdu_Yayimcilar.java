@@ -8,50 +8,67 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import pages.CokSatanKitaplar_Edebiyat_Kitapyurdu;
 import utilities.Driver;
+import utilities.ExcelUtils;
+import utilities.ReusableMethods;
 
-import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.List;
 
 public class KitapYurdu_Yayimcilar {
     CokSatanKitaplar_Edebiyat_Kitapyurdu edebiyatKitapyurdu= new CokSatanKitaplar_Edebiyat_Kitapyurdu();
+    String dosyaYolu = "src/test/java/resources/Book.xlsx";
+    String sayfaAdi = "sayfa";
+    XSSFWorkbook workbook = new XSSFWorkbook();
+    XSSFSheet sheet = workbook.createSheet(sayfaAdi );
 
 
     @Then("kullanici yayinci kategorisinden yayimevlerini sirayla secer")
     public void kullaniciYayinciKategorisindenYayimevleriniSiraylaSecer() throws IOException {
         for (int i = 1; i < 81; i++) {
-            Driver.getDriver().findElement(By.xpath("(//div[@id='faceted-search-group-2']//div[@class='row'])["+i+"]")).click();
-            List<WebElement> kitapElements= Driver.getDriver().findElements(By.xpath("//div[@class='name ellipsis']"));
+            //yayınevlerini sırayla tiklamak icin komut
+            Driver.getDriver().findElement(By.xpath("(//div[@id='faceted-search-group-2']//div[@class='row'])[" + i + "]")).click();
+
+            //Acilan sayfada yayinevini almak icin komut
+            WebElement publisherFilter = Driver.getDriver().findElement(By.id("publisher-filters-div")).findElement(By.className("facet-name"));
 
 
-            String dosyaYolu = "src/test/java/resources/Book.xlsx";
-            String sayfaAdi= "sayfa";
+            //acilan yayinevine ait kitaplari listeye alma komutu
+            List<WebElement> kitapElements = Driver.getDriver().findElements(By.xpath("//div[@class='name ellipsis']"));
 
-// Yeni bir Excel dosyası oluştur
-            XSSFWorkbook workbook = new XSSFWorkbook();
+            // yukarida alinan yayinevi sayfa adi olarak atanacak
+            String sayfaAdi = publisherFilter.getText();
+            System.out.println("sayfaAdi = " + sayfaAdi);
 
-// Yeni bir sayfa ekle
-            for(int k=0;k<kitapElements.size(); k++){
-                sayfaAdi=kitapElements.get(k).getText();
-                try { XSSFSheet sheet = workbook.createSheet(sayfaAdi + k);
-            } catch (Exception e) {
-                    e.printStackTrace();
+            ReusableMethods.excellSayfaAdiVerme(sayfaAdi, dosyaYolu);
+
+            // Kitap elementlerinin sayısını al
+            int kitapElementSayisi = kitapElements.size();
+
+            // For döngüsü ile kitapları Excel'e yaz
+            ExcelUtils excelUtils = new ExcelUtils(dosyaYolu, sayfaAdi);
+            //1.buraya excell sheet isimlerini yazdirma kodlari gelecek
+
+
+
+
+            //2. burasi ayri bolum olcak. excell hucrelerine kitap isimlerini girmek icin
+            kitapElements = Driver.getDriver().findElements(By.xpath("//div[@class='name ellipsis']"));
+            for (int k = 0; k <= kitapElementSayisi; k++) {
+                // Kitap adını al
+
+                try {
+                    String kitapAdi = kitapElements.get(k).getText();
+                    System.out.println("kitapAdi = " + kitapAdi);
+                    excelUtils.setCellData(kitapAdi, k + 0, 0);
+                } catch (Exception e) {
+
                 }
 
-// Dosyayı kaydet
-            try {
-                FileOutputStream outputStream = new FileOutputStream(dosyaYolu);
-                workbook.write(outputStream);
-                workbook.close();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
 
+            }
             Driver.getDriver().navigate().back();
-            }
-
         }
-
+    }
 
 
 
@@ -71,4 +88,16 @@ public class KitapYurdu_Yayimcilar {
 
         Driver.closeDriver();
     }
-}
+
+    @And("cok satan edebiyat kitaplari linkine sol klik yapar")
+    public void cokSatanEdebiyatKitaplariLinkineSolKlikYapar() {
+        ReusableMethods.webelementJavaScript("document.querySelector(\"#mainNav > div.nav-content > ul > li.book.has-menu.active > div.lvl2.js-bookCr > ul > li:nth-child(1) > div > div.open-menu-ct.bookBestSeller > div.subCategories > ul:nth-child(2) > li:nth-child(1) > a > strong\")").click();
+
+        ReusableMethods.excellSayfaAdiVerme(sayfaAdi, dosyaYolu);
+
+
+    }
+
+    }
+
+

@@ -18,9 +18,7 @@ import org.testng.AssertJUnit;
 import java.awt.*;
 import java.awt.datatransfer.StringSelection;
 import java.awt.event.KeyEvent;
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
+import java.io.*;
 import java.sql.*;
 import java.text.SimpleDateFormat;
 import java.time.Duration;
@@ -502,4 +500,15 @@ public class ReusableMethods {
         }
     }
 
+    public static void excellSayfaAdiVerme(String sayfaAdi, String dosyaYolu){
+        try (Workbook workbook = new XSSFWorkbook()) {
+            workbook.createSheet(sayfaAdi);
+            FileOutputStream outputStream = new FileOutputStream(dosyaYolu);
+            workbook.write(outputStream);
+            workbook.close();
+            outputStream.close();
+        } catch (Exception e) {
+
+        }
+    }
 }
