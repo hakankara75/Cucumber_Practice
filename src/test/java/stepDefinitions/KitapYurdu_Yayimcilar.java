@@ -51,23 +51,6 @@ public class KitapYurdu_Yayimcilar {
                 excelUtils.setCellData(kitapElements.get(j).getText(), j, 0);
             }
 
-
-
-//
-//            //2. burasi ayri bolum olcak. excell hucrelerine kitap isimlerini girmek icin
-//            kitapElements = Driver.getDriver().findElements(By.xpath("//div[@class='name ellipsis']"));
-//            for (int k = 0; k <= kitapElementSayisi; k++) {
-//                // Kitap adını al
-//
-//                try {
-//                    String kitapAdi = kitapElements.get(k).getText();
-//                    System.out.println("kitapAdi = " + kitapAdi);
-//                    excelUtils.setCellData(kitapAdi, k + 0, 0);
-//                } catch (Exception e) {
-//
-//                }
-//
-//            }
             Driver.getDriver().navigate().back();
         }
     }

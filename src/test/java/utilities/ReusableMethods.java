@@ -411,8 +411,7 @@ public class ReusableMethods {
         try {
             connection = DriverManager.getConnection(url, user, password);
         } catch (SQLException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
+
         }
     }
 
@@ -421,14 +420,12 @@ public class ReusableMethods {
         try {
             statement = connection.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
         } catch (SQLException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
+
         }
         try {
             resultSet = statement.executeQuery(query);
         } catch (SQLException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
+
         }
     }
 
@@ -442,8 +439,7 @@ public class ReusableMethods {
                 rowList.add(resultSet.getObject(column));
             }
         } catch (SQLException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
+
         }
         return rowList;
     }
@@ -460,38 +456,15 @@ public class ReusableMethods {
                 columns.add(rsmd.getColumnName(i));
             }
         } catch (SQLException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
+
         }
         return columns;
     }
 
 
 
-    public void excelDosyasiVeSayfasiOlusturma(String dosyaAdi, String sayfaAdi,int sayfayaEkOlacakSayi) throws IOException {
-        String dosyaYolu = "src/test/java/resources/"+dosyaAdi+".xlsx";
-
-        FileOutputStream fileOutputStream = null;
-        try {
-            Workbook workbook = new XSSFWorkbook();
-            for (int i = 1; i <= sayfayaEkOlacakSayi; i++) {
-                String sheetName = sayfaAdi + i;
-                Sheet sheet = workbook.createSheet(sheetName);
-                // Sayfaya istediğiniz verileri ekleyebilirsiniz
-            }
-
-            fileOutputStream = new FileOutputStream(new File(dosyaYolu));
-            workbook.write(fileOutputStream);
-            fileOutputStream.close();
-            System.out.println("Excel dosyası oluşturuldu.");
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
     /**
-     * Bu metot excellde var olan sayfaya isim verir
+     * Bu metot bir excell dosyası oluşturur ve excellde var olan sayfaya isim verir
      * @param sayfaAdi sayfaya verilecek isim
      * @param dosyaYolu hangi excell dosyasi uzerinde calisilacaksa o dosyanin yolu
      */
