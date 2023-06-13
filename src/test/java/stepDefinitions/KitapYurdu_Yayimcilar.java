@@ -11,11 +11,11 @@ import utilities.Driver;
 import utilities.ExcelUtils;
 import utilities.ReusableMethods;
 
-import java.io.IOException;
 import java.util.List;
 
 public class KitapYurdu_Yayimcilar {
     CokSatanKitaplar_Edebiyat_Kitapyurdu edebiyatKitapyurdu= new CokSatanKitaplar_Edebiyat_Kitapyurdu();
+    ExcelUtils excelUtils;
     String dosyaYolu = "src/test/java/resources/Book.xlsx";
     String sayfaAdi = "sayfa";
     XSSFWorkbook workbook = new XSSFWorkbook();
@@ -23,7 +23,7 @@ public class KitapYurdu_Yayimcilar {
 
 
     @Then("kullanici yayinci kategorisinden yayimevlerini sirayla secer")
-    public void kullaniciYayinciKategorisindenYayimevleriniSiraylaSecer() throws IOException {
+    public void kullaniciYayinciKategorisindenYayimevleriniSiraylaSecer() throws Exception {
         for (int i = 1; i < 81; i++) {
             //yayınevlerini sırayla tiklamak icin komut
             Driver.getDriver().findElement(By.xpath("(//div[@id='faceted-search-group-2']//div[@class='row'])[" + i + "]")).click();
@@ -39,33 +39,35 @@ public class KitapYurdu_Yayimcilar {
             String sayfaAdi = publisherFilter.getText();
             System.out.println("sayfaAdi = " + sayfaAdi);
 
-            ReusableMethods.excellSayfaAdiVerme(sayfaAdi, dosyaYolu);
+            ReusableMethods.excellSayfasiOlusturupIsimVerme(dosyaYolu,sayfaAdi);
 
             // Kitap elementlerinin sayısını al
             int kitapElementSayisi = kitapElements.size();
 
             // For döngüsü ile kitapları Excel'e yaz
-            ExcelUtils excelUtils = new ExcelUtils(dosyaYolu, sayfaAdi);
-            //1.buraya excell sheet isimlerini yazdirma kodlari gelecek
 
-
-
-
-            //2. burasi ayri bolum olcak. excell hucrelerine kitap isimlerini girmek icin
-            kitapElements = Driver.getDriver().findElements(By.xpath("//div[@class='name ellipsis']"));
-            for (int k = 0; k <= kitapElementSayisi; k++) {
-                // Kitap adını al
-
-                try {
-                    String kitapAdi = kitapElements.get(k).getText();
-                    System.out.println("kitapAdi = " + kitapAdi);
-                    excelUtils.setCellData(kitapAdi, k + 0, 0);
-                } catch (Exception e) {
-
-                }
-
-
+            for (int j = 0; j < kitapElementSayisi; j++) {
+                excelUtils = new ExcelUtils(dosyaYolu, sayfaAdi);
+                excelUtils.setCellData(kitapElements.get(j).getText(), j, 0);
             }
+
+
+
+//
+//            //2. burasi ayri bolum olcak. excell hucrelerine kitap isimlerini girmek icin
+//            kitapElements = Driver.getDriver().findElements(By.xpath("//div[@class='name ellipsis']"));
+//            for (int k = 0; k <= kitapElementSayisi; k++) {
+//                // Kitap adını al
+//
+//                try {
+//                    String kitapAdi = kitapElements.get(k).getText();
+//                    System.out.println("kitapAdi = " + kitapAdi);
+//                    excelUtils.setCellData(kitapAdi, k + 0, 0);
+//                } catch (Exception e) {
+//
+//                }
+//
+//            }
             Driver.getDriver().navigate().back();
         }
     }
@@ -98,6 +100,7 @@ public class KitapYurdu_Yayimcilar {
 
     }
 
-    }
+
+}
 
 

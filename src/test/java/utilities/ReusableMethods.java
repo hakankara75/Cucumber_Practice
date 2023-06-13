@@ -6,7 +6,6 @@ import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 import org.apache.commons.io.FileUtils;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
-import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
@@ -18,7 +17,10 @@ import org.testng.AssertJUnit;
 import java.awt.*;
 import java.awt.datatransfer.StringSelection;
 import java.awt.event.KeyEvent;
-import java.io.*;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.sql.*;
 import java.text.SimpleDateFormat;
 import java.time.Duration;
@@ -464,19 +466,7 @@ public class ReusableMethods {
         return columns;
     }
 
-    public static void addSheetToExcel(String fileName, String sheetName) throws Exception {
-        // Dosya ve çalışma kitabı objelerini oluştur
-        FileOutputStream outputStream = new FileOutputStream(fileName);
-        XSSFWorkbook workbook = new XSSFWorkbook();
 
-        // Sayfayı oluştur ve kitaba ekle
-        XSSFSheet sheet = workbook.createSheet(sheetName);
-        workbook.write(outputStream);
-
-        // Kapat
-        outputStream.close();
-        workbook.close();
-    }
 
     public void excelDosyasiVeSayfasiOlusturma(String dosyaAdi, String sayfaAdi,int sayfayaEkOlacakSayi) throws IOException {
         String dosyaYolu = "src/test/java/resources/"+dosyaAdi+".xlsx";
@@ -500,6 +490,11 @@ public class ReusableMethods {
         }
     }
 
+    /**
+     * Bu metot excellde var olan sayfaya isim verir
+     * @param sayfaAdi sayfaya verilecek isim
+     * @param dosyaYolu hangi excell dosyasi uzerinde calisilacaksa o dosyanin yolu
+     */
     public static void excellSayfaAdiVerme(String sayfaAdi, String dosyaYolu){
         try (Workbook workbook = new XSSFWorkbook()) {
             workbook.createSheet(sayfaAdi);
@@ -510,5 +505,25 @@ public class ReusableMethods {
         } catch (Exception e) {
 
         }
+    }
+
+    /**
+     * Bu metot var olan bir excell dosyasini acip icine yeni sayfa ekler ve sayfaya isim verir.
+     * @param dosyaYolu acilacak ve sayfa eklenecek excell dosyasinin yoludur
+     * @param sayfaAdi excellde yeni acilan sayfaya verilecek isimdir
+     */
+    public static void excellSayfasiOlusturupIsimVerme(String dosyaYolu, String sayfaAdi){
+        try {
+            FileInputStream file = new FileInputStream(new File(dosyaYolu));
+            Workbook workbook = new XSSFWorkbook(file);
+            Sheet sheet = workbook.createSheet(sayfaAdi);
+            FileOutputStream outputStream = new FileOutputStream(dosyaYolu);
+            workbook.write(outputStream);
+            workbook.close();
+            outputStream.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
     }
 }

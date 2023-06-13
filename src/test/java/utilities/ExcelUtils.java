@@ -57,14 +57,20 @@ public class ExcelUtils {
     }
     //=========Deger, Satir, Sutun girindiginde, O satır ve sutuna girilen veriyi ekler===============//
     public void setCellData(String value, int rowNum, int colNum) {
-            try {
-                sheet.getRow(rowNum).createCell(colNum).setCellValue(value);
-                FileOutputStream fos = new FileOutputStream(path);
-                workbook.write(fos);
-                fos.close();
-            } catch (Exception e) {
-                e.printStackTrace();
+        try {
+            Row row = sheet.getRow(rowNum);
+            if (row == null) {
+                row = sheet.createRow(rowNum);
             }
+            Cell cell = row.createCell(colNum);
+            cell.setCellValue(value);
+
+            FileOutputStream fos = new FileOutputStream(path);
+            workbook.write(fos);
+            fos.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         }
 
     //    Bu metot ustdeki metotla birlikde calisir. Overload eder. Parametreleri farklidir
