@@ -46,9 +46,15 @@ public class KitapYurdu_Yayimcilar {
 
             // For döngüsü ile kitapları Excel'e yaz
 
+            int sayac= 0;
             for (int j = 0; j < kitapElementSayisi; j++) {
-                excelUtils = new ExcelUtils(dosyaYolu, sayfaAdi);
-                excelUtils.setCellData(kitapElements.get(j).getText(), j, 0);
+                try {
+                    excelUtils = new ExcelUtils(dosyaYolu, sayfaAdi);
+                    excelUtils.setCellData(kitapElements.get(j).getText(), j, 0);
+                }catch (Exception e) {
+
+                }
+
             }
 
             Driver.getDriver().navigate().back();

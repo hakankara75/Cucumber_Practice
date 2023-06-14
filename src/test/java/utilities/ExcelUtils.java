@@ -12,7 +12,12 @@ public class ExcelUtils {
     private Workbook workbook;
     private Sheet sheet;
     private String path;
-    //Constuctor: Excel path'ine ve Excel'deki sayfaya ulaşmak için 2 parametreli cons. oluşturduk
+
+    /**bu metot dosya yolu verilen bir excell dosyasina ulasir
+     * verilen sayfa ismini acar ve okur
+     * @param path ulasilacak ve okunacak excell dosya yolu
+     * @param sheetName excell dosyasinda okunacak sayfa ismi
+     */
     public ExcelUtils(String path,String sheetName){
         this.path = path;
         try {
@@ -23,16 +28,28 @@ public class ExcelUtils {
             throw new RuntimeException(e);
         }
     }
-    //Satir ve sütun sayilari girildiğinde, o hücredeki veriyi return eder
+
+    /**Excellde Satir ve sütun sayilari girildiğinde, o hücredeki veriyi return eder
+     *
+     * @param rowNum satir numarasi
+     * @param colNum sutun numarasi
+     * @return
+     */
     public String getCellData(int rowNum,int colNum){
         Cell cell = sheet.getRow(rowNum).getCell(colNum);
         return cell.toString();
     }
-    //Exceldeki satir sayisini return eder
+
+    /**Exceldeki satir sayisini return eder
+     * @return
+     */
     public int rowCount(){
         return  sheet.getLastRowNum();
     }
-    //Exceldeki sütun sayisini return eder
+
+    /**Exceldeki sütun sayisini return eder
+      * @return
+     */
     public int columnCount(){
         return sheet.getRow(0).getLastCellNum();
     }
@@ -47,7 +64,11 @@ public class ExcelUtils {
         }
         return data;
     }
-    //==============Sutun isimlerini verir==================//
+
+    /** Bu metot excelldeki bir sutunun basligini verir
+     *
+      * @return bir sutunun basligini verir
+     */
     public List<String> getColumnsNames() {
         List<String> columns = new ArrayList<>();
         for (Cell cell : sheet.getRow(0)) {
@@ -55,7 +76,14 @@ public class ExcelUtils {
         }
         return columns;
     }
-    //=========Deger, Satir, Sutun girindiginde, O satır ve sutuna girilen veriyi ekler===============//
+
+    /**
+     * Bu metot excellde belirlenen hucreye verilen degeri girip kaydeder.
+      * @param value excell hucresine kaydedilecek deger
+     * @param rowNum satir numarasi
+     * @param colNum sutun numarasi
+     */
+
     public void setCellData(String value, int rowNum, int colNum) {
         try {
             Row row = sheet.getRow(rowNum);
