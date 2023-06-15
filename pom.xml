@@ -102,6 +102,13 @@
             <version>1.2.17</version>
         </dependency>
 
+        <!-- Pojo class olusturmak icin -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.26</version>
+            <scope>provided</scope>
+        </dependency>
 
 
     </dependencies>
