@@ -1,50 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Cucumber" time="22.82" tests="1" skipped="0" failures="1" errors="0">
-<testcase classname="KitapYurdu Cok Satan Edebiyat Kitaplari Yayincilar" name="TC04 KitapYurdu Cok Satan Edebiyat Kitaplari Yayincilar Secme" time="22.592">
-<failure type="org.openqa.selenium.StaleElementReferenceException" message="stale element reference: stale element not found
-  (Session info: MicrosoftEdge=114.0.1823.43)
-For documentation on this error, please visit: https://selenium.dev/exceptions/#stale_element_reference
+<testsuite name="Cucumber" time="17.555" tests="1" skipped="0" failures="1" errors="0">
+<testcase classname="Management" name="TC01" time="17.386">
+<failure type="org.openqa.selenium.NoSuchElementException" message="Unable to find element with locator By.xpath: //body/div[3]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/form[1]/div[1]/div[2]/div[1]/input[1]
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
 Build info: version: '4.8.3', revision: 'e5e76298c3'
 System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '19.0.2'
-Driver info: org.openqa.selenium.edge.EdgeDriver
-Command: [8e4353a5ff5f01d984857bce7b93a585, clickElement {id=20E6C48E923D7DD8CBC89ED72ABDD615_element_61}]
-Capabilities {acceptInsecureCerts: false, browserName: msedge, browserVersion: 114.0.1823.43, ms:edgeOptions: {debuggerAddress: localhost:53235}, msedge: {msedgedriverVersion: 114.0.1823.43 (ef5b3acd8c1d..., userDataDir: C:\Users\HAKANB~1.DES\AppDa...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:53235/devtoo..., se:cdpVersion: 114.0.1823.43, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[EdgeDriver: msedge on WINDOWS (8e4353a5ff5f01d984857bce7b93a585)] -&gt; xpath: //div[@id='faceted-search-group-2']//div[@class='row']]
-Session ID: 8e4353a5ff5f01d984857bce7b93a585">
-<![CDATA[org.openqa.selenium.StaleElementReferenceException: stale element reference: stale element not found
-  (Session info: MicrosoftEdge=114.0.1823.43)
-For documentation on this error, please visit: https://selenium.dev/exceptions/#stale_element_reference
+Driver info: driver.version: RemoteWebDriver">
+<![CDATA[org.openqa.selenium.NoSuchElementException: Unable to find element with locator By.xpath: //body/div[3]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/form[1]/div[1]/div[2]/div[1]/input[1]
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
 Build info: version: '4.8.3', revision: 'e5e76298c3'
 System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '19.0.2'
-Driver info: org.openqa.selenium.edge.EdgeDriver
-Command: [8e4353a5ff5f01d984857bce7b93a585, clickElement {id=20E6C48E923D7DD8CBC89ED72ABDD615_element_61}]
-Capabilities {acceptInsecureCerts: false, browserName: msedge, browserVersion: 114.0.1823.43, ms:edgeOptions: {debuggerAddress: localhost:53235}, msedge: {msedgedriverVersion: 114.0.1823.43 (ef5b3acd8c1d..., userDataDir: C:\Users\HAKANB~1.DES\AppDa...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:53235/devtoo..., se:cdpVersion: 114.0.1823.43, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[EdgeDriver: msedge on WINDOWS (8e4353a5ff5f01d984857bce7b93a585)] -> xpath: //div[@id='faceted-search-group-2']//div[@class='row']]
-Session ID: 8e4353a5ff5f01d984857bce7b93a585
-	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:67)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:484)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:193)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:183)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:158)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:257)
-	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:78)
-	at stepDefinitions.KitapYurdu_Yayimcilar.kullaniciYayinciKategorisindenYayimevleriniSiraylaSecer(KitapYurdu_Yayimcilar.java:32)
-	at ✽.kullanici yayinci kategorisinden yayimevlerini sirayla secer(file:///C:/Users/HakanBatirhan/IdeaProjects/Batch129Cucumber_Practice/src/test/resources/features/directory03/KitapYurdu_ZamanAraligi_Yayincilar.feature:8)
+Driver info: driver.version: RemoteWebDriver
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:352)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:70)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:39)
+	at jdk.proxy2/jdk.proxy2.$Proxy25.sendKeys(Unknown Source)
+	at stepDefinitions.Manage.kullaniciNameKutusunaGirer(Manage.java:47)
+	at ✽.Kullanici name kutusuna "name" girer(file:///C:/Users/HakanBatirhan/IdeaProjects/Batch129Cucumber_Practice/src/test/resources/features/directory03/management2.feature:12)
 ]]>
 </failure>
 <system-out><![CDATA[
-Given Kullanici "url" e gider...............................................passed
-Then kullanici cok satan kitaplar menusu ustune gelir.......................passed
-And 3 saniye bekleme yapar..................................................passed
-And cok satan edebiyat kitaplari linkine sol klik yapar.....................passed
-Then kullanici yayinci kategorisinden yayimevlerini sirayla secer...........failed
-And kullanici sectigi yayimciya gore goruntulenen kitaplarin degistigini dogrular.skipped
-And kullanici goruntulenen kitaplarin sectigi yayimcinin kitaplari oldugunu dogrular.skipped
+Given Kullanici "url" adresine gider........................................passed
+Then Kullanici Login ikonunu tiklar.........................................passed
+And Kullanici username kutusununa "username" girer..........................passed
+And Kullanici password kutusuna "password" girer............................passed
+And Kullanici Login butonunu tiklar.........................................passed
+And Kullanici Menu butonunu tiklar..........................................passed
+And Kullanici admin management menusunu secer...............................passed
+Then Kullanici edit butonuna basar..........................................passed
+And Kullanici name kutusuna "name" girer....................................failed
+And Kullanici surname kutusuna "surname" girer..............................skipped
+And Kullanici birth place kutusuna "birth place" girer......................skipped
+And Kullanici email kutusuna "email" girer..................................skipped
+And Kullanici gender checkboxtan gender secer...............................skipped
+And Kullanici is advisor teacher checkbox'ini secer.........................skipped
+And Kullanici date of birth kutusuna "date of birth" girer..................skipped
+And Kullanici phone kutusuna "phone" girer..................................skipped
+And Kullanici ssn kutusuna "ssn" girer......................................skipped
+And Kullanici user name kutusuna "user name" girer..........................skipped
+And Kullanici pass kutusuna "pass" girer....................................skipped
+And Kullanici submit butonuna basar.........................................skipped
 ]]></system-out>
 </testcase>
 </testsuite>

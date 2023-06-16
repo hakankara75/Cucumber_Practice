@@ -1,1 +1,1 @@
-file:src/test/resources/features/directory03/KitapYurdu_ZamanAraligi_Yayincilar.feature:3
+file:src/test/resources/features/directory03/management2.feature:3
