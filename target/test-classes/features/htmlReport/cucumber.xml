@@ -1,27 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Cucumber" time="17.555" tests="1" skipped="0" failures="1" errors="0">
-<testcase classname="Management" name="TC01" time="17.386">
-<failure type="org.openqa.selenium.NoSuchElementException" message="Unable to find element with locator By.xpath: //body/div[3]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/form[1]/div[1]/div[2]/div[1]/input[1]
-For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
-Build info: version: '4.8.3', revision: 'e5e76298c3'
-System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '19.0.2'
-Driver info: driver.version: RemoteWebDriver">
-<![CDATA[org.openqa.selenium.NoSuchElementException: Unable to find element with locator By.xpath: //body/div[3]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/form[1]/div[1]/div[2]/div[1]/input[1]
-For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
-Build info: version: '4.8.3', revision: 'e5e76298c3'
-System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '19.0.2'
-Driver info: driver.version: RemoteWebDriver
-	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:352)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:70)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:39)
-	at jdk.proxy2/jdk.proxy2.$Proxy25.sendKeys(Unknown Source)
-	at stepDefinitions.Manage.kullaniciNameKutusunaGirer(Manage.java:47)
-	at ✽.Kullanici name kutusuna "name" girer(file:///C:/Users/HakanBatirhan/IdeaProjects/Batch129Cucumber_Practice/src/test/resources/features/directory03/management2.feature:12)
-]]>
-</failure>
+<testsuite name="Cucumber" time="10.851" tests="1" skipped="0" failures="0" errors="0">
+<testcase classname="Management" name="TC01" time="10.66">
 <system-out><![CDATA[
 Given Kullanici "url" adresine gider........................................passed
 Then Kullanici Login ikonunu tiklar.........................................passed
@@ -29,20 +8,9 @@ And Kullanici username kutusununa "username" girer..........................pass
 And Kullanici password kutusuna "password" girer............................passed
 And Kullanici Login butonunu tiklar.........................................passed
 And Kullanici Menu butonunu tiklar..........................................passed
-And Kullanici admin management menusunu secer...............................passed
-Then Kullanici edit butonuna basar..........................................passed
-And Kullanici name kutusuna "name" girer....................................failed
-And Kullanici surname kutusuna "surname" girer..............................skipped
-And Kullanici birth place kutusuna "birth place" girer......................skipped
-And Kullanici email kutusuna "email" girer..................................skipped
-And Kullanici gender checkboxtan gender secer...............................skipped
-And Kullanici is advisor teacher checkbox'ini secer.........................skipped
-And Kullanici date of birth kutusuna "date of birth" girer..................skipped
-And Kullanici phone kutusuna "phone" girer..................................skipped
-And Kullanici ssn kutusuna "ssn" girer......................................skipped
-And Kullanici user name kutusuna "user name" girer..........................skipped
-And Kullanici pass kutusuna "pass" girer....................................skipped
-And Kullanici submit butonuna basar.........................................skipped
+And Kullanici meet management linkini tiklar................................passed
+Then Kullanici student tiklar...............................................passed
+And Kullanici student secer.................................................passed
 ]]></system-out>
 </testcase>
 </testsuite>

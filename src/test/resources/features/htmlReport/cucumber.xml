@@ -1,42 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Cucumber" time="22.645" tests="1" skipped="0" failures="1" errors="0">
-<testcase classname="Management" name="TC01" time="22.256">
-<failure type="org.openqa.selenium.ElementNotInteractableException" message="element not interactable
-  (Session info: chrome=114.0.5735.134)
-Build info: version: '4.8.3', revision: 'e5e76298c3'
-System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '19.0.2'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [07e7b170897c9659b2933e5b18d3fcd6, clickElement {id=22AC8D28E847EA9CF52830CB4BDAE055_element_115}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 114.0.5735.134, chrome: {chromedriverVersion: 114.0.5735.90 (386bc09e8f4f..., userDataDir: C:\Users\HAKANB~1.DES\AppDa...}, goog:chromeOptions: {debuggerAddress: localhost:62492}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:62492/devtoo..., se:cdpVersion: 114.0.5735.134, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on WINDOWS (07e7b170897c9659b2933e5b18d3fcd6)] -&gt; xpath: (//button[@type='button'])[5]]
-Session ID: 07e7b170897c9659b2933e5b18d3fcd6">
-<![CDATA[org.openqa.selenium.ElementNotInteractableException: element not interactable
-  (Session info: chrome=114.0.5735.134)
-Build info: version: '4.8.3', revision: 'e5e76298c3'
-System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '19.0.2'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [07e7b170897c9659b2933e5b18d3fcd6, clickElement {id=22AC8D28E847EA9CF52830CB4BDAE055_element_115}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 114.0.5735.134, chrome: {chromedriverVersion: 114.0.5735.90 (386bc09e8f4f..., userDataDir: C:\Users\HAKANB~1.DES\AppDa...}, goog:chromeOptions: {debuggerAddress: localhost:62492}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:62492/devtoo..., se:cdpVersion: 114.0.5735.134, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on WINDOWS (07e7b170897c9659b2933e5b18d3fcd6)] -> xpath: (//button[@type='button'])[5]]
-Session ID: 07e7b170897c9659b2933e5b18d3fcd6
-	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:67)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:484)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:193)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:183)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:158)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:257)
-	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:78)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:52)
-	at jdk.proxy2/jdk.proxy2.$Proxy25.click(Unknown Source)
-	at stepDefinitions.Manage.kullaniciSubmitButonunaBasar(Manage.java:98)
-	at ✽.Kullanici submit butonuna basar(file:///C:/Users/HakanBatirhan/IdeaProjects/Batch129Cucumber_Practice/src/test/resources/features/directory03/management2.feature:23)
+<testsuite name="Cucumber" time="8.892" tests="1" skipped="0" failures="1" errors="0">
+<testcase classname="Management" name="TC01" time="8.676">
+<failure type="java.lang.IndexOutOfBoundsException" message="Index 3 out of bounds for length 1">
+<![CDATA[java.lang.IndexOutOfBoundsException: Index 3 out of bounds for length 1
+	at java.base/jdk.internal.util.Preconditions.outOfBounds(Preconditions.java:100)
+	at java.base/jdk.internal.util.Preconditions.outOfBoundsCheckIndex(Preconditions.java:106)
+	at java.base/jdk.internal.util.Preconditions.checkIndex(Preconditions.java:302)
+	at java.base/java.util.Objects.checkIndex(Objects.java:385)
+	at java.base/java.util.ArrayList.get(ArrayList.java:427)
+	at stepDefinitions.General_Management.kullanici_student_tiklar(General_Management.java:28)
+	at ✽.Kullanici student tiklar(file:///C:/Users/HakanBatirhan/IdeaProjects/Batch129Cucumber_Practice/src/test/resources/features/directory03/management3.feature:11)
 ]]>
 </failure>
 <system-out><![CDATA[
@@ -46,20 +19,9 @@ And Kullanici username kutusununa "username" girer..........................pass
 And Kullanici password kutusuna "password" girer............................passed
 And Kullanici Login butonunu tiklar.........................................passed
 And Kullanici Menu butonunu tiklar..........................................passed
-And Kullanici admin management menusunu secer...............................passed
-Then Kullanici edit butonuna basar..........................................passed
-And Kullanici name kutusuna "name" girer....................................passed
-And Kullanici surname kutusuna "surname" girer..............................passed
-And Kullanici birth place kutusuna "birth place" girer......................passed
-And Kullanici email kutusuna "email" girer..................................passed
-And Kullanici gender checkboxtan gender secer...............................passed
-And Kullanici is advisor teacher checkbox'ini secer.........................passed
-And Kullanici date of birth kutusuna "date of birth" girer..................passed
-And Kullanici phone kutusuna "phone" girer..................................passed
-And Kullanici ssn kutusuna "ssn" girer......................................passed
-And Kullanici user name kutusuna "user name" girer..........................passed
-And Kullanici pass kutusuna "pass" girer....................................passed
-And Kullanici submit butonuna basar.........................................failed
+And Kullanici meet management linkini tiklar................................passed
+Then Kullanici student tiklar...............................................failed
+And Kullanici student secer.................................................skipped
 ]]></system-out>
 </testcase>
 </testsuite>

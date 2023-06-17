@@ -24,7 +24,7 @@ public class Manage {
 
     @And("Kullanici username kutusununa {string} girer")
     public void kullaniciUsernameKutusununaGirer(String arg0) {
-        management.username.sendKeys("Team10");
+        management.username.sendKeys("teacherhakan");
     }
 
     @And("Kullanici password kutusuna {string} girer")

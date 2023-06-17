@@ -2,14 +2,8 @@ package pages;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
-import utilities.Driver;
 
-public class Kisi_Ekleme_Guncelleme_Modulu {
-    public Kisi_Ekleme_Guncelleme_Modulu() {
-        PageFactory.initElements(Driver.getDriver(), this);
-
-    }
+public class Kisi_Ekleme_Guncelleme_Modulu extends AmazonPage{
 
     @FindBy(xpath = "//a[@href='/login']")
     public WebElement login;
