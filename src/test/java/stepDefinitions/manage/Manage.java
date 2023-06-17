@@ -16,32 +16,6 @@ public class Manage {
         Driver.getDriver().get(ConfigReader.getProperty("manageUrl"));
     }
 
-    @Then("Kullanici Login ikonunu tiklar")
-    public void kullanici_login_ikonunu_tiklar() {
-    management.login.click();
-    }
-
-
-    @And("Kullanici username kutusununa {string} girer")
-    public void kullaniciUsernameKutusununaGirer(String arg0) {
-        management.username.sendKeys("teacherhakan");
-    }
-
-    @And("Kullanici password kutusuna {string} girer")
-    public void kullaniciPasswordKutusunaGirer(String arg0) {
-        management.pasword.sendKeys("12345678");
-
-    }
-
-    @And("Kullanici Login butonunu tiklar")
-    public void kullaniciLoginButonunuTiklar() {
-        management.UyeGirisKismiLoginButton.click();
-    }
-    @Then("Kullanici Menu butonunu tiklar")
-    public void kullanici_menu_butonunu_tiklar() {
-        management.menu.click();
-    }
-
     @Then("Kullanici name kutusuna {string} girer")
     public void kullaniciNameKutusunaGirer(String arg0) {
         management.editName.sendKeys("batu");

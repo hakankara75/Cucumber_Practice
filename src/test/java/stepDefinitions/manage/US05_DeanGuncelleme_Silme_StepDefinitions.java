@@ -3,12 +3,16 @@ package stepDefinitions.manage;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import pages.manage.Kisi_Ekleme_Guncelleme_Modulu;
 import pages.manage.US05_DeanGuncelleme_Silme_Page;
 import utilities.ConfigReader;
 import utilities.Driver;
 
-import static org.junit.Assert.*;
+import java.util.List;
+
+import static org.junit.Assert.assertTrue;
 
 public class US05_DeanGuncelleme_Silme_StepDefinitions {
 
@@ -48,16 +52,20 @@ public class US05_DeanGuncelleme_Silme_StepDefinitions {
 
     @Given("And Admin Dean List'i gorur")
     public void andAdminDeanListIGorur() {
-        assertTrue(dean.deanList.isDisplayed());
+        assertTrue(dean.deanListBasligi.isDisplayed());
     }
 
-    @Given("And Admin Dean List'i gorur")
-    public void and_admin_dean_list_i_gorur() {
-
-
-    }
     @Given("Admin Name bilgilerini gorur")
     public void admin_name_bilgilerini_gorur() {
+        assertTrue(dean.nameSutunu.isDisplayed());
+        List<WebElement> list= Driver.getDriver().findElements(By.xpath("(//div[@class='card-body'])[2]"));
+        for (int i = 0; i <=list.size() ; i++) {
+
+            System.out.println("list.get(i).getText() = " + list.get(i).getText());
+//            assertTrue(Driver.getDriver().findElement(By.xpath("//*[@id=\"root\"]/div/main/div/div[1]/div[3]/div/div/div[1]/table/tbody/tr[20]")).isDisplayed());
+
+        }
+
 
 
     }

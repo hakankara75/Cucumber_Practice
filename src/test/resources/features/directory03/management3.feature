@@ -8,4 +8,6 @@ Feature: Management
     And Kullanici password kutusuna "password" girer
     And Kullanici Login butonunu tiklar
     And Kullanici Menu butonunu tiklar
-    And Admin Dean Management sayfasına gider
+    And Kullanici meet management linkini tiklar
+    And Kullanici student tiklar
+    And Kullanici student secer

@@ -20,7 +20,11 @@ public class General_Management  {
         ReusableMethods.bekle(2);
         management.selectStudent.click();
 
-      List<WebElement> liste= Driver.getDriver().findElements(By.xpath("//div[@class=' css-1nmdiq5-menu']"));
+
+    }
+    @Then("Kullanici student secer")
+    public void kullanici_student_secer() {
+        List<WebElement> liste= Driver.getDriver().findElements(By.xpath("//div[@class=' css-1nmdiq5-menu']"));
         System.out.println("liste.size() = " + liste.size());
 
         for (int i = 0; i < liste.size(); i++) {
@@ -30,9 +34,7 @@ public class General_Management  {
 
         }
 
-    }
-    @Then("Kullanici student secer")
-    public void kullanici_student_secer() {
+
         Driver.closeDriver();
     }
 }
