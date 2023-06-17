@@ -105,4 +105,6 @@ public class AmazonStepDefinitions {
     public void kullanıcıSignInButonunuTıklar() {
         amazonPage.signInSubmit.click();
     }
+
+
 }

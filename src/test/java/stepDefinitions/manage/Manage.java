@@ -1,7 +1,7 @@
-package stepDefinitions;
+package stepDefinitions.manage;
 
 import io.cucumber.java.en.*;
-import pages.Kisi_Ekleme_Guncelleme_Modulu;
+import pages.manage.Kisi_Ekleme_Guncelleme_Modulu;
 import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.ReusableMethods;

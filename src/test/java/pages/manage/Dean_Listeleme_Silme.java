@@ -1,9 +1,10 @@
-package pages;
+package pages.manage;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import pages.AmazonPage;
 
-public class Dean_Listeleme_Silme extends AmazonPage{
+public class Dean_Listeleme_Silme extends AmazonPage {
 
     @FindBy(xpath = "(//li[@class='has-open-menu']/child::span)[1]")
     public WebElement cokSatanKitaplar;

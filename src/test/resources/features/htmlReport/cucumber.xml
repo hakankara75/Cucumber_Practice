@@ -2,13 +2,13 @@
 <testsuite name="Cucumber" time="8.892" tests="1" skipped="0" failures="1" errors="0">
 <testcase classname="Management" name="TC01" time="8.676">
 <failure type="java.lang.IndexOutOfBoundsException" message="Index 3 out of bounds for length 1">
-<![CDATA[java.lang.IndexOutOfBoundsException: Index 3 out of bounds for length 1
+    <![CDATA[java.lang.IndexOutOfBoundsException: Index 3 out of bounds for length 1
 	at java.base/jdk.internal.util.Preconditions.outOfBounds(Preconditions.java:100)
 	at java.base/jdk.internal.util.Preconditions.outOfBoundsCheckIndex(Preconditions.java:106)
 	at java.base/jdk.internal.util.Preconditions.checkIndex(Preconditions.java:302)
 	at java.base/java.util.Objects.checkIndex(Objects.java:385)
 	at java.base/java.util.ArrayList.get(ArrayList.java:427)
-	at stepDefinitions.General_Management.kullanici_student_tiklar(General_Management.java:28)
+	at stepDefinitions.manage.General_Management.kullanici_student_tiklar(General_Management.java:28)
 	at ✽.Kullanici student tiklar(file:///C:/Users/HakanBatirhan/IdeaProjects/Batch129Cucumber_Practice/src/test/resources/features/directory03/management3.feature:11)
 ]]>
 </failure>

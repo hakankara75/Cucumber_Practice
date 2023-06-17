@@ -1,9 +1,9 @@
-package stepDefinitions;
+package stepDefinitions.manage;
 
 import io.cucumber.java.en.Then;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import pages.Dean_Listeleme_Silme;
+import pages.manage.Dean_Listeleme_Silme;
 import utilities.Driver;
 import utilities.ReusableMethods;
 

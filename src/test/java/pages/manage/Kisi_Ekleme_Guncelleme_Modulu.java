@@ -1,9 +1,10 @@
-package pages;
+package pages.manage;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import pages.AmazonPage;
 
-public class Kisi_Ekleme_Guncelleme_Modulu extends AmazonPage{
+public class Kisi_Ekleme_Guncelleme_Modulu extends AmazonPage {
 
     @FindBy(xpath = "//a[@href='/login']")
     public WebElement login;
