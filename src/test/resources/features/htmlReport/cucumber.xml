@@ -1,24 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Cucumber" time="27.003" tests="2" skipped="0" failures="2" errors="0">
-<testcase classname="DeanGuncelleme_Silme" name="Admin Girisi" time="19.617">
-<failure type="org.openqa.selenium.NoSuchElementException" message="no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//button[@aria-controls='offcanvasNavbar-expand-false']&quot;}
+<testsuite name="Cucumber" time="13.698" tests="2" skipped="0" failures="1" errors="0">
+<testcase classname="DeanGuncelleme_Silme" name="Admin Girisi" time="4.699">
+<system-out><![CDATA[
+Given Admin "url" adresine gider............................................passed
+Then Kullanici Login ikonunu tiklar.........................................passed
+And Kullanici username kutusununa "username" girer..........................passed
+And Kullanici password kutusuna "password" girer............................passed
+And Kullanici Login butonunu tiklar.........................................passed
+And Kullanici Menu butonunu tiklar..........................................passed
+And Admin Dean Management sayfasına gider...................................passed
+]]></system-out>
+</testcase>
+<testcase classname="DeanGuncelleme_Silme" name="US05 Admin, Dean leri görebilmeli ve silebilmeli" time="8.467">
+<failure type="org.openqa.selenium.ElementClickInterceptedException" message="element click intercepted: Element is not clickable at point (1382, 733)
   (Session info: chrome=114.0.5735.134)
-For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
 Build info: version: '4.8.3', revision: 'e5e76298c3'
 System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '19.0.2'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [e17d105b28c9b5402998683df423380c, findElement {using=xpath, value=//button[@aria-controls='offcanvasNavbar-expand-false']}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 114.0.5735.134, chrome: {chromedriverVersion: 114.0.5735.90 (386bc09e8f4f..., userDataDir: C:\Users\HAKANB~1.DES\AppDa...}, goog:chromeOptions: {debuggerAddress: localhost:63355}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:63355/devtoo..., se:cdpVersion: 114.0.5735.134, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: e17d105b28c9b5402998683df423380c">
-<![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//button[@aria-controls='offcanvasNavbar-expand-false']"}
+Command: [ed3c65a0c72e51d1f375dca0643a4d85, clickElement {id=B3E07FD38A8C744F86A7A402E23A1D50_element_207}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 114.0.5735.134, chrome: {chromedriverVersion: 114.0.5735.90 (386bc09e8f4f..., userDataDir: C:\Users\HAKANB~1.DES\AppDa...}, goog:chromeOptions: {debuggerAddress: localhost:55221}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:55221/devtoo..., se:cdpVersion: 114.0.5735.134, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on WINDOWS (ed3c65a0c72e51d1f375dca0643a4d85)] -&gt; xpath: (//button[@type='button'])[8]]
+Session ID: ed3c65a0c72e51d1f375dca0643a4d85">
+<![CDATA[org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element is not clickable at point (1382, 733)
   (Session info: chrome=114.0.5735.134)
-For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
 Build info: version: '4.8.3', revision: 'e5e76298c3'
 System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '19.0.2'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [e17d105b28c9b5402998683df423380c, findElement {using=xpath, value=//button[@aria-controls='offcanvasNavbar-expand-false']}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 114.0.5735.134, chrome: {chromedriverVersion: 114.0.5735.90 (386bc09e8f4f..., userDataDir: C:\Users\HAKANB~1.DES\AppDa...}, goog:chromeOptions: {debuggerAddress: localhost:63355}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:63355/devtoo..., se:cdpVersion: 114.0.5735.134, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: e17d105b28c9b5402998683df423380c
+Command: [ed3c65a0c72e51d1f375dca0643a4d85, clickElement {id=B3E07FD38A8C744F86A7A402E23A1D50_element_207}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 114.0.5735.134, chrome: {chromedriverVersion: 114.0.5735.90 (386bc09e8f4f..., userDataDir: C:\Users\HAKANB~1.DES\AppDa...}, goog:chromeOptions: {debuggerAddress: localhost:55221}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:55221/devtoo..., se:cdpVersion: 114.0.5735.134, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on WINDOWS (ed3c65a0c72e51d1f375dca0643a4d85)] -> xpath: (//button[@type='button'])[8]]
+Session ID: ed3c65a0c72e51d1f375dca0643a4d85
 	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:67)
 	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
 	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:484)
@@ -29,61 +40,28 @@ Session ID: e17d105b28c9b5402998683df423380c
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:183)
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:158)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
-	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
-	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:352)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:70)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:39)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:257)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:78)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:52)
 	at jdk.proxy2/jdk.proxy2.$Proxy25.click(Unknown Source)
-	at stepDefinitions.manage.US05_DeanGuncelleme_Silme_StepDefinitions.kullanici_menu_butonunu_tiklar(US05_DeanGuncelleme_Silme_StepDefinitions.java:45)
-	at ✽.Kullanici Menu butonunu tiklar(file:///C:/Users/HakanBatirhan/IdeaProjects/Batch129Cucumber_Practice/src/test/resources/features/directory04/US05_DeanGuncelleme_Silme.feature:10)
+	at stepDefinitions.manage.US05_DeanGuncelleme_Silme_StepDefinitions.admin_edit_butonuna_basar(US05_DeanGuncelleme_Silme_StepDefinitions.java:150)
+	at ✽.Admin Edit butonuna basar(file:///C:/Users/HakanBatirhan/IdeaProjects/Batch129Cucumber_Practice/src/test/resources/features/directory04/US05_DeanGuncelleme_Silme.feature:24)
 ]]>
 </failure>
 <system-out><![CDATA[
-Given Admin "url" adresine gider............................................passed
-Then Kullanici Login ikonunu tiklar.........................................passed
-And Kullanici username kutusununa "username" girer..........................passed
-And Kullanici password kutusuna "password" girer............................passed
-And Kullanici Login butonunu tiklar.........................................passed
-And Kullanici Menu butonunu tiklar..........................................failed
-And Admin Dean Management sayfasına gider...................................skipped
-]]></system-out>
-</testcase>
-<testcase classname="DeanGuncelleme_Silme" name="US05 Admin, Dean leri görebilmeli ve silebilmeli" time="7.003">
-<failure type="org.openqa.selenium.NoSuchElementException" message="Unable to find element with locator By.xpath: (//h5[@class='fw-bold p-3 card-header'])[2]
-For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
-Build info: version: '4.8.3', revision: 'e5e76298c3'
-System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '19.0.2'
-Driver info: driver.version: RemoteWebDriver">
-<![CDATA[org.openqa.selenium.NoSuchElementException: Unable to find element with locator By.xpath: (//h5[@class='fw-bold p-3 card-header'])[2]
-For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
-Build info: version: '4.8.3', revision: 'e5e76298c3'
-System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '19.0.2'
-Driver info: driver.version: RemoteWebDriver
-	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:352)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:70)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:39)
-	at jdk.proxy2/jdk.proxy2.$Proxy25.isDisplayed(Unknown Source)
-	at stepDefinitions.manage.US05_DeanGuncelleme_Silme_StepDefinitions.andAdminDeanListIGorur(US05_DeanGuncelleme_Silme_StepDefinitions.java:55)
-	at ✽.And Admin Dean List'i gorur(file:///C:/Users/HakanBatirhan/IdeaProjects/Batch129Cucumber_Practice/src/test/resources/features/directory04/US05_DeanGuncelleme_Silme.feature:14)
-]]>
-</failure>
-<system-out><![CDATA[
-Given And Admin Dean List'i gorur...........................................failed
-And Admin Name bilgilerini gorur............................................skipped
-And Admin Gender bilgilerini gorur..........................................skipped
-And Admin Phone bilgilerini gorur...........................................skipped
-And Admin SSN bilgilerini gorur.............................................skipped
-And Admin User Name bilgilerini gorur.......................................skipped
-And Admin Delete butonunu gorur.............................................skipped
-And Admin Delete butonuna basar.............................................skipped
-And Admin Dean List'i gorur.................................................skipped
-And Admin Edit butonunu gorur...............................................skipped
-And Admin Edit butonuna basar...............................................skipped
+Given Admin Dean List'i gorur...............................................passed
+And Admin Name bilgilerini gorur............................................passed
+And Admin Gender bilgilerini gorur..........................................passed
+And Admin Phone bilgilerini gorur...........................................passed
+And Admin SSN bilgilerini gorur.............................................passed
+And Admin User Name bilgilerini gorur.......................................passed
+And Admin Delete butonunu gorur.............................................passed
+And Admin Delete butonuna basar.............................................passed
+And Admin Dean List'i gorur.................................................passed
+And Admin Edit butonunu gorur...............................................passed
+And Admin Edit butonuna basar...............................................failed
 And Admin Edit Dean penceresini gorur.......................................skipped
 And Admin degistirmek istedigi ismi Name kutusunda gorur....................skipped
 And Admin degistirmek istedigi soyadi Surname kutusunda gorur...............skipped

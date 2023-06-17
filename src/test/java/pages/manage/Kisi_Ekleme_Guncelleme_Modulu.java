@@ -89,5 +89,6 @@ public class Kisi_Ekleme_Guncelleme_Modulu extends AmazonPage {
     public WebElement editSubmit;
     @FindBy(xpath = "(//button[@type='button'])[8]")
     public WebElement firstEditButton;
-
+    @FindBy(xpath = "//div[@class='text-center modal-title h4']")
+    public WebElement editDeanBolumBasligi;
 }

@@ -11,7 +11,7 @@ Feature: DeanGuncelleme_Silme
       And Admin Dean Management sayfasına gider
 
   Scenario: US05 Admin, Dean leri görebilmeli ve silebilmeli
-    Given And Admin Dean List'i gorur
+    Given Admin Dean List'i gorur
     And Admin Name bilgilerini gorur
     And Admin Gender bilgilerini gorur
     And Admin Phone bilgilerini gorur

@@ -499,4 +499,35 @@ public class ReusableMethods {
         }
 
     }
+
+    public static int sutunSayisiBul(String sutunIsmiGir){
+        WebElement table = Driver.getDriver().findElement(By.xpath("//table"));
+        List<WebElement> rows = table.findElements(By.tagName("tr"));
+        int nameColumnIndex = -1; // Name sütununun index değeri
+        int rowCount = 0; // Toplam satır sayısı
+
+// Tablodaki her bir satırı döngü ile gezin
+        for (WebElement row : rows) {
+            if (nameColumnIndex == -1) { // İlk satırda Name sütununun index değerini bulun
+                List<WebElement> headers = row.findElements(By.tagName("th"));
+                for (int i = 0; i < headers.size(); i++) {
+                    if (sutunIsmiGir.equalsIgnoreCase(headers.get(i).getText())) {
+                        nameColumnIndex = i;
+                        break;
+                    }
+                }
+            } else { // Diğer satırlarda Name sütunundaki veriyi okuyarak satır sayısını arttırın
+                List<WebElement> columns = row.findElements(By.tagName("td"));
+                if (columns.size() > nameColumnIndex) {
+                    String name = columns.get(nameColumnIndex).getText();
+                    if (!name.trim().isEmpty()) {
+                        rowCount++;
+                    }
+                }
+            }
+        }
+
+        return rowCount;
+    }
+
 }
