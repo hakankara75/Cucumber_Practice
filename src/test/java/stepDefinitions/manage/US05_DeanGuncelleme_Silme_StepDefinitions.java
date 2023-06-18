@@ -53,7 +53,7 @@ public class US05_DeanGuncelleme_Silme_StepDefinitions {
     public void admin_name_bilgilerini_gorur() {
         assertTrue(dean.nameSutunu.isDisplayed());
 
-       int sutunSayisi= ReusableMethods.sutunSayisiBul("Name");
+       int sutunSayisi= ReusableMethods.satirSayisiBul("Name");
 
         int i=1;
         do {
@@ -69,7 +69,7 @@ public class US05_DeanGuncelleme_Silme_StepDefinitions {
 
         assertTrue(dean.genderSutunu.isDisplayed());
 
-        int sutunSayisi= ReusableMethods.sutunSayisiBul("Gender");
+        int sutunSayisi= ReusableMethods.satirSayisiBul("Gender");
 
         int i=1;
         do {
@@ -83,7 +83,7 @@ public class US05_DeanGuncelleme_Silme_StepDefinitions {
     public void admin_phone_bilgilerini_gorur() {
         assertTrue(dean.phoneNumberSutunu.isDisplayed());
 
-        int sutunSayisi= ReusableMethods.sutunSayisiBul("Phone Number");
+        int sutunSayisi= ReusableMethods.satirSayisiBul("Phone Number");
 
         int i=1;
         do {
@@ -97,7 +97,7 @@ public class US05_DeanGuncelleme_Silme_StepDefinitions {
     public void admin_ssn_bilgilerini_gorur() {
         assertTrue(dean.ssnSutunu.isDisplayed());
 
-        int sutunSayisi= ReusableMethods.sutunSayisiBul("Ssn");
+        int sutunSayisi= ReusableMethods.satirSayisiBul("Ssn");
 
         int i=1;
         do {
@@ -111,7 +111,7 @@ public class US05_DeanGuncelleme_Silme_StepDefinitions {
     public void admin_user_name_bilgilerini_gorur() {
         assertTrue(dean.usernameSutunu.isDisplayed());
 
-        int sutunSayisi= ReusableMethods.sutunSayisiBul("User Name");
+        int sutunSayisi= ReusableMethods.satirSayisiBul("User Name");
 
         int i=1;
         do {

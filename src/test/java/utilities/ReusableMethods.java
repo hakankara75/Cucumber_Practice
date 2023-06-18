@@ -500,7 +500,12 @@ public class ReusableMethods {
 
     }
 
-    public static int sutunSayisiBul(String sutunIsmiGir){
+    /** bu metot manage sitesindeki listlerde bir sutundaki satır sayısını verir
+     *
+     * @param sutunIsmiGir eleman sayisi bulunmak istenen sutunun ismi girilmeli
+     * @return int olarak bir sutundaki satir sayisini doner
+     */
+    public static int satirSayisiBul(String sutunIsmiGir){
         WebElement table = Driver.getDriver().findElement(By.xpath("//table"));
         List<WebElement> rows = table.findElements(By.tagName("tr"));
         int nameColumnIndex = -1; // Name sütununun index değeri
