@@ -51,7 +51,7 @@ public class Kisi_Ekleme_Guncelleme_Modulu extends AmazonPage {
     @FindBy(xpath = "(//button[@type='button'])[5]")
     public WebElement submit;
     @FindBy(xpath = "//input[@id='password']")
-    public WebElement pasword;
+    public WebElement loginPasword;
     @FindBy(xpath = "//input[@id='username']")
     public WebElement username;
     @FindBy(xpath = "//button[@aria-controls='offcanvasNavbar-expand-false']")
@@ -91,4 +91,7 @@ public class Kisi_Ekleme_Guncelleme_Modulu extends AmazonPage {
     public WebElement firstEditButton;
     @FindBy(xpath = "//div[@class='text-center modal-title h4']")
     public WebElement editDeanBolumBasligi;
+    @FindBy(id = "controlled-tab-example-tab-lessonProgram")
+    public WebElement lessonProgram;
+
 }

@@ -31,7 +31,7 @@ public class US05_DeanGuncelleme_Silme_StepDefinitions {
     }
     @And("Kullanici password kutusuna {string} girer")
     public void kullaniciPasswordKutusunaGirer(String arg0) {
-        management.pasword.sendKeys(ConfigReader.getProperty("deanPassword"));
+        management.loginPasword.sendKeys(ConfigReader.getProperty("deanPassword"));
 
     }
     @And("Kullanici Login butonunu tiklar")
@@ -208,5 +208,6 @@ public class US05_DeanGuncelleme_Silme_StepDefinitions {
         management.submit.click();
         Driver.closeDriver();
     }
+
 
 }
