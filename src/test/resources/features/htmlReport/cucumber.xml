@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Cucumber" time="7.714" tests="1" skipped="0" failures="0" errors="0">
-<testcase classname="DeanGuncelleme_Silme" name="Admin Girisi" time="7.49">
+<testsuite name="Cucumber" time="1.529" tests="1" skipped="0" failures="0" errors="0">
+<testcase classname="Aday öğrenciler sisteme kayıt olabilirler." name="Loop Deneme Scenariosu" time="1.204">
 <system-out><![CDATA[
-Then Kullanici Login olur...................................................passed
-And Admin Vicedean Management sayfasına gider...............................passed
+Given birthplace "batch129" ile quest useri cagir...........................passed
+Then kac tane user oldugunu bul.............................................passed
 ]]></system-out>
 </testcase>
 </testsuite>

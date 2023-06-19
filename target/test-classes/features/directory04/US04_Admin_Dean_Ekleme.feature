@@ -27,7 +27,7 @@ Feature: DeanGuncelleme_Silme
     When Admin Date Of Birth kutusunu bos biraktiginda "Required" uyarisini gorur
     Then Admin Phone kutusuna "<phone>" girer
     When Admin Phonekutusunu bos biraktiginda "Required" uyarisini gorur
-    Then Admin SSN kutusuna 3. ve 5. rakamdan sonra "-" içeren 9 rakamdan olusan "<ssn>" girer
+    Then Admin SSN kutusuna ucuncu ve besinci rakamdan sonra - içeren dokuz rakamdan olusan "<ssn>" girer
     When Admin SSN kutusunu bos biraktiginda "Required" uyarisini gorur
     Then Admin User Name kutusuna "<username>" girer
     When Admin User Name kutusunu bos biraktiginda "Required" uyarisini gorur
@@ -38,7 +38,16 @@ Feature: DeanGuncelleme_Silme
     And Admin girdiği verileri kaydeder
     Examples:
       | name  | surname | birthplace | dateofbirth | phone        | ssn         | username  | password |
-      | batur | kara    | ardahan    | 01/01/2001  | 254-358-6951 | 257-95-3657 | baturDean |12345678  |
+      | batur | kara    | ardahan    | 01/01/2001  | 254-358-6951 | 257-95-3657 | baturDean | 12345678 |
+      |       | kara    | ardahan    | 01/01/2001  | 254-358-6951 | 257-95-3657 | baturDean | 12345678 |
+      | batur |         | ardahan    | 01/01/2001  | 254-358-6951 | 257-95-3657 | baturDean | 12345678 |
+      | batur | kara    |            | 01/01/2001  | 254-358-6951 | 257-95-3657 | baturDean | 12345678 |
+      | batur | kara    | ardahan    |             | 254-358-6951 | 257-95-3657 | baturDean | 12345678 |
+      | batur | kara    | ardahan    | 01/01/2001  |              | 257-95-3657 | baturDean | 12345678 |
+      | batur | kara    | ardahan    | 01/01/2001  | 254-358-6951 |             | baturDean | 12345678 |
+      | batur | kara    | ardahan    | 01/01/2001  | 254-358-6951 | 257-95-3657 |           | 12345678 |
+      | batur | kara    | ardahan    | 01/01/2001  | 254-358-6951 | 257-95-3657 | baturDean |          |
+
 
   @senaryo2
 

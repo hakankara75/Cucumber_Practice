@@ -168,11 +168,6 @@ public class US04_AdminDeanEkleyebilmeli extends Kisi_Ekleme_Guncelleme_Modulu {
         admin.phoneNumber.sendKeys(arg1);
     }
 
-    @Then("Admin SSN kutusuna {int}. ve {int}. rakamdan sonra {string} içeren {int} rakamdan olusan {string} girer")
-    public void adminSSNKutusunaVeRakamdanSonraIcerenRakamdanOlusanGirer(int arg0, int arg1, String arg2, int arg3, String arg4, String arg5) {
-        admin.ssn.sendKeys(arg0);
-        admin.ssn.sendKeys(arg0);
-    }
 
     @Then("Admin User Name kutusuna {string} girer")
     public void adminUserNameKutusunaGirer(String arg0, String arg1) {
@@ -199,5 +194,10 @@ public class US04_AdminDeanEkleyebilmeli extends Kisi_Ekleme_Guncelleme_Modulu {
 
     @And("Admin Password olarak büyük harf, küçük harf ve bir rakam içeren {string} girer")
     public void adminPasswordOlarakBuyukHarfKucukHarfVeBirRakamIcerenGirer(String arg0, String arg1) {
+    }
+
+
+    @Then("Admin SSN kutusuna ucuncu ve besinci rakamdan sonra - içeren dokuz rakamdan olusan {string} girer")
+    public void adminSSNKutusunaUcuncuVeBesinciRakamdanSonraIcerenDokuzRakamdanOlusanGirer(String arg0, String arg1) {
     }
 }
