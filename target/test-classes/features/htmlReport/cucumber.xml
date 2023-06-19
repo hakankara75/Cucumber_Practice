@@ -1,18 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Cucumber" time="8.029" tests="1" skipped="0" failures="1" errors="0">
-<testcase classname="DeanGuncelleme_Silme" name="Admin Girisi" time="7.797">
-<failure type="java.lang.AssertionError">
-<![CDATA[java.lang.AssertionError
-	at org.junit.Assert.fail(Assert.java:87)
-	at org.junit.Assert.assertTrue(Assert.java:42)
-	at org.junit.Assert.assertTrue(Assert.java:53)
-	at stepDefinitions.manage.Vicedean_Management.adminVicedeanManagementSayfasınaGider(Vicedean_Management.java:41)
-	at ✽.Admin Vicedean Management sayfasına gider(file:///C:/Users/HakanBatirhan/IdeaProjects/Batch129Cucumber_Practice/src/test/resources/features/directory04/Lesson_Assertion.feature:6)
-]]>
-</failure>
+<testsuite name="Cucumber" time="7.714" tests="1" skipped="0" failures="0" errors="0">
+<testcase classname="DeanGuncelleme_Silme" name="Admin Girisi" time="7.49">
 <system-out><![CDATA[
 Then Kullanici Login olur...................................................passed
-And Admin Vicedean Management sayfasına gider...............................failed
+And Admin Vicedean Management sayfasına gider...............................passed
 ]]></system-out>
 </testcase>
 </testsuite>

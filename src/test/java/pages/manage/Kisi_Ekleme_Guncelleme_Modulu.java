@@ -93,5 +93,26 @@ public class Kisi_Ekleme_Guncelleme_Modulu extends AmazonPage {
     public WebElement editDeanBolumBasligi;
     @FindBy(id = "controlled-tab-example-tab-lessonProgram")
     public WebElement lessonProgram;
-
+    @FindBy(xpath = "//input[@id='name']")
+    public WebElement addName;
+    @FindBy(xpath = "//input[@id='surname']")
+    public WebElement addSurname;
+    @FindBy(xpath = "(//div[@class='invalid-feedback'])[1]")
+    public WebElement requiredMessageName;
+    @FindBy(xpath = "(//div[@class='invalid-feedback'])[2]")
+    public WebElement requiredMessageSurname;
+    @FindBy(xpath = "(//div[@class='invalid-feedback'])[3]")
+    public WebElement requiredMessageBirthPlace;
+    @FindBy(xpath = "(//div[@class='invalid-feedback'])[4]")
+    public WebElement requiredMessageDateOfBirth;
+    @FindBy(xpath = "(//div[@class='invalid-feedback'])[5]")
+    public WebElement requiredMessagePhone;
+    @FindBy(xpath = "(//div[@class='invalid-feedback'])[6]")
+    public WebElement requiredMessageSsn;
+    @FindBy(xpath = "(//div[@class='invalid-feedback'])[7]")
+    public WebElement requiredMessageUserName;
+    @FindBy(xpath = "(//div[@class='invalid-feedback'])[8]")
+    public WebElement requiredMessagePassword;
+    @FindBy(xpath = "(//div[@class='Toastify__toast-body'])[1]")
+    public WebElement alertMessage;
 }

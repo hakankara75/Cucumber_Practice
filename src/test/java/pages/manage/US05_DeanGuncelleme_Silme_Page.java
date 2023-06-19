@@ -2,6 +2,7 @@ package pages.manage;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import stepDefinitions.manage.US04_AdminDeanEkleyebilmeli;
 
 public class US05_DeanGuncelleme_Silme_Page  {
     Kisi_Ekleme_Guncelleme_Modulu management = new Kisi_Ekleme_Guncelleme_Modulu();
