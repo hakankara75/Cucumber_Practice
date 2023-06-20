@@ -44,6 +44,10 @@ asagida hata alinirsa screenshot yapilacagina dair metot var
 
     }
 
+    @After ("All")
+    public void tearDown(){
+        Driver.closeDriver();
+    }
 
     @After
     public void teardown(Scenario scenario){// bu class yardimci olacak

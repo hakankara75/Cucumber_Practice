@@ -8,6 +8,7 @@ import pages.manage.Kisi_Ekleme_Guncelleme_Modulu;
 import pages.manage.US04_Admin_Dean_Ekleyebilmeli_Modulu;
 import utilities.Driver;
 import utilities.Methods;
+import utilities.ReusableMethods;
 
 import static org.junit.Assert.assertTrue;
 
@@ -107,6 +108,7 @@ public class US04_AdminDeanEkleyebilmeli extends Kisi_Ekleme_Guncelleme_Modulu {
     @And("Admin Submit butonuna basar")
     public void adminSubmitButonunaBasar() {
         admin.submit.click();
+
     }
 
     @And("Admin girdiği verileri kaydeder")
@@ -139,8 +141,9 @@ public class US04_AdminDeanEkleyebilmeli extends Kisi_Ekleme_Guncelleme_Modulu {
     @And("Admin Gender radio'sunu bos biraktiginda {string} uyarisini gorur")
     public void adminGenderRadioSunuBosBiraktigindaUyarisiniGorur(String arg0) {
 
+        ReusableMethods.bekle(1);
         assertTrue(admin.alertMessage.isDisplayed());
-// bu textin locatine bakacağım. burada kaldim
+
     }
 
     @And("Admin Date Of Birth  kutusunu bos biraktiginda uyarı yazısını gorur")
@@ -188,4 +191,12 @@ public class US04_AdminDeanEkleyebilmeli extends Kisi_Ekleme_Guncelleme_Modulu {
         admin.loginPasword.sendKeys(arg0);
     }
 
+    @Then("Admin kayit yapamadigini dogrular")
+    public void adminKayitYapamadiginiDogrular() {
+        ReusableMethods.bekle(1);
+        assertTrue(admin.nameShouldTwo.isDisplayed());
+
+        ReusableMethods.bekle(2);
+        Driver.closeDriver();
+    }
 }

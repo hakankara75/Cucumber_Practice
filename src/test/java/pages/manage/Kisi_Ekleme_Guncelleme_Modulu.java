@@ -113,6 +113,9 @@ public class Kisi_Ekleme_Guncelleme_Modulu extends AmazonPage {
     public WebElement requiredMessageUserName;
     @FindBy(xpath = "(//div[@class='invalid-feedback'])[8]")
     public WebElement requiredMessagePassword;
-    @FindBy(xpath = "(//div[@class='Toastify__toast-body'])[1]")
+    @FindBy(xpath = "(//div[@class='Toastify__toast-body'])[2]")
     public WebElement alertMessage;
+    @FindBy(xpath = "(//div[@class='Toastify__toast-body'])[1]")
+    public WebElement nameShouldTwo;
+
 }

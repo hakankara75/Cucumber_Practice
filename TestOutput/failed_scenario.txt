@@ -1,1 +1,1 @@
-file:src/test/resources/features/ApiFeatures/US01_Register.feature:10
+file:src/test/resources/features/directory04/US04_TekDegerGirme_NegatifTest.feature:25:26
