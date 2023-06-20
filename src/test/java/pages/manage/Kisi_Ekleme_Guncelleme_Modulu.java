@@ -14,7 +14,7 @@ public class Kisi_Ekleme_Guncelleme_Modulu extends AmazonPage {
     public WebElement surname;
     @FindBy(xpath = "(//a[@role='button'])[10]")
     public WebElement adminManagement;
-    @FindBy(xpath = "(//a[@role='button'])[11]")
+    @FindBy(xpath = "//a[normalize-space()='Dean Management']")
     public WebElement deanManagement;
     @FindBy(xpath = "(//a[@role='button'])[12]")
     public WebElement viceDeanManagement;

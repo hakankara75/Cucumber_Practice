@@ -1,6 +1,8 @@
 package stepDefinitions.manage;
 
-import io.cucumber.java.en.*;
+import io.cucumber.java.en.And;
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
 import pages.manage.Kisi_Ekleme_Guncelleme_Modulu;
 import utilities.ConfigReader;
 import utilities.Driver;
@@ -29,6 +31,7 @@ public class Manage {
     @And("Kullanici birth place kutusuna {string} girer")
     public void kullaniciBirthPlaceKutusunaGirer(String arg0) {
         management.editBirthPlace.sendKeys("yalnizcam");
+
 
     }
 

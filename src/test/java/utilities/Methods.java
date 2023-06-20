@@ -9,6 +9,9 @@ public class Methods {
         login.login.click();
 
         switch (username){
+            case "adminUsername":
+                login.username.sendKeys(ConfigReader.getProperty("adminUsername"));
+                break;
             case "deanName":
                 login.username.sendKeys(ConfigReader.getProperty("deanName"));
                 break;
@@ -35,5 +38,13 @@ public class Methods {
 
     }
 
+    public void addDean(){
+        ReusableMethods.bekle(2);
+        login.menu.click();
+        ReusableMethods.bekle(2);
+        login.deanManagement.click();
+        ReusableMethods.bekle(2);
+
+    }
 
 }

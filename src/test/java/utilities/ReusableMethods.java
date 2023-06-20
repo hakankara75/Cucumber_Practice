@@ -28,6 +28,8 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import static org.junit.Assert.*;
+
 public class ReusableMethods {
     protected static ExtentReports extentReports; //Raporlamayı başlatır
     protected static ExtentHtmlReporter extentHtmlReporter;//Raporu HTML formatında düzenler
@@ -534,5 +536,16 @@ public class ReusableMethods {
 
         return rowCount;
     }
+
+    public static void dogruMu( String expectedResult, String actualResutlt){
+
+        assertTrue(expectedResult.equals(actualResutlt));
+    }
+
+    public static void dogruMu(Integer expectedResult, Integer actualResutlt){
+
+        assertTrue(expectedResult.equals(actualResutlt));
+    }
+
 
 }

@@ -88,4 +88,5 @@ yukarisi icin DataBaseUtils'de 3 metot olusturduk. asagidaki getResultSet hepsin
         assertFalse(resultSet.next());
 
     }
+
 }
