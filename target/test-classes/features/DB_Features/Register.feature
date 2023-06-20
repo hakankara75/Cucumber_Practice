@@ -1,5 +1,5 @@
 @US01_DBTest
-  Feature: Aday öğrenciler sisteme kayıt olabilirler.
+  Feature: Aday öğrenciler sisteme kayıt olabilirler. DB
 
     Scenario Outline: US01_GuestUser_Validation
       Given "<username>" ile guest useri cagir

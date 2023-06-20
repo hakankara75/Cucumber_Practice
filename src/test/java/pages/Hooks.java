@@ -4,14 +4,11 @@ package pages;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
-import org.junit.Assert;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
-import utilities.ConfigReader;
 import utilities.Driver;
-import utilities.ExcelUtils;
-import utilities.ReusableMethods;
+
+import static pages.base_urls.ManagementOnSchoolsBaseUrl.setUp;
 
 public class Hooks {
 
@@ -23,10 +20,13 @@ asagida hata alinirsa screenshot yapilacagina dair metot var
  */
 
     //features/day30_IlkFeature/US003_RunnerKullanimi.feature dosyasi asagida ornek olarak calisildi
-    @Before ("All")
+    @Before ("@Api") //before cucumber'da import edilmeli, @Api ile tum api testinden once baslar
+    public void before(){
+       setUp();
+    }
+    @Before ("All") //her testten once calisir
     public void setup(){
-        System.out.println("Before Methodu");
-
+        System.out.println("Her testten once calisir");
     }
     @Before ("@gr1")
     public void setup1(){

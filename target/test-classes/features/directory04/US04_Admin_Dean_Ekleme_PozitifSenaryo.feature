@@ -22,7 +22,7 @@ Feature: DeanGuncelleme_Silme
     Then Admin Phone kutusuna "<phone>" girer
     Then Admin SSN kutusuna ucuncu ve besinci rakamdan sonra (-) içeren dokuz rakamdan olusan "<ssn>" girer
     Then Admin User Name kutusuna "<username>" girer
-    Then Admin Password kutusuna en az 8 karakterden olusan "<password>" girer
+    Then Admin Password kutusuna en az sekiz karakterden olusan "<password>" girer
     And Admin Submit butonuna basar
     And Admin girdiği verileri kaydeder
     Examples:

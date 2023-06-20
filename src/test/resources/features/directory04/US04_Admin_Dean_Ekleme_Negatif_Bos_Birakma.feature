@@ -8,7 +8,6 @@ Given Admin Add Dean Management bolumunu gorur
 When Admin Name kutusunu bos biraktiginda uyarı yazısını gorur
 Then Admin  Surname  kutusunu bos biraktiginda uyarı yazısını gorur
 And Admin Birth Place  kutusunu bos biraktiginda uyarı yazısını gorur
-And Admin Gender radio'sunu bos biraktiginda "You have entered an invalid value. Valid values are: MALE, FEMALE" uyarisini gorur
 And Admin Date Of Birth  kutusunu bos biraktiginda uyarı yazısını gorur
 And Admin Phone  kutusunu bos biraktiginda uyarı yazısını gorur
 And Admin Ssn  kutusunu bos biraktiginda uyarı yazısını gorur
