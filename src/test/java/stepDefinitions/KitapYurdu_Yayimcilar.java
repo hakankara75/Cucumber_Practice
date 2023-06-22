@@ -33,7 +33,7 @@ public class KitapYurdu_Yayimcilar {
 
 
             //acilan yayinevine ait kitaplari listeye alma komutu
-            List<WebElement> kitapElements = Driver.getDriver().findElements(By.xpath("//div[@class='name ellipsis']"));
+            List<WebElement> kitapElements = edebiyatKitapyurdu.ellips;
 
             // yukarida alinan yayinevi sayfa adi olarak atanacak
             String sayfaAdi = publisherFilter.getText();

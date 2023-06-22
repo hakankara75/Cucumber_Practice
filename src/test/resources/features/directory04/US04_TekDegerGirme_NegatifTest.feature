@@ -1,4 +1,4 @@
-Feature: Gender Bos Birakma
+Feature: Gender Bos Birakma ve Diger Alanlara Eksik Deger Girme
 
   @TekDegerGirme
   Scenario Outline: US04 Gender Bos Gecme

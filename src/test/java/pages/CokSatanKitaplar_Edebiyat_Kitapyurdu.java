@@ -5,6 +5,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
 
+import java.util.List;
+
 public class CokSatanKitaplar_Edebiyat_Kitapyurdu {
 
     public CokSatanKitaplar_Edebiyat_Kitapyurdu(){
@@ -33,7 +35,8 @@ public class CokSatanKitaplar_Edebiyat_Kitapyurdu {
     public WebElement kitaplar;
     @FindBy(xpath = "//div[@class='product-grid']")
     public WebElement kitaplarList;
-
+    @FindBy(xpath = "//div[@class='name ellipsis']")
+    public List<WebElement> ellips;
 }
 
 

@@ -2,13 +2,13 @@
 Feature: DeanGuncelleme_Silme
   Background: Admin Girisi
     Scenario: Admin Girisi
-      Given Admin "url" adresine gider
-      Then Kullanici Login ikonunu tiklar
-      And Kullanici username kutusununa "username" girer
-      And Kullanici password kutusuna "password" girer
-      And Kullanici Login butonunu tiklar
-      And Kullanici Menu butonunu tiklar
-      And Admin Dean Management sayfasına gider
+      Given Admin olarak "url" adresine gider
+      Then Admin olarak Login ikonunu tiklar
+      And Admin olarak username kutusununa "username" girer
+      And Admin olarak password kutusuna "password" girer
+      And Admin olarak Login butonunu tiklar
+      And Admin olarak Menu butonuna basar
+      And Admin olarak Dean Management linkini tiklar
 
   Scenario: US05 Admin, Dean leri görebilmeli ve silebilmeli
     Given Admin Dean List'i gorur
@@ -33,5 +33,4 @@ Feature: DeanGuncelleme_Silme
     And Admin degistirmek istedigi username'i User Name kutusunda gorur
     And Admin degistirmek istedigi password'u Password kutusunda gorur
     And Admin Submit butonunu gorur
-    And Admin Submit butonuna tiklar
     And Admin Submit butonuna tiklar

@@ -2,19 +2,22 @@ package pages.manage;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import pages.AmazonPage;
+import org.openqa.selenium.support.PageFactory;
+import utilities.Driver;
 
-public class Kisi_Ekleme_Guncelleme_Modulu extends AmazonPage {
+public class Kisi_Ekleme_Guncelleme_Modulu {
+    public Kisi_Ekleme_Guncelleme_Modulu() {
+        PageFactory.initElements(Driver.getDriver(), this);
 
-    @FindBy(xpath = "//a[@href='/login']")
-    public WebElement login;
+    }
+
     @FindBy(xpath = "//input[@id='name']")
     public WebElement name;
     @FindBy(xpath = "//input[@id='surname']")
     public WebElement surname;
     @FindBy(xpath = "(//a[@role='button'])[10]")
     public WebElement adminManagement;
-    @FindBy(xpath = "//a[normalize-space()='Dean Management']")
+    @FindBy(xpath = "//a[text()='Dean Management']")
     public WebElement deanManagement;
     @FindBy(xpath = "(//a[@role='button'])[12]")
     public WebElement viceDeanManagement;
@@ -48,55 +51,52 @@ public class Kisi_Ekleme_Guncelleme_Modulu extends AmazonPage {
     public WebElement phoneNumber;
     @FindBy(xpath = "//input[@id='ssn']")
     public WebElement ssn;
-    @FindBy(xpath = "(//button[@type='button'])[5]")
+    @FindBy(xpath = "//button[text()='Submit']")
     public WebElement submit;
-    @FindBy(xpath = "//input[@id='password']")
-    public WebElement loginPasword;
-    @FindBy(xpath = "//input[@id='username']")
-    public WebElement username;
-    @FindBy(xpath = "//button[@aria-controls='offcanvasNavbar-expand-false']")
+
+    @FindBy(xpath = "//button[text()='Menu']")
     public WebElement menu;
-    @FindBy(xpath = "(//button[@type='button'])[3]")
-    public WebElement UyeGirisKismiLoginButton;
+
     @FindBy(xpath = "//body/div[3]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]")
     public WebElement chooseLessonTextBox;
-    @FindBy(xpath = "//body/div[3]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/form[1]/div[1]/div[2]/div[1]/input[1]")
+    @FindBy(xpath = "(//input[@id='name'])[2]")
     public WebElement editName;
-    @FindBy(xpath = "//body/div[3]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/form[1]/div[1]/div[3]/div[1]/input[1]")
+    @FindBy(xpath = "(//input[@id='surname'])[2]")
     public WebElement editSurname;
-    @FindBy(xpath = "//body/div[3]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/form[1]/div[1]/div[4]/div[1]/input[1]")
+    @FindBy(xpath = "(//input[@id='birthPlace'])[2]")
     public WebElement editBirthPlace;
     @FindBy(xpath = "//body/div[3]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/form[1]/div[2]/div[1]/div[1]/input[1]")
     public WebElement editEmail;
-    @FindBy(xpath = "//body/div[3]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/form[1]/div[2]/div[2]/div[1]/input[1]")
+    @FindBy(xpath = "(//input[@id='phoneNumber'])[2]")
     public WebElement editPhone;
-    @FindBy(xpath = "//body/div[3]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/form[1]/div[2]/div[3]/div[1]/input[1]")
+    @FindBy(xpath = "(//input[@id='ssn'])[2]")
     public WebElement editSsn;
     @FindBy(xpath = "//body/div[3]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/form[1]/div[2]/div[4]/div[1]/input[1]")
     public WebElement isAdvisorTeacher;
 
-    @FindBy(xpath = "//body/div[3]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/form[1]/div[2]/div[5]/div[1]/div[1]/div[1]/input[1]")
-    public WebElement editFemale;
-    @FindBy(xpath = "//body/div[3]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/form[1]/div[2]/div[5]/div[1]/div[2]/div[1]/input[1]")
-    public WebElement editMale;
-    @FindBy(xpath = "//body/div[3]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/form[1]/div[3]/div[1]/div[1]/input[1]")
+    @FindBy(xpath = "(//input[@value='FEMALE'])[2]")
+    public WebElement editGenderFemale;
+    @FindBy(xpath = "(//input[@value='MALE'])[2]")
+    public WebElement editGenderMale;
+    @FindBy(xpath = "(//input[@id='birthDay'])[2]")
     public WebElement editDateOfBirth;
-    @FindBy(xpath = "//body/div[3]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/form[1]/div[3]/div[2]/div[1]/input[1]")
+    @FindBy(xpath = "(//input[@id='username'])[2]")
     public WebElement editUserName;
-    @FindBy(xpath = "//body/div[3]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/form[1]/div[3]/div[3]/div[1]/input[1]")
+    @FindBy(xpath = "(//input[@id='password'])[2]")
     public WebElement editPassword;
-    @FindBy(xpath = "//body/div[3]/div[1]/div[1]/div[2]/div[2]/button[1]")
+    @FindBy(xpath = "(//button[text()='Submit'])[2]")
     public WebElement editSubmit;
-    @FindBy(xpath = "(//button[@type='button'])[8]")
+    @FindBy(xpath = "(//button[@type='button'])[7]")
     public WebElement firstEditButton;
+
     @FindBy(xpath = "//div[@class='text-center modal-title h4']")
     public WebElement editDeanBolumBasligi;
-    @FindBy(id = "controlled-tab-example-tab-lessonProgram")
-    public WebElement lessonProgram;
+
     @FindBy(xpath = "//input[@id='name']")
     public WebElement addName;
     @FindBy(xpath = "//input[@id='surname']")
     public WebElement addSurname;
+
     @FindBy(xpath = "(//div[@class='invalid-feedback'])[1]")
     public WebElement requiredMessageName;
     @FindBy(xpath = "(//div[@class='invalid-feedback'])[2]")
@@ -109,13 +109,23 @@ public class Kisi_Ekleme_Guncelleme_Modulu extends AmazonPage {
     public WebElement requiredMessagePhone;
     @FindBy(xpath = "(//div[@class='invalid-feedback'])[6]")
     public WebElement requiredMessageSsn;
+
     @FindBy(xpath = "(//div[@class='invalid-feedback'])[7]")
     public WebElement requiredMessageUserName;
     @FindBy(xpath = "(//div[@class='invalid-feedback'])[8]")
     public WebElement requiredMessagePassword;
-    @FindBy(xpath = "(//div[@class='Toastify__toast-body'])[2]")
+    @FindBy(xpath = "(//div[@class='Toastify__toast-body'])[1]")
     public WebElement alertMessage;
+
+    @FindBy(xpath = "//input[@id='username']")
+    public WebElement username;
+
+    @FindBy(xpath = "//input[@id='password']")
+    public WebElement loginPasword;
     @FindBy(xpath = "(//div[@class='Toastify__toast-body'])[1]")
     public WebElement nameShouldTwo;
-
+    @FindBy(xpath = "//div[@class='Toastify__toast-container Toastify__toast-container--top-center']")
+    public WebElement saveMessage;
 }
+
+

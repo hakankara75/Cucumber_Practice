@@ -2,11 +2,11 @@ package pages.manage;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import stepDefinitions.manage.US04_AdminDeanEkleyebilmeli;
+import stepDefinitions.manage.US04_AdminDeanEkleyebilmeli_StepDefinitions;
 
 public class US05_DeanGuncelleme_Silme_Page  {
     Kisi_Ekleme_Guncelleme_Modulu management = new Kisi_Ekleme_Guncelleme_Modulu();
-    US04_AdminDeanEkleyebilmeli dean= new US04_AdminDeanEkleyebilmeli();
+    US04_AdminDeanEkleyebilmeli_StepDefinitions dean= new US04_AdminDeanEkleyebilmeli_StepDefinitions();
 
     @FindBy(xpath = "(//h5[@class='fw-bold p-3 card-header'])[1]")
     public WebElement addDeanBasligi;
