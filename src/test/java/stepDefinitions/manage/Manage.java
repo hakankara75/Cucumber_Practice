@@ -37,7 +37,7 @@ public class Manage {
 
     @And("Kullanici gender checkboxtan gender secer")
     public void kullaniciGenderCheckboxtanGenderSecer() {
-        management.editFemale.click();
+        management.editGenderFemale.click();
     }
 
     @And("Kullanici date of birth kutusuna {string} girer")
@@ -88,7 +88,7 @@ public class Manage {
 
     @And("Kullanici email kutusuna {string} girer")
     public void kullaniciEmailKutusunaGirer(String arg0) {
-        management.editMale.sendKeys("hakanbatirhan@gmail.com");
+        management.editGenderMale.sendKeys("hakanbatirhan@gmail.com");
     }
 
     @And("Kullanici is advisor teacher checkbox'ini secer")

@@ -4,8 +4,8 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import pages.Kisi_Ekleme_Guncelleme_Modulu;
-import pages.US04_Admin_Dean_Ekleyebilmeli_Modulu;
+import pages.manage.Kisi_Ekleme_Guncelleme_Modulu;
+import pages.manage.US04_US05_Dean_Ekleme_Guncelleme_Silme_Modulu;
 import utilities.Driver;
 import utilities.ReusableMethods;
 import utilities.US04_US05_Methods;
@@ -13,9 +13,10 @@ import utilities.US04_US05_Methods;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
-public class US04_AdminDeanEkleyebilmeli_StepDefinitions extends Kisi_Ekleme_Guncelleme_Modulu {
 
-    US04_Admin_Dean_Ekleyebilmeli_Modulu admin= new US04_Admin_Dean_Ekleyebilmeli_Modulu();
+public class US04_UI_AdminDeanEkleyebilmeli_StepDefinitions extends Kisi_Ekleme_Guncelleme_Modulu {
+
+    US04_US05_Dean_Ekleme_Guncelleme_Silme_Modulu admin = new US04_US05_Dean_Ekleme_Guncelleme_Silme_Modulu();
     US04_US05_Methods method =new US04_US05_Methods();
 
 
@@ -86,12 +87,12 @@ public class US04_AdminDeanEkleyebilmeli_StepDefinitions extends Kisi_Ekleme_Gun
     @And("Admin Submit butonuna basar")
     public void adminSubmitButonunaBasar() {
         admin.submit.click();
-        ReusableMethods.bekle(2);
+        ReusableMethods.bekle(3);
     }
 
     @And("Admin girdiği verileri kaydeder")
     public void adminGirdigiVerileriKaydeder() {
-        method.milisaniyeBekle(1);
+        method.alertWait1(admin.addDeanClass);
         assertFalse(admin.addDeanClass.getText().contains("saved"));
         Driver.closeDriver();
     }
@@ -110,7 +111,8 @@ public class US04_AdminDeanEkleyebilmeli_StepDefinitions extends Kisi_Ekleme_Gun
 
     @Then("Admin kayit yapamadigini dogrular")
     public void adminKayitYapamadiginiDogrular() {
-        method.milisaniyeBekle(2);
+
+        method.alertWait1(admin.nameShouldTwo);
         assertFalse(admin.nameShouldTwo.isDisplayed());
 
         ReusableMethods.bekle(2);
@@ -178,6 +180,7 @@ public class US04_AdminDeanEkleyebilmeli_StepDefinitions extends Kisi_Ekleme_Gun
 
     @And("Admin eksik giris ile kayit yapamadigini dogrular")
     public void adminEksikGirisIleKayitYapamadiginiDogrular() {
+
         boolean bosMu= admin.requiredMessageName.isDisplayed()||
                 admin.requiredMessageSurname.isDisplayed()||
                 admin.requiredMessageBirthPlace.isDisplayed()||
@@ -186,8 +189,7 @@ public class US04_AdminDeanEkleyebilmeli_StepDefinitions extends Kisi_Ekleme_Gun
                 admin.requiredMessageSsn.isDisplayed()||
                 admin.requiredMessageUserName.isDisplayed()||
                 admin.requiredMessagePassword.isDisplayed();
-       assertTrue(bosMu==true);
-
+        assertTrue(bosMu==true);
         Driver.closeDriver();
     }
 }

@@ -1,9 +1,9 @@
 package utilities;
 
-import pages.manage.Kisi_Ekleme_Guncelleme_Modulu;
+import pages.manage.Login_Modulu;
 
 public class Methods {
-    Kisi_Ekleme_Guncelleme_Modulu login = new Kisi_Ekleme_Guncelleme_Modulu();
+    Login_Modulu login = new Login_Modulu();
     public void loginMethod(String username, String password) {
         Driver.getDriver().get(ConfigReader.getProperty("manageUrl"));
         login.login.click();
@@ -34,7 +34,7 @@ public class Methods {
 
         login.loginPasword.sendKeys(ConfigReader.getProperty(password));
 
-        login.UyeGirisKismiLoginButton.click();
+        login.uyeGirisKismiLoginButton.click();
 
     }
 

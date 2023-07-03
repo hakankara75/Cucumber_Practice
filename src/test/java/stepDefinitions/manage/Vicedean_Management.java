@@ -22,7 +22,7 @@ public class Vicedean_Management extends Methods {
 
     @And("Admin Vicedean Management sayfasına gider")
     public void adminVicedeanManagementSayfasınaGider() {
-        manage.lessonProgram.click();
+        manage.lessonManagement.click();
         ReusableMethods.pageDown();
         for (int i = 1; i < 2; i++) {
             for (int k = 1; k < 2; k++) {

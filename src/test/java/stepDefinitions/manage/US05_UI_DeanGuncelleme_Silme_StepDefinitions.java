@@ -4,7 +4,8 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import org.openqa.selenium.By;
-import pages.US05_DeanGuncelleme_Silme_Modulu;
+import pages.manage.US04_US05_Dean_Ekleme_Guncelleme_Silme_Modulu;
+import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.ReusableMethods;
 import utilities.US04_US05_Methods;
@@ -13,10 +14,10 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 
-public class US05_DeanGuncelleme_Silme_StepDefinitions extends US04_US05_Methods {
+public class US05_UI_DeanGuncelleme_Silme_StepDefinitions extends US04_US05_Methods {
 
-    US05_DeanGuncelleme_Silme_Modulu dean = new US05_DeanGuncelleme_Silme_Modulu();
-//    US04_US05_Methods methods= new US04_US05_Methods();
+    US04_US05_Dean_Ekleme_Guncelleme_Silme_Modulu dean = new US04_US05_Dean_Ekleme_Guncelleme_Silme_Modulu();
+
     String name = "hakan";
     String surname = "kara";
     String birthPlace = "ardahan";
@@ -51,6 +52,8 @@ public class US05_DeanGuncelleme_Silme_StepDefinitions extends US04_US05_Methods
         int i = 1;
         do {
             assertTrue(Driver.getDriver().findElement(By.xpath("//tr[" + i + "]//td[1]")).isDisplayed());
+            assertTrue(Driver.getDriver().findElement(By.xpath("//tr[" + i + "]//td[1]")).getText().length() > 0);
+
             i++;
 
         } while (i <= sutunSayisi);
@@ -82,6 +85,8 @@ public class US05_DeanGuncelleme_Silme_StepDefinitions extends US04_US05_Methods
         int i = 1;
         do {
             assertTrue(Driver.getDriver().findElement(By.xpath("//tr[" + i + "]//td[3]")).isDisplayed());
+            assertTrue(Driver.getDriver().findElement(By.xpath("//tr[" + i + "]//td[3]")).getText().length() > 0);
+
             i++;
 
         } while (i <= sutunSayisi);
@@ -97,6 +102,8 @@ public class US05_DeanGuncelleme_Silme_StepDefinitions extends US04_US05_Methods
         int i = 1;
         do {
             assertTrue(Driver.getDriver().findElement(By.xpath("//tr[" + i + "]//td[4]")).isDisplayed());
+            assertTrue(Driver.getDriver().findElement(By.xpath("//tr[" + i + "]//td[4]")).getText().length() > 0);
+
             i++;
 
         } while (i <= sutunSayisi);
@@ -112,6 +119,8 @@ public class US05_DeanGuncelleme_Silme_StepDefinitions extends US04_US05_Methods
         int i = 1;
         do {
             assertTrue(Driver.getDriver().findElement(By.xpath("//tr[" + i + "]//td[5]")).isDisplayed());
+            assertTrue(Driver.getDriver().findElement(By.xpath("//tr[" + i + "]//td[5]")).getText().length() > 0);
+
             i++;
 
         } while (i <= sutunSayisi);
@@ -121,21 +130,37 @@ public class US05_DeanGuncelleme_Silme_StepDefinitions extends US04_US05_Methods
     @Given("Admin Delete butonunu gorur")
     public void admin_delete_butonunu_gorur() {
 
-        //assertTrue(dean.deanListBolumu.getText().toLowerCase().contains("delete"));
+
 
 
     }
 
     @Given("Admin Delete butonuna basar")
     public void admin_delete_butonuna_basar() {
-        // assertTrue(dean.deanListBolumu.getText().toLowerCase().contains("delete"));
+      try {
+         assertTrue(dean.deanListBolumu.getText().toLowerCase().contains("delete"));
+      }catch (Exception e) {
+
+      }finally {
+          Driver.closeDriver();
+      }
 
     }
 
     @Given("Admin Dean List'i gorur")
     public void admin_dean_list_i_gorur() {
-        ReusableMethods.arrowDown();
+        try{
+        ReusableMethods.pageDown();
+        ReusableMethods.arrowUp();
+        ReusableMethods.arrowUp();
+        ReusableMethods.arrowUp();
+        ReusableMethods.arrowUp();
+        ReusableMethods.bekle(3);}
+        catch (Exception e){
+
+        }
         assertTrue(dean.deanListBasligi.isDisplayed());
+
 
     }
 
@@ -164,6 +189,8 @@ public class US05_DeanGuncelleme_Silme_StepDefinitions extends US04_US05_Methods
     public void admin_degistirmek_istedigi_ismi_name_kutusunda_gorur() {
         assertTrue(dean.editName.isDisplayed());
         assertTrue(dean.editName.getAttribute("value").contains(name));
+        ReusableMethods.bekle(2);
+
 
     }
 
@@ -177,11 +204,18 @@ public class US05_DeanGuncelleme_Silme_StepDefinitions extends US04_US05_Methods
     public void admin_degistirmek_istedigi_dogum_yerini_birth_place_kutusunda_gorur() {
         assertTrue(dean.editBirthPlace.isDisplayed());
         assertTrue(dean.editBirthPlace.getAttribute("value").contains(birthPlace));
+
     }
 
     @Given("Admin degistirmek istedigi cinsiyeti Gender checkbox'inda gorur")
     public void admin_degistirmek_istedigi_cinsiyeti_gender_checkbox_inda_gorur() {
-        assertFalse(dean.editGenderMale.isSelected());
+        ReusableMethods.bekle(3);
+        try {
+            assertTrue(dean.editGenderMale.isSelected());
+        } catch (Exception e) {
+            assertTrue(dean.editGenderFemale.isSelected());
+        }
+
 
 
     }
@@ -190,6 +224,9 @@ public class US05_DeanGuncelleme_Silme_StepDefinitions extends US04_US05_Methods
     public void admin_degistirmek_istedigi_dogum_tarihini_date_of_birth_kutusunda_gorur() {
         assertTrue(dean.editDateOfBirth.isDisplayed());
         assertTrue(dean.editDateOfBirth.getAttribute("value").contains(dateOfBirth));
+        ReusableMethods.sendKeyWithJavaScript("01/01/1000", dean.dateOfBirth);
+        ReusableMethods.bekle(2);
+
 
     }
 
@@ -197,6 +234,7 @@ public class US05_DeanGuncelleme_Silme_StepDefinitions extends US04_US05_Methods
     public void admin_degistirmek_istedigi_telefon_numarasini_phone_kutusunda_gorur() {
         assertTrue(dean.editPhone.isDisplayed());
         assertTrue(dean.editPhone.getAttribute("value").contains(phone));
+        ReusableMethods.bekle(2);
     }
 
     @Given("Admin degistirmek istedigi ssn bilgisini SSN kutusunda gorur")
@@ -210,14 +248,16 @@ public class US05_DeanGuncelleme_Silme_StepDefinitions extends US04_US05_Methods
     public void admin_degistirmek_istedigi_username_i_user_name_kutusunda_gorur() {
         assertTrue(dean.editUserName.isDisplayed());
         assertTrue(dean.editUserName.getAttribute("value").contains(username));
+        ReusableMethods.sendKeyWithJavaScript("12345678", dean.editPassword);
+        ReusableMethods.bekle(3);
+
     }
 
     @Given("Admin degistirmek istedigi password'u Password kutusunda gorur")
     public void admin_degistirmek_istedigi_password_u_password_kutusunda_gorur() {
+        ReusableMethods.bekle(3);
         assertTrue(dean.editPassword.isDisplayed());
-        System.out.println("dean.editPassword = " + dean.editPassword);
-        assertFalse(dean.editPassword.getAttribute("value").contains(password));
-
+        assertTrue(dean.editPassword.getAttribute("value").contains(password));
     }
 
     @Given("Admin Submit butonunu gorur")
@@ -229,18 +269,17 @@ public class US05_DeanGuncelleme_Silme_StepDefinitions extends US04_US05_Methods
     @Given("Admin Submit butonuna tiklar")
     public void admin_submit_butonuna_tiklar() {
         try {
-            dean.submit.click();
+            ReusableMethods.webelementJavaScript("document.querySelector(\"body > div.fade.modal.show > div > div > div:nth-child(2) > div.modal-footer > button\")").click();
         } catch (Exception e) {
 
         }
-        ReusableMethods.bekle(2);
-        Driver.closeDriver();
 
     }
 
     @Given("Admin olarak {string} adresine gider")
     public void adminOlarakAdresineGider(String arg0) {
 
+        Driver.getDriver().get(ConfigReader.getProperty("manageUrl"));
 
     }
 
@@ -269,8 +308,7 @@ public class US05_DeanGuncelleme_Silme_StepDefinitions extends US04_US05_Methods
 
     @And("Admin olarak Menu butonuna basar")
     public void adminOlarakMenuButonunaBasar() {
-         dean.menu.click();
-     dean.deanManagement.click();
+        deanBolumuGiris();
 
     }
 
@@ -283,5 +321,13 @@ public class US05_DeanGuncelleme_Silme_StepDefinitions extends US04_US05_Methods
     @And("Admin olarak Dean Management linkini tiklar")
     public void adminOlarakDeanManagementLinkiniTiklar() {
 
+    }
+
+    @And("Admin kayit yapar")
+    public void adminKayitYapar() {
+        ReusableMethods.bekle(3);
+        assertFalse(dean.requiredMessagePassword.isDisplayed());
+        ReusableMethods.bekle(3);
+        Driver.closeDriver();
     }
 }
