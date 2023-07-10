@@ -42,13 +42,28 @@ Feature:Admin Dean
     Given Admin bos veri gondererek Dean eklemek icin request yapar
     Then Bos veri ile Dean bodysi "<no>" "<name>" "<surname>" "<birthPlace>" "<birthDay>" "<gender>"  "<phoneNumber>" "<ssn>" "<username>" "<password>" ekleyemedigi API ile dogrulanir
     Examples:
-      | no | name |  | surname | birthPlace | birthDay | gender | phoneNumber | ssn | username | password |
-      | 1  |      |  | surname | birthPlace | birthDay | gender | phoneNumber | ssn | username | password |
-      | 2  | name |  |         | birthPlace | birthDay | gender | phoneNumber | ssn | username | password |
-      | 3  | name |  | surname |            | birthDay | gender | phoneNumber | ssn | username | password |
-      | 4  | name |  | surname | birthPlace | birthDay |        | phoneNumber | ssn | username | password |
-      | 5  | name |  | surname | birthPlace |          | gender | phoneNumber | ssn | username | password |
-      | 6  | name |  | surname | birthPlace | birthDay | gender |             | ssn | username | password |
-      | 7  | name |  | surname | birthPlace | birthDay | gender | phoneNumber |     | username | password |
-      | 8  | name |  | surname | birthPlace | birthDay | gender | phoneNumber | ssn |          | password |
-      | 9  | name |  | surname | birthPlace | birthDay | gender | phoneNumber | ssn |          |          |
+      | no | name      |  | surname      | birthPlace | birthDay | gender | phoneNumber      | ssn      | username      | password |
+      | 1  |           |  | fake.surname | birthPlace | birthDay | gender | fake.phoneNumber | fake.ssn | fake.username | password |
+      | 2  | fake.name |  |              | birthPlace | birthDay | gender | fake.phoneNumber | fake.ssn | fake.username | password |
+      | 3  | fake.name |  | fake.surname |            | birthDay | gender | fake.phoneNumber | fake.ssn | fake.username | password |
+      | 4  | fake.name |  | fake.surname | birthPlace | birthDay |        | fake.phoneNumber | fake.ssn | fake.username | password |
+      | 5  | fake.name |  | fake.surname | birthPlace |          | gender | fake.phoneNumber | fake.ssn | fake.username | password |
+      | 6  | fake.name |  | fake.surname | birthPlace | birthDay | gender |                  | fake.ssn | fake.username | password |
+      | 7  | fake.name |  | fake.surname | birthPlace | birthDay | gender | fake.phoneNumber |          | fake.username | password |
+      | 8  | fake.name |  | fake.surname | birthPlace | birthDay | gender | fake.phoneNumber | fake.ssn |               | password |
+      | 9  | fake.name |  | fake.surname | birthPlace | birthDay | gender | fake.phoneNumber | fake.ssn | fake.username |          |
+
+  @US04ApiSsnNegatif @Admin
+
+  Scenario Outline: US04 Admin  Dean'i invalid Ssn gondererek kaydedemez
+    Given Admin bos veri gondererek Dean eklemek icin request yapar
+    Then Invalid Ssn degerli Dean bodysi "<no>" "<name>" "<surname>" "<birthPlace>" "<birthDay>" "<gender>"  "<phoneNumber>" "<ssn>" "<username>" "<password>"<userId>" ekleyemedigi API ile dogrulanir
+    Examples:
+      | no | name      |  | surname      | birthPlace | birthDay | gender | phoneNumber      | ssn      | username      | password | userId |
+      | 1  | fake.name |  | fake.surname | birthPlace | birthDay | gender | fake.phoneNumber | fake.ssn | fake.username | password |        |
+      | 2  | fake.name |  | fake.surname | birthPlace | birthDay | gender | fake.phoneNumber | fake.ssn | fake.username | password |        |
+      | 3  | fake.name |  | fake.surname | birthPlace | birthDay | gender | fake.phoneNumber | fake.ssn | fake.username | password |        |
+      | 4  | fake.name |  | fake.surname | birthPlace | birthDay | gender | fake.phoneNumber | fake.ssn | fake.username | password |        |
+      | 5  | fake.name |  | fake.surname | birthPlace | birthDay | gender | fake.phoneNumber | fake.ssn | fake.username | password |        |
+      | 6  | fake.name |  | fake.surname | birthPlace | birthDay | gender | fake.phoneNumber | fake.ssn | fake.username | password |        |
+      | 7  | fake.name |  | fake.surname | birthPlace | birthDay | gender | fake.phoneNumber | fake.ssn | fake.username | password |        |
