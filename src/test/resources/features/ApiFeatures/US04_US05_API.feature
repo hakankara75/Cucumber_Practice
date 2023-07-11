@@ -1,5 +1,15 @@
 Feature:Admin Dean
 
+  @US04ApiPost @Admin @PostDelete @PostPut
+
+  Scenario Outline: US04 Admin Dean ekleyebilmeli
+    Given Admin Tum Dean bilgilerini post request yapar
+    Then Dean bodysi "<name>" "<surname>" "<birthPlace>" "<birthDay>" "<gender>"  "<phoneNumber>" "<ssn>" "<username>" "<password>" API ile dogrulanir
+    Examples:
+      | name       | surname       | birthPlace | birthDay   | gender | phoneNumber       | ssn       | username       | password |
+      | faker.name | faker.surname | ardahan    | 2001-01-01 | MALE   | faker.phoneNumber | faker.ssn | faker.username | 12345678 |
+
+
   @US05Api @Admin
   Scenario Outline:US05 Admin Dean'lerin Name, Gender, Phone Number, SSN, User Name bilgilerini görebilmeli
     Given Admin Tum Dean bilgilerini cagirir
@@ -9,32 +19,25 @@ Feature:Admin Dean
       | abaturib | akara   | ardahan    | 2001-01-01 | MALE   | 214-318-1513 | 115-91-3517 | 1baturDeane |
       | HAKAN    | KARA    | ardahan    | 1222-11-22 | MALE   | 131-544-5555 | 234-33-3457 | deanhakan5  |
 
-  @US04ApiPost @Admin
+  @US05ApiDelete @Admin
 
-  Scenario Outline: US04 Admin Dean ekleyebilmeli
-    Given Admin Tum Dean bilgilerini post request yapar
-    Then Dean bodysi "<name>" "<surname>" "<birthPlace>" "<birthDay>" "<gender>"  "<phoneNumber>" "<ssn>" "<username>" "<password>" "<userId>"API ile dogrulanir
-    Examples:
-      | name      | surname | birthPlace | birthDay   | gender | phoneNumber  | ssn         | username | password | userId |
-      | hakbaanis | akara   | ardahan    | 2001-01-01 | MALE   | 139-347-1113 | 164-77-3516 | hbature  | 12345678 |        |
-
-  @US05ApiGet @Admin
-
-  Scenario Outline: US05 Admin ekledigi Dean'i cagirabilir
-    Given Admin Ekledigi Dean bilgilerine get request yapar
-    Then Dean bodysi "<name>" "<surname>" "<birthPlace>" "<birthDay>" "<gender>"  "<phoneNumber>" "<ssn>" "<username>" "<password>" API ile get yaparak dogrulanir
-    Examples:
-      | name   | surname | birthPlace | birthDay   | gender | phoneNumber  | ssn         | username | password |
-      | bathak | kara    | ardahan    | 2000-11-11 | MALE   | 214-777-1153 | 142-77-4511 | bathak   | 12345678 |
-
-  @US04ApiDelete @Admin
-
-  Scenario Outline: US04 Admin  Dean'i sildigini dogrular
+  Scenario Outline: US05 Admin  Dean'i sildigini dogrular
     Given Admin Silecegi Dean bilgilerini delete request yapar
     Then Silinen Dean bodysi "<name>" "<surname>" "<birthPlace>" "<birthDay>" "<gender>"  "<phoneNumber>" "<ssn>" "<username>" "<password>" "<userId>" API ile dogrulanir
     Examples:
       | name    | surname | birthPlace | birthDay   | gender | phoneNumber  | ssn         | username | password | userId |
       | hababis | akara   | ardahan    | 2001-01-01 | MALE   | 183-347-1113 | 834-77-3516 | hbatabbe | 12345678 |        |
+
+
+  @US05ApiPut @Admin @PostPut
+
+  Scenario Outline: US05 Admin Dean bilgisini degistirebilir
+    Given Admin Ekledigi Dean bilgilerine put request yapar
+    Then Dean bodysi "<name>" "<surname>" "<birthPlace>" "<birthDay>" "<gender>"  "<phoneNumber>" "<ssn>" "<username>" "<password>" API ile get yaparak dogrulanir
+    Examples:
+      | name         | surname         | birthPlace | birthDay   | gender | phoneNumber         | ssn         | username         | password |
+      | <faker.name> | <faker.surname> | ardahan    | 2001-01-01 | MALE   | <faker.phoneNumber> | <faker.ssn> | <faker.username> | 12345678 |
+
 
   @US04ApiDeanEkleme @Admin
 
@@ -53,7 +56,7 @@ Feature:Admin Dean
       | 8  | fake.name |  | fake.surname | birthPlace | birthDay | gender | fake.phoneNumber | fake.ssn |               | password |
       | 9  | fake.name |  | fake.surname | birthPlace | birthDay | gender | fake.phoneNumber | fake.ssn | fake.username |          |
 
-  @US04ApiSsnNegatif @Admin
+  @US04ApiSsnNegative @Admin
 
   Scenario Outline: US04 Admin  Dean'i invalid Ssn gondererek kaydedemez
     Given Admin bos veri gondererek Dean eklemek icin request yapar
@@ -67,3 +70,33 @@ Feature:Admin Dean
       | 5  | fake.name |  | fake.surname | birthPlace | birthDay | gender | fake.phoneNumber | fake.ssn | fake.username | password |        |
       | 6  | fake.name |  | fake.surname | birthPlace | birthDay | gender | fake.phoneNumber | fake.ssn | fake.username | password |        |
       | 7  | fake.name |  | fake.surname | birthPlace | birthDay | gender | fake.phoneNumber | fake.ssn | fake.username | password |        |
+      | 8  | fake.name |  | fake.surname | birthPlace | birthDay | gender | fake.phoneNumber | fake.ssn | fake.username | password |        |
+
+  @US04ApiPasswordPositive @Admin
+
+  Scenario Outline: US04 Admin  Dean'i valid Password gondererek kaydeder
+    Given Admin valid password ile Dean eklemek icin request yapar
+    Then Valid Password degerli Dean bodysi "<name>" "<surname>" "<birthPlace>" "<birthDay>" "<gender>"  "<phoneNumber>" "<ssn>" "<username>" "<password>" ekledigi API ile dogrulanir
+    Examples:
+      | name       | surname       | birthPlace | birthDay   | gender | phoneNumber       | ssn       | username       | password       |
+      | faker.name | faker.surname | ardahan    | 2001-01-01 | MALE   | faker.phoneNumber | faker.ssn | faker.username | faker.password |
+
+  @US04ApiPasswordNegatife @Admin
+
+  Scenario Outline: US04 Admin  Dean'i valid Password gondererek kaydeder
+    Given Admin valid password ile Dean eklemek icin request yapar
+    Then Invalid Password degerli Dean bodysi "<name>" "<surname>" "<birthPlace>" "<birthDay>" "<gender>"  "<phoneNumber>" "<ssn>" "<username>" "<password>" ekleyemedigi API ile dogrulanir
+    Examples:
+      | name       | surname       | birthPlace | birthDay   | gender | phoneNumber       | ssn       | username       | password |
+      | faker.name | faker.surname | ardahan    | 2001-01-01 | MALE   | faker.phoneNumber | faker.ssn | faker.username | 1234567a |
+      | faker.name | faker.surname | ardahan    | 2001-01-01 | MALE   | faker.phoneNumber | faker.ssn | faker.username | 1234567A |
+      | faker.name | faker.surname | ardahan    | 2001-01-01 | MALE   | faker.phoneNumber | faker.ssn | faker.username | AAAAAAAA |
+      | faker.name | faker.surname | ardahan    | 2001-01-01 | MALE   | faker.phoneNumber | faker.ssn | faker.username | aaaaaaaa |
+      | faker.name | faker.surname | ardahan    | 2001-01-01 | MALE   | faker.phoneNumber | faker.ssn | faker.username | ???????? |
+      | faker.name | faker.surname | ardahan    | 2001-01-01 | MALE   | faker.phoneNumber | faker.ssn | faker.username | 1234567  |
+      | faker.name | faker.surname | ardahan    | 2001-01-01 | MALE   | faker.phoneNumber | faker.ssn | faker.username | 123456A  |
+      | faker.name | faker.surname | ardahan    | 2001-01-01 | MALE   | faker.phoneNumber | faker.ssn | faker.username | 123456a  |
+      | faker.name | faker.surname | ardahan    | 2001-01-01 | MALE   | faker.phoneNumber | faker.ssn | faker.username | 12345Aa  |
+      | faker.name | faker.surname | ardahan    | 2001-01-01 | MALE   | faker.phoneNumber | faker.ssn | faker.username | 1234567? |
+      | faker.name | faker.surname | ardahan    | 2001-01-01 | MALE   | faker.phoneNumber | faker.ssn | faker.username |          |
+

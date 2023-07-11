@@ -5,19 +5,22 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
-import pojo.US04_US05_Pojos.US04Pojo;
-import pojo.US04_US05_Pojos.US04_OuterPojo;
+import pojos.US04_US05_Pojos.US04Pojo;
+import pojos.US04_US05_Pojos.US04_OuterPojo;
 import utilities.ObjectMapperUtils;
+import utilities.US04_US05_Methods;
 
+import static base_url.ManagementOnSchoolsBaseUrl.spec;
 import static io.restassured.RestAssured.given;
 import static org.testng.AssertJUnit.assertEquals;
-import static pages.base_urls.ManagementOnSchoolsBaseUrl.spec;
 
-public class US04_US05_API_StefDefinitions {
+public class US04_US05_API_StefDefinitions extends US04_US05_Methods {
     Response response;
     US04_OuterPojo expectedDean;
-    String userId;
+    US04Pojo us04Pojo;
+    static String userId;
     Faker faker = new Faker();
+    JsonPath jsonPath;
 
     @Given("Admin Tum Dean bilgilerini cagirir")
     public void adminTumDeanBilgileriniCagirir() {
@@ -39,41 +42,46 @@ public class US04_US05_API_StefDefinitions {
 
     }
 
-    @Then("Dean bodysi {string} {string} {string} {string} {string}  {string} {string} {string} {string} {string}API ile dogrulanir")
-    public void deanBodysiAPIIleDogrulanir(String name, String surname, String birthPlace, String birthDay, String gender, String phoneNumber, String ssn, String username, String password, String userId) {
+    @Then("Dean bodysi {string} {string} {string} {string} {string}  {string} {string} {string} {string} API ile dogrulanir")
+    public void deanBodysiAPIIleDogrulanir(String name, String surname, String birthPlace, String birthDay, String gender, String phoneNumber, String ssn, String username, String password) {
+        faker = new Faker();
+        name = faker.name().firstName();
+        surname = faker.name().lastName();
+        phoneNumber = faker.numerify("###-###-####");
+        ssn = faker.idNumber().ssnValid();
+        username = faker.name().username();
+
         //set the expected data
         US04Pojo us04Pojo = new US04Pojo(name, surname, birthPlace, birthDay, gender, phoneNumber, ssn, username, password, userId);
         expectedDean = new US04_OuterPojo(us04Pojo, null, null);
 
 
         //send the request and get the response
-        response = given(spec).body(us04Pojo).post("{first}/{second}");
-        response.prettyPrint();
+        response =given(spec).body(us04Pojo).post("{first}/{second}");
+        //response.prettyPrint();
 
+        jsonPath = response.jsonPath();
 
         //do assertion
         US04_OuterPojo actualPostDean = ObjectMapperUtils.convertJsonToJava(response.asString(), US04_OuterPojo.class);
 
         assertEquals(200, response.statusCode());
+
         assertEquals(expectedDean.getObject().getName(), actualPostDean.getObject().getName());
+
         assertEquals(expectedDean.getObject().getSurname(), actualPostDean.getObject().getSurname());
+
         assertEquals(expectedDean.getObject().getBirthPlace(), actualPostDean.getObject().getBirthPlace());
+
         assertEquals(expectedDean.getObject().getBirthDay(), actualPostDean.getObject().getBirthDay());
+
         assertEquals(expectedDean.getObject().getGender(), actualPostDean.getObject().getGender());
+
         assertEquals(expectedDean.getObject().getPhoneNumber(), actualPostDean.getObject().getPhoneNumber());
+
         assertEquals(expectedDean.getObject().getSsn(), actualPostDean.getObject().getSsn());
+
         assertEquals(expectedDean.getObject().getUsername(), actualPostDean.getObject().getUsername());
-
-    }
-
-    @Given("Admin Tum Dean bilgilerini get request yapar")
-    public void adminTumDeanBilgileriniGetRequestYapar() {
-        //set the url
-        spec.pathParams("first", "dean", "second", "getAll");
-
-        //send the request and get the response
-        response = given(spec).get("{first}/{second}");
-        //response.prettyPrint();
 
     }
 
@@ -92,26 +100,41 @@ public class US04_US05_API_StefDefinitions {
 
     @Then("Dean bodysi {string} {string} {string} {string} {string}  {string} {string} {string} {string} API ile get yaparak dogrulanir")
     public void deanBodysiAPIIleGetYaparakDogrulanir(String name, String surname, String birthPlace, String birthDay, String gender, String phoneNumber, String ssn, String username, String password) {
+        faker = new Faker();
+        if (name.equals("<faker.name>")) {
+            name = faker.name().firstName();
+        }
+        if (surname.equals("<faker.surname>")) {
+            surname = faker.name().lastName();
+        }
+        if (phoneNumber.equals("<faker.phoneNumber>")) {
+            phoneNumber = faker.numerify("###-###-####");
+        }
+        if (ssn.equals("<faker.ssn>")) {
+            ssn = faker.idNumber().ssnValid();
+        }
+        if (username.equals("<faker.username>")) {
+            username = faker.name().username();
+        }
+
+        //set the expecte data
+        us04Pojo = new US04Pojo(name, surname, birthPlace, birthDay, gender, phoneNumber, ssn, username, password);
+
+        //send the response get the request
+        response = given(spec).body(us04Pojo).put("{first}/{second}/{third}");
+        //response.prettyPrint();
+
         //do assertion
-        JsonPath jsonPath = response.jsonPath();
-        Object actualName = jsonPath.getList("findAll{it.username=='" + username + "'}.name").get(0);
-        Object actualSurname = jsonPath.getList("findAll{it.username=='" + username + "'}.surname").get(0);
-        Object actualBirthDay = jsonPath.getList("findAll{it.username=='" + username + "'}.birthDay").get(0);
-        Object actualSsn = jsonPath.getList("findAll{it.username=='" + username + "'}.ssn").get(0);
-        Object actualBirthPlace = jsonPath.getList("findAll{it.username=='" + username + "'}.birthPlace").get(0);
-        Object actualPhoneNumber = jsonPath.getList("findAll{it.username=='" + username + "'}.phoneNumber").get(0);
-        Object actualGender = jsonPath.getList("findAll{it.username=='" + username + "'}.gender").get(0);
-        Object actualUsername = jsonPath.getList("findAll{it.username=='" + username + "'}.username").get(0);
+        jsonPath = response.jsonPath();
+        String expectedMessage = "Dean updated Successful";
+        String actualMessage = jsonPath.getString("message");
+        String expectedStatus = "OK";
+        String actualHttpStatus = jsonPath.getString("httpStatus");
+
 
         assertEquals(200, response.statusCode());
-        assertEquals(name, actualName);
-        assertEquals(surname, actualSurname);
-        assertEquals(birthDay, actualBirthDay);
-        assertEquals(ssn, actualSsn);
-        assertEquals(birthPlace, actualBirthPlace);
-        assertEquals(phoneNumber, actualPhoneNumber);
-        assertEquals(gender, actualGender);
-        assertEquals(username, actualUsername);
+        assertEquals(expectedMessage, actualMessage);
+        assertEquals(expectedStatus, actualHttpStatus);
 
     }
 
@@ -122,30 +145,13 @@ public class US04_US05_API_StefDefinitions {
 
     @Then("Silinen Dean bodysi {string} {string} {string} {string} {string}  {string} {string} {string} {string} {string} API ile dogrulanir")
     public void silinenDeanBodysiAPIIleDogrulanir(String name, String surname, String birthPlace, String birthDay, String gender, String phoneNumber, String ssn, String username, String password, String userId) {
-        //set the url for POST
-        spec.pathParams("first", "dean", "second", "save");
-
-        //set the expected data for POST
-        US04Pojo us04Pojo = new US04Pojo(name, surname, birthPlace, birthDay, gender, phoneNumber, ssn, username, password, userId);
-        expectedDean = new US04_OuterPojo(us04Pojo, null, null);
-
-
-        //send the request and get the response for POST
-        response = given(spec).body(us04Pojo).post("{first}/{second}");
-        response.prettyPrint();
-
-        JsonPath jsonPath = response.jsonPath();
-        userId = jsonPath.getString("object.userId");
-        System.out.println("userId Post = " + userId);
-        System.out.println("response.getStatusCode() = " + response.getStatusCode());
-
         //set the url for DELETE
         spec.pathParams("first", "dean", "second", "delete", "third", userId);
 
 
         //send the request and get the response for DELETE
         response = given(spec).delete("{first}/{second}/{third}");
-        response.prettyPrint();
+        //response.prettyPrint();
 
         //do assertion for DELETE
         jsonPath = response.jsonPath();
@@ -195,12 +201,12 @@ public class US04_US05_API_StefDefinitions {
         if (gender.equals("")) {
             gender = "";
         } else {
-            gender = "0";
+            gender = "MALE";
         }
         if (phoneNumber.equals("")) {
             phoneNumber = "";
         } else {
-            phoneNumber = faker.numerify("###-###-#####");
+            phoneNumber = faker.numerify("###-###-####");
         }
         if (ssn.equals("")) {
             ssn = "";
@@ -215,7 +221,7 @@ public class US04_US05_API_StefDefinitions {
         if (password.equals("")) {
             password = "";
         } else {
-            password = "1235678";
+            password = "12345678";
         }
         //set the expected data
         US04Pojo us04Pojo = new US04Pojo(name, surname, birthPlace, birthDay, gender, phoneNumber, ssn, username, password, userId);
@@ -224,7 +230,7 @@ public class US04_US05_API_StefDefinitions {
 
         //send the request and get the response
         response = given(spec).body(us04Pojo).post("{first}/{second}");
-        response.prettyPrint();
+       // response.prettyPrint();
 
 
         //do assertion
@@ -346,38 +352,34 @@ public class US04_US05_API_StefDefinitions {
 
         birthDay = "2001-01-01";
 
-        gender = "0";
+        gender = "MALE";
 
-        phoneNumber = faker.numerify("###-###-#####");
+        phoneNumber = faker.numerify("###-###-####");
 
         switch (no) {
             case "1":
                 ssn = faker.number().numberBetween(100, 999) + "," + faker.number().numberBetween(10, 99) + "," + faker.number().numberBetween(1000, 9999);
-                System.out.println(ssn);
                 break;
             case "2":
                 ssn = faker.number().numberBetween(100, 999) + " " + faker.number().numberBetween(10, 99) + " " + faker.number().numberBetween(1000, 9999);
-                System.out.println(ssn);
                 break;
             case "3":
                 ssn = faker.number().numberBetween(10, 99) + "-" + faker.number().numberBetween(100, 999) + "-" + faker.number().numberBetween(1000, 9999);
-                System.out.println(ssn);
                 break;
             case "4":
                 ssn = faker.number().numberBetween(10, 99) + "," + faker.number().numberBetween(100, 999) + "," + faker.number().numberBetween(1000, 9999);
-                System.out.println(ssn);
                 break;
             case "5":
                 ssn = faker.number().numberBetween(1000, 9999) + "," + faker.number().numberBetween(10, 99) + "," + faker.number().numberBetween(100, 999);
-                System.out.println(ssn);
                 break;
             case "6":
                 ssn = faker.number().numberBetween(1000, 9999) + " " + faker.number().numberBetween(10, 99) + " " + faker.number().numberBetween(100, 999);
-                System.out.println(ssn);
                 break;
             case "7":
-                ssn = faker.number().numberBetween(100, 999) + "-" + faker.number().numberBetween(10, 99) + "-" + faker.number().numberBetween(1000, 9999);
-                System.out.println(ssn);
+                ssn = faker.number().numberBetween(10, 99) + "," + faker.number().numberBetween(10, 99) + "," + faker.number().numberBetween(10000, 99999);
+                break;
+            case "8":
+                ssn = faker.number().numberBetween(10, 99) + " " + faker.number().numberBetween(10, 99) + " " + faker.number().numberBetween(10000, 99999);
                 break;
             default:
                 break;
@@ -385,7 +387,7 @@ public class US04_US05_API_StefDefinitions {
 
         username = faker.name().username();
 
-        password = "1235678";
+        password = "12345678";
 
         //set the expected data
         US04Pojo us04Pojo = new US04Pojo(name, surname, birthPlace, birthDay, gender, phoneNumber, ssn, username, password, null);
@@ -393,23 +395,96 @@ public class US04_US05_API_StefDefinitions {
 
         //send the request and get the response
         response = given(spec).body(us04Pojo).post("{first}/{second}");
-        response.prettyPrint();
+       // response.prettyPrint();
 
         //do assertion
         US04_OuterPojo actualPostDean = ObjectMapperUtils.convertJsonToJava(response.asString(), US04_OuterPojo.class);
 
-        String expectedSsn = expectedDean.getObject().getSsn();
-        System.out.println("expectedSsn" + expectedSsn.toString());
-
-
-
-//        assertEquals(400, response.statusCode());
-        if (no.contains("7")) {
-            assertEquals(expectedDean.getObject().getSsn(), actualPostDean.getObject().getSsn());
-
-        }
-
+        assertEquals(400, response.statusCode());
 
     }
 
+    @Given("Admin Ekledigi Dean bilgilerine put request yapar")
+    public void adminEkledigiDeanBilgilerinePutRequestYapar() {
+        //set the url
+        spec.pathParams("first", "dean", "second", "update", "third", userId);
+    }
+
+
+    @Given("Admin valid password ile Dean eklemek icin request yapar")
+    public void adminValidPasswordIleDeanEklemekIcinRequestYapar() {
+        //set the url
+        spec.pathParams("first", "dean", "second", "save");
+    }
+
+    @Then("Valid Password degerli Dean bodysi {string} {string} {string} {string} {string}  {string} {string} {string} {string} ekledigi API ile dogrulanir")
+    public void validPasswordDegerliDeanBodysiEkledigiAPIIleDogrulanir(String name, String surname, String birthPlace, String birthDay, String gender, String phoneNumber, String ssn, String username, String password) throws Throwable {    // Write code here that turns the phrase above into concrete actions    throw new cucumber.api.PendingException();}
+        faker = new Faker();
+        name = faker.name().firstName();
+        System.out.println("olusan name = " + name);
+        surname = faker.name().lastName();
+        phoneNumber = faker.numerify("###-###-####");
+        ssn = faker.idNumber().ssnValid();
+        username = faker.name().username();
+        password=faker.internet().password();
+
+        //set the expected data
+        US04Pojo us04Pojo = new US04Pojo(name, surname, birthPlace, birthDay, gender, phoneNumber, ssn, username, password, userId);
+        expectedDean = new US04_OuterPojo(us04Pojo, null, null);
+
+
+        //send the request and get the response
+        response =given(spec).body(us04Pojo).post("{first}/{second}");
+        response.prettyPrint();
+
+        jsonPath = response.jsonPath();
+
+        //do assertion
+        US04_OuterPojo actualPostDean = ObjectMapperUtils.convertJsonToJava(response.asString(), US04_OuterPojo.class);
+
+        assertEquals(200, response.statusCode());
+
+        assertEquals(expectedDean.getObject().getName(), actualPostDean.getObject().getName());
+
+        assertEquals(expectedDean.getObject().getSurname(), actualPostDean.getObject().getSurname());
+
+        assertEquals(expectedDean.getObject().getBirthPlace(), actualPostDean.getObject().getBirthPlace());
+
+        assertEquals(expectedDean.getObject().getBirthDay(), actualPostDean.getObject().getBirthDay());
+
+        assertEquals(expectedDean.getObject().getGender(), actualPostDean.getObject().getGender());
+
+        assertEquals(expectedDean.getObject().getPhoneNumber(), actualPostDean.getObject().getPhoneNumber());
+
+        assertEquals(expectedDean.getObject().getSsn(), actualPostDean.getObject().getSsn());
+
+        assertEquals(expectedDean.getObject().getUsername(), actualPostDean.getObject().getUsername());
+    }
+
+    @Then("Invalid Password degerli Dean bodysi {string} {string} {string} {string} {string}  {string} {string} {string} {string} ekleyemedigi API ile dogrulanir")
+    public void ınvalidPasswordDegerliDeanBodysiEkleyemedigiAPIIleDogrulanir(String name, String surname, String birthPlace, String birthDay, String gender, String phoneNumber, String ssn, String username, String password) {
+        faker = new Faker();
+        name = faker.name().firstName();
+        System.out.println("olusan name = " + name);
+        surname = faker.name().lastName();
+        phoneNumber = faker.numerify("###-###-####");
+        ssn = faker.idNumber().ssnValid();
+        username = faker.name().username();
+
+        //set the expected data
+        US04Pojo us04Pojo = new US04Pojo(name, surname, birthPlace, birthDay, gender, phoneNumber, ssn, username, password, userId);
+        expectedDean = new US04_OuterPojo(us04Pojo, null, null);
+
+
+        //send the request and get the response
+        response =given(spec).body(us04Pojo).post("{first}/{second}");
+        response.prettyPrint();
+
+        jsonPath = response.jsonPath();
+
+        //do assertion
+        US04_OuterPojo actualPostDean = ObjectMapperUtils.convertJsonToJava(response.asString(), US04_OuterPojo.class);
+
+        assertEquals(400, response.statusCode());
+    }
 }
