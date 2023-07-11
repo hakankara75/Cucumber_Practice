@@ -5,14 +5,13 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
-import pojos.US04_US05_Pojos.US04Pojo;
-import pojos.US04_US05_Pojos.US04_OuterPojo;
+import pojo.US04_US05_Pojos.US04Pojo;
+import pojo.US04_US05_Pojos.US04_OuterPojo;
 import utilities.ObjectMapperUtils;
 import utilities.US04_US05_Methods;
-
-import static base_url.ManagementOnSchoolsBaseUrl.spec;
 import static io.restassured.RestAssured.given;
 import static org.testng.AssertJUnit.assertEquals;
+import static pages.base_urls.ManagementOnSchoolsBaseUrl.spec;
 
 public class US04_US05_API_StefDefinitions extends US04_US05_Methods {
     Response response;

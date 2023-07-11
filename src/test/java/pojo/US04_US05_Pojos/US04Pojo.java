@@ -22,7 +22,15 @@ public class US04Pojo {
     private String password;
     private String userId;
 
-
-
-
+    public US04Pojo(String name, String surname, String birthPlace, String birthDay, String gender, String phoneNumber, String ssn, String username, String password) {
+        this.name = name;
+        this.surname = surname;
+        this.birthPlace = birthPlace;
+        this.birthDay = birthDay;
+        this.gender = gender;
+        this.phoneNumber = phoneNumber;
+        this.ssn = ssn;
+        this.username = username;
+        this.password = password;
+    }
 }
