@@ -96,7 +96,12 @@ public class US04_UI_AdminDeanEkleyebilmeli_StepDefinitions extends Kisi_Ekleme_
         assertFalse(admin.addDeanClass.getText().contains("saved"));
         Driver.closeDriver();
     }
-
+    @And("Admin girdiği verileri kaydettigini dogrular")
+    public void adminGirdigiVerileriKaydettiginiDogrular() {
+        method.alertWait1(admin.addDeanClass);
+        assertFalse(admin.addDeanClass.getText().contains("saved"));
+        Driver.closeDriver();
+    }
     @And("Admin Gender radio'sunu bos biraktiginda {string} uyarisini gorur")
     public void adminGenderRadioSunuBosBiraktigindaUyarisiniGorur(String arg0) {
 

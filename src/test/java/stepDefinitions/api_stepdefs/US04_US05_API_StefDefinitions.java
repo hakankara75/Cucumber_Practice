@@ -14,7 +14,7 @@ import static org.testng.AssertJUnit.assertEquals;
 import static pages.base_urls.ManagementOnSchoolsBaseUrl.spec;
 
 public class US04_US05_API_StefDefinitions extends US04_US05_Methods {
-    Response response;
+    public static  Response response;
     US04_OuterPojo expectedDean;
     US04Pojo us04Pojo;
     static String userId;
