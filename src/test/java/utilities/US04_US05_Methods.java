@@ -52,7 +52,7 @@ public class US04_US05_Methods extends US04_05 implements US04_05_Methods {
 
     @Override
     public void loginMethod(String username, String password) {
-        Driver.getDriver().get(ConfigReader.getProperty("url"));
+        Driver.getDriver().get(ConfigReader.getProperty("manageUrl"));
         page.login.click();
 
         switch (username) {

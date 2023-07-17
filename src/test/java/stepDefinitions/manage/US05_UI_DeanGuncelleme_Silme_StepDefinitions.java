@@ -5,7 +5,6 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import org.openqa.selenium.By;
 import pages.manage.US04_US05_Dean_Ekleme_Guncelleme_Silme_Modulu;
-import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.ReusableMethods;
 import utilities.US04_US05_Methods;
@@ -279,7 +278,7 @@ public class US05_UI_DeanGuncelleme_Silme_StepDefinitions extends US04_US05_Meth
     @Given("Admin olarak {string} adresine gider")
     public void adminOlarakAdresineGider(String arg0) {
 
-        Driver.getDriver().get(ConfigReader.getProperty("manageUrl"));
+
 
     }
 
@@ -300,7 +299,7 @@ public class US05_UI_DeanGuncelleme_Silme_StepDefinitions extends US04_US05_Meth
     @And("Admin olarak Login butonunu tiklar")
     public void adminOlarakLoginButonunuTiklar() {
         try{
-            loginMethod("adminUsername", "password");
+            loginMethod("adminUsername", "deanPassword");
         }catch (Exception e){
 
         }

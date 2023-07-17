@@ -15,7 +15,7 @@ import org.junit.runner.RunWith;
         features = "src/test/resources/features",
         glue = {"stepDefinitions","Hooks"},
         tags = "@US04_Edit",
-        dryRun = true
+        dryRun = false
 
 )
 public class TestRunner {
