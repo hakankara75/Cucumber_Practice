@@ -1,65 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Cucumber" time="14.441" tests="1" skipped="0" failures="1" errors="0">
-<testcase classname="Bos Veri Girisi" name="US04 Gender Bos Gecme - Example #1.1" time="14.015">
-<failure type="org.openqa.selenium.NoSuchWindowException" message="no such window: target window already closed
-from unknown error: web view not found
-  (Session info: chrome=114.0.5735.199)
-Build info: version: '4.8.3', revision: 'e5e76298c3'
-System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '19.0.2'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [4bebcd858ee876253b3b78318cc3cdbf, findElement {using=xpath, value=//button[text()='Menu']}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 114.0.5735.199, chrome: {chromedriverVersion: 114.0.5735.90 (386bc09e8f4f..., userDataDir: C:\Users\HAKANB~1.DES\AppDa...}, goog:chromeOptions: {debuggerAddress: localhost:49868}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:49868/devtoo..., se:cdpVersion: 114.0.5735.199, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 4bebcd858ee876253b3b78318cc3cdbf">
-<![CDATA[org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
-from unknown error: web view not found
-  (Session info: chrome=114.0.5735.199)
-Build info: version: '4.8.3', revision: 'e5e76298c3'
-System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '19.0.2'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [4bebcd858ee876253b3b78318cc3cdbf, findElement {using=xpath, value=//button[text()='Menu']}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 114.0.5735.199, chrome: {chromedriverVersion: 114.0.5735.90 (386bc09e8f4f..., userDataDir: C:\Users\HAKANB~1.DES\AppDa...}, goog:chromeOptions: {debuggerAddress: localhost:49868}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:49868/devtoo..., se:cdpVersion: 114.0.5735.199, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 4bebcd858ee876253b3b78318cc3cdbf
-	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:67)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:484)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:193)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:183)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:158)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
-	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
-	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:352)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:70)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:39)
-	at jdk.proxy2/jdk.proxy2.$Proxy25.click(Unknown Source)
-	at utilities.US04_US05_Methods.deanBolumuGiris(US04_US05_Methods.java:117)
-	at stepDefinitions.manage.US05_UI_DeanGuncelleme_Silme_StepDefinitions.adminOlarakMenuButonunaBasar(US05_UI_DeanGuncelleme_Silme_StepDefinitions.java:311)
-	at ✽.Admin olarak Menu butonuna basar(file:///C:/Users/HakanBatirhan/IdeaProjects/Batch129Cucumber_Practice/src/test/resources/features/directory04/US04_UI_Admin_Dean_Ekleme_Negatif.feature:9)
-]]>
-</failure>
+<testsuite name="Cucumber" time="0.399" tests="1" skipped="0" failures="0" errors="0">
+<testcase classname="Edit" name="TC04_Admin_Deanleri_Guncelleyebilmelidir" time="0.097">
 <system-out><![CDATA[
-Given Admin olarak "manageUrl" adresine gider...............................passed
-Then Admin olarak Login ikonunu tiklar......................................passed
-And Admin olarak username kutusununa "username" girer.......................passed
-And Admin olarak password kutusuna "password" girer.........................passed
-And Admin olarak Login butonunu tiklar......................................passed
-And Admin olarak Menu butonuna basar........................................failed
-And Admin olarak Dean Management linkini tiklar.............................skipped
-Given Admin Add Dean Management bolumunu gorur..............................skipped
-Then Admin Name kutusuna "batur" girer......................................skipped
-Then Admin Surname kutusuna "kara" girer....................................skipped
-Then Admin Birth Place kutusuna "ardahan"  girer............................skipped
-Then Admin Date Of Birth kutusuna "01/01/2001"  girer.......................skipped
-Then Admin Phone kutusuna "254-358-6951" girer..............................skipped
-Then Admin SSN kutusuna ucuncu ve besinci rakamdan sonra (-) içeren dokuz rakamdan olusan "257-95-3657" girer.skipped
-Then Admin User Name kutusuna "baturDean" girer.............................skipped
-Then Admin Password kutusuna en az sekiz karakterden olusan "12345678" girer.skipped
-And Admin Submit butonuna basar.............................................skipped
-And Admin Gender radio'sunu bos biraktiginda "You have entered an invalid value. Valid values are: MALE, FEMALE" uyarisini gorur.skipped
+Given kullanıcı managementschool proje sayfasına gider......................passed
+And kullanıcı sayfada login butonuna tiklar.................................passed
+And Kullanici Kayitli Username Bilgileri Ile Login Olur.....................passed
+When Kullanici Kayitli Password Bilgileri Ile Login Olur....................passed
+And kullanici login butonuna tiklayarak sisteme giris yapar.................passed
+And Kullanici Menu Butonuna Tiklar..........................................passed
+And Kullanici Gelen Menuden Dean Management Menusune Tiklar.................passed
+And Kullanici Dean List 'ini gorur..........................................passed
+And Kullanici Sayfada Edit Butonuna Tiklar..................................passed
+And Kullanici Name Alanina Editlenecek Ismi Yazar...........................passed
+And Kullanici SurName Alanina Editlenecek Soyismi Yazar.....................passed
+And Kullanici BirthPlace Alanina Editlenecek BirthPlacei Yazar..............passed
+And Kullanici Gender Alanina Editlenecek Gender Secenegini Secer............passed
+And Kullanici Date Of Birth Alanina Editlenecek Date Of Birthi Yazar........passed
+And Kullanici Phone Alanina Editlenecek Phone u Yazar.......................passed
+And Kullanici SSN Alanina Editlenecek SSN Numarasini Yazar..................passed
+And Kullanici User Name Alanina Editlenecek Ismi Yazar......................passed
+And Kullanici Password Alanina Editlenecek Parola Yazar.....................passed
+And Kullanici Submit Butonuna Tiklayarak KayitLari Onaylar..................passed
+Then Kullanici driver'i kapatir.............................................passed
 ]]></system-out>
 </testcase>
 </testsuite>

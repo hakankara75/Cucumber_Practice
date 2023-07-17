@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Cucumber" time="0.914" tests="1" skipped="0" failures="1" errors="0">
+<testcase classname="Edit" name="TC04_Admin_Deanleri_Guncelleyebilmelidir" time="0.304">
+<failure/>
+<system-out><![CDATA[
+Given kullanıcı managementschool proje sayfasına gider......................undefined
+And kullanıcı sayfada login butonuna tiklar.................................skipped
+And Kullanici Kayitli Username Bilgileri Ile Login Olur.....................skipped
+When Kullanici Kayitli Password Bilgileri Ile Login Olur....................skipped
+And kullanici login butonuna tiklayarak sisteme giris yapar.................skipped
+And Kullanici Menu Butonuna Tiklar..........................................skipped
+And Kullanici Gelen Menuden Dean Management Menusune Tiklar.................skipped
+And Kullanici Dean List 'ini gorur..........................................skipped
+And Kullanici Sayfada Edit Butonuna Tiklar..................................skipped
+And Kullanici Name Alanina Editlenecek Ismi Yazar...........................skipped
+And Kullanici SurName Alanina Editlenecek Soyismi Yazar.....................skipped
+And Kullanici BirthPlace Alanina Editlenecek BirthPlacei Yazar..............skipped
+And Kullanici Gender Alanina Editlenecek Gender Secenegini Secer............skipped
+And Kullanici Date Of Birth Alanina Editlenecek Date Of Birthi Yazar........skipped
+And Kullanici Phone Alanina Editlenecek Phone u Yazar.......................skipped
+And Kullanici SSN Alanina Editlenecek SSN Numarasini Yazar..................skipped
+And Kullanici User Name Alanina Editlenecek Ismi Yazar......................skipped
+And Kullanici Password Alanina Editlenecek Parola Yazar.....................skipped
+And Kullanici Submit Butonuna Tiklayarak KayitLari Onaylar..................skipped
+Then Kullanici driver'i kapatir.............................................skipped
+]]></system-out>
+</testcase>
+</testsuite>
