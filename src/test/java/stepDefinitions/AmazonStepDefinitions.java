@@ -3,10 +3,12 @@ package stepDefinitions;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
+import io.cucumber.java.tr.Ve;
 import org.openqa.selenium.Keys;
 import pages.AmazonPage;
 import utilities.ConfigReader;
 import utilities.Driver;
+import utilities.ReusableMethods;
 
 import static org.junit.Assert.assertTrue;
 
@@ -107,4 +109,9 @@ public class AmazonStepDefinitions {
     }
 
 
+    @Ve("Amazon'un Secimi yazan urunu tiklar")
+    public void amazonUnSecimiYazanUrunuTiklar() {
+        amazonPage.amazonunSecimi.click();
+        ReusableMethods.bekle(3);
+    }
 }

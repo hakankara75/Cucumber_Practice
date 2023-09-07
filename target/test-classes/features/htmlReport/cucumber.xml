@@ -1,33 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Cucumber" time="15.282" tests="1" skipped="0" failures="1" errors="0">
-<testcase classname="Edit" name="TC04_Admin_Deanleri_Guncelleyebilmelidir" time="14.908">
-<failure type="io.cucumber.java.PendingException" message="TODO: implement me">
-<![CDATA[io.cucumber.java.PendingException: TODO: implement me
-	at stepDefinitions.manage.US04_EditSteps.kullanici_ssn_alanina_editlenecek_ssn_numarasini_yazar(US04_EditSteps.java:101)
-	at ✽.Kullanici SSN Alanina Editlenecek SSN Numarasini Yazar(file:///C:/Users/HakanBatirhan/IdeaProjects/Batch129Cucumber_Practice/src/test/resources/features/directory04/UI04_Edit.feature:22)
-]]>
-</failure>
+<testsuite name="Cucumber" time="13.674" tests="1" skipped="0" failures="0" errors="0">
+<testcase classname="Gherkin Language Degistirme" name="TC01 kullanici Amazonda Nutella aratir" time="13.244">
 <system-out><![CDATA[
-Given Admin olarak "url" adresine gider.....................................passed
-Then Admin olarak Login ikonunu tiklar......................................passed
-And Admin olarak username kutusununa "username" girer.......................passed
-And Admin olarak password kutusuna "password" girer.........................passed
-And Admin olarak Login butonunu tiklar......................................passed
-And Admin olarak Menu butonuna basar........................................passed
-And Admin olarak Dean Management linkini tiklar.............................passed
-And Kullanici Dean List ini gorur...........................................passed
-And Kullanici Sayfada Edit Butonuna Tiklar..................................passed
-And Kullanici Name Alanina Editlenecek ismi Yazar...........................passed
-And Kullanici SurName Alanina Editlenecek Soyismi Yazar.....................passed
-And Kullanici BirthPlace Alanina Editlenecek BirthPlacei Yazar..............passed
-And Kullanici Gender Alanina Editlenecek Gender Secenegini Secer............passed
-And Kullanici Date Of Birth Alanina Editlenecek Date Of Birthi Yazar........passed
-And Kullanici Phone Alanina Editlenecek Phone u Yazar.......................passed
-And Kullanici SSN Alanina Editlenecek SSN Numarasini Yazar..................pending
-And Kullanici User Name Alanina Editlenecek ismi Yazar......................skipped
-And Kullanici Password Alanina Editlenecek Parola Yazar.....................skipped
-And Kullanici Submit Butonuna Tiklayarak KayitLari Onaylar..................skipped
-Then Kullanici driver'i kapatir.............................................skipped
+Diyelim ki kullanici Amazon sayfasinda......................................passed
+O zaman kullanici Nutella icin arama yapar..................................passed
+Ve sonuclarin Nutella icerdigini test eder..................................passed
+Ve sayfayi kapatir..........................................................passed
 ]]></system-out>
 </testcase>
 </testsuite>

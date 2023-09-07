@@ -1,6 +1,5 @@
 package pages;
 
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -35,4 +34,6 @@ public class AmazonPage {
     public WebElement image4;
     @FindBy (xpath = "//*[@class='a-link-normal']//following::img[5]")
     public WebElement image5;
+    @FindBy (xpath = "//span[text()='Amazon’un ']")
+    public WebElement amazonunSecimi;
 }
