@@ -3,6 +3,7 @@ package stepDefinitions;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 import io.cucumber.java.tr.Ve;
 import org.openqa.selenium.Keys;
 import pages.AmazonPage;
@@ -113,5 +114,15 @@ public class AmazonStepDefinitions {
     public void amazonUnSecimiYazanUrunuTiklar() {
         amazonPage.amazonunSecimi.click();
         ReusableMethods.bekle(3);
+    }
+
+    @When("kullanici Başa dön yazisina kadar iner")
+    public void kullaniciBasaDonYazisinaKadarIner() {
+        ReusableMethods.scrollToElementWithWebElement(amazonPage.backToTop);
+    }
+
+    @Then("Başa dön yazisina geldigini dogrular")
+    public void basaDonYazisinaGeldiginiDogrular() {
+        assertTrue(amazonPage.backToTop.isDisplayed());
     }
 }
