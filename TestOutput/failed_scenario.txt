@@ -1,0 +1,1 @@
+file:src/test/resources/features/directory04/US04_UI_Admin_Dean_Ekleme_PozitifSenaryo.feature:29

@@ -1,4 +1,4 @@
-@hakan
+@hakanCheckbox
 Feature: US01 Cok satan edebiyat kitapları
 
 

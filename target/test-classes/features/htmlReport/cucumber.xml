@@ -1,11 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Cucumber" time="13.674" tests="1" skipped="0" failures="0" errors="0">
-<testcase classname="Gherkin Language Degistirme" name="TC01 kullanici Amazonda Nutella aratir" time="13.244">
+<testsuite name="Cucumber" time="32.243" tests="1" skipped="0" failures="0" errors="0">
+<testcase classname="US01 Cok satan edebiyat kitapları" name="TC01 cok satan edebiyat kitaplari sayfasi testi" time="31.927">
 <system-out><![CDATA[
-Diyelim ki kullanici Amazon sayfasinda......................................passed
-O zaman kullanici Nutella icin arama yapar..................................passed
-Ve sonuclarin Nutella icerdigini test eder..................................passed
-Ve sayfayi kapatir..........................................................passed
+Given Kullanici "url" e gider...............................................passed
+Then giris yap linkini tiklar...............................................passed
+And eposta kutusuna mailini girer...........................................passed
+And sifre kutusuna sifresini girer..........................................passed
+And giris yap butonunu tiklar...............................................passed
+Given kullanici cok satan kitaplar menusu ustune gelir......................passed
+Then Sayfanin resmini ceker.................................................passed
+And 3 saniye bekleme yapar..................................................passed
+Then acilan menude cok satan edebiyat kitaplari linki oldugunu dogrular.....passed
+And 1 saniye bekleme yapar..................................................passed
+And cok satan edebiyat kitaplari linkini tiklar.............................passed
+When kullanici cok satan edebiyat kitaplari sayfasinda oldugunu dogrular....passed
+And edebiyat butonunun secilmis oldugunu dogrular...........................passed
+Then edebiyat butonunun resmini ceker.......................................passed
+And satista olanlar checkboxinin secili oldugunu dogrular...................passed
+Then yirmi urun dropdownina tiklar..........................................passed
+And yuz urunu secer.........................................................passed
+And yuz urun seceneginin secildigini dogrular...............................passed
+And sayfada yuz urun gorundugunu dogrular...................................passed
 ]]></system-out>
 </testcase>
 </testsuite>
