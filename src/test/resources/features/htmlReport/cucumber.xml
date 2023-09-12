@@ -1,10 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Cucumber" time="3.843" tests="1" skipped="0" failures="0" errors="0">
-<testcase classname="Normalize Space" name="Test 01 Normalize Space" time="3.571">
+<testsuite name="Cucumber" time="12.108" tests="2" skipped="0" failures="0" errors="0">
+<testcase classname="US1001 Kullanici Amazon Sayfadsinda Arama yapar" name="TC01 kullanici Amazonda Nutella aratir" time="6.322">
 <system-out><![CDATA[
 Given kullanici Amazon sayfasinda...........................................passed
-When kullanici Başa dön yazisina kadar iner.................................passed
-Then Başa dön yazisina geldigini dogrular...................................passed
+Then kullanici Nutella icin arama yapar.....................................passed
+And sonuclarin Nutella icerdigini test eder.................................passed
+And sayfayi kapatir.........................................................passed
+]]></system-out>
+</testcase>
+<testcase classname="US1001 Kullanici Amazon Sayfadsinda Arama yapar" name="TC01 kullanici Amazonda Nutella aratir" time="5.528">
+<system-out><![CDATA[
+Given kullanici Amazon sayfasinda...........................................passed
+Then kullanici Nutella icin arama yapar.....................................passed
+And sonuclarin Nutella icerdigini test eder.................................passed
 And sayfayi kapatir.........................................................passed
 ]]></system-out>
 </testcase>

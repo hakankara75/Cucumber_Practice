@@ -547,5 +547,23 @@ public class ReusableMethods {
         assertTrue(expectedResult.equals(actualResutlt));
     }
 
+    public static void flash(WebElement element,WebDriver driver){
+        JavascriptExecutor js= (JavascriptExecutor) driver;
+        String elementColor=element.getCssValue("backgroundColor");
+        for (int i = 0; i < 10; i++) {
+            changeColor("rgb(0,10000,0)", element, driver);
+            changeColor(elementColor, element, driver);
+        }
+    }
+    public static void changeColor(String color, WebElement element, WebDriver driver){
+        JavascriptExecutor js= (JavascriptExecutor) driver;
+        js.executeScript("arguments[0].style.backgroundColor='"+color+"'", element);
+
+        try{
+            Thread.sleep(20);
+        }catch (Exception e){
+
+        }
+    }
 
 }

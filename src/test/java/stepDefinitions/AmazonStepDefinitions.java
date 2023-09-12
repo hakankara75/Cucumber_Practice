@@ -5,13 +5,17 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import io.cucumber.java.tr.Ve;
+import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import pages.AmazonPage;
 import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.ReusableMethods;
 
 import static org.junit.Assert.assertTrue;
+import static utilities.Driver.driver;
 
 public class AmazonStepDefinitions {
     AmazonPage amazonPage = new AmazonPage();
@@ -19,11 +23,18 @@ public class AmazonStepDefinitions {
     @Given("kullanici Amazon sayfasinda")
     public void kullanici_amazon_sayfasinda() {
         Driver.getDriver().get(ConfigReader.getProperty("amazonUrl"));
+
     }
 
     @Then("kullanici Nutella icin arama yapar")
     public void kullanici_nutella_icin_arama_yapar() {
-        amazonPage.aramaKutusu.sendKeys("Nutella", Keys.ENTER);
+        amazonPage.aramaKutusu.sendKeys("Nutella");
+        Actions act = new Actions(Driver.getDriver());
+        WebElement elementLocator = Driver.getDriver().findElement(By.id("nav-search-submit-button"));
+        ReusableMethods.flash(elementLocator, driver);
+        elementLocator.click();
+
+
     }
 
     @Then("sonuclarin Nutella icerdigini test eder")
@@ -101,7 +112,7 @@ public class AmazonStepDefinitions {
 
     @And("Kullanıcı password kutusuna password girer")
     public void kullanıcıPasswordKutusunaPasswordGirer() {
-        amazonPage.password.sendKeys(ConfigReader.getProperty("password"));
+        amazonPage.password.sendKeys(ConfigReader.getProperty("password"),"CP857");
     }
 
     @Then("Kullanıcı Sign In butonunu tıklar")
@@ -125,4 +136,5 @@ public class AmazonStepDefinitions {
     public void basaDonYazisinaGeldiginiDogrular() {
         assertTrue(amazonPage.backToTop.isDisplayed());
     }
+
 }

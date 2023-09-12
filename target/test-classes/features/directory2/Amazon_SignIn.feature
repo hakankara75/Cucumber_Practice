@@ -2,7 +2,7 @@
   Feature: US001 Amazon sayfasına login olur
 
     Scenario: Kullanıcı Amazon sayfasına login yapar
-      Given kullanici "amazonUrl" sayfasinda
+      Given kullanici Amazon sayfasinda
       Then Kullanıcı Sign In menüsünü tıklar
       And Kullanıcı email kutusuna mail girer
       Then Kullanıcı continue butonunu tıklar
