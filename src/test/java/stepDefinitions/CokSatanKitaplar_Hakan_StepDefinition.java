@@ -20,6 +20,7 @@ import java.util.List;
 
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
+import static utilities.Driver.driver;
 import static utilities.ReusableMethods.*;
 
 
@@ -135,6 +136,9 @@ public class CokSatanKitaplar_Hakan_StepDefinition {
 
     @And("cok satan edebiyat kitaplari linkini tiklar")
     public void cokSatanEdebiyatKitaplariLinkiniTiklar() {
+        WebElement element= ReusableMethods.webelementJavaScript("document.querySelector(\"#mainNav > div.nav-content > ul > li.book.has-menu.active > div.lvl2.js-bookCr > ul > li:nth-child(1) > div > div.open-menu-ct.bookBestSeller > div.subCategories > ul:nth-child(2) > li:nth-child(1) > a > strong\")");
+
+        ReusableMethods.flash(element, driver);
         ReusableMethods.webelementJavaScript("document.querySelector(\"#mainNav > div.nav-content > ul > li.book.has-menu.active > div.lvl2.js-bookCr > ul > li:nth-child(1) > div > div.open-menu-ct.bookBestSeller > div.subCategories > ul:nth-child(2) > li:nth-child(1) > a > strong\")").click();
 
     }
