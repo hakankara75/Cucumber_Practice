@@ -154,7 +154,18 @@
                        <testFailureIgnore>true</testFailureIgnore> <!--testin başarısız olmasına rağmen diğer testlere devam eder ve sonunda tüm testleri çalıştırır. -->
                    </configuration>
                </plugin>
-
+           <plugin>
+               <groupId>org.apache.maven.plugins</groupId>
+               <artifactId>maven-failsafe-plugin</artifactId>
+               <version>3.1.0</version>
+               <configuration>
+                   <testFailureIgnore>true</testFailureIgnore>
+                   <skipTests>false</skipTests>
+                   <includes>
+                       <include>**/runner/*Runners.java</include>
+                   </includes>
+               </configuration>
+           </plugin>
            <plugin>
                <groupId>net.masterthought</groupId>
                <artifactId>maven-cucumber-reporting</artifactId>
