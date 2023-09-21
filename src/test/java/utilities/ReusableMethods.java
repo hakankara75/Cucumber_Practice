@@ -405,4 +405,18 @@ public class ReusableMethods {
         }catch (Exception e){
         }
     }
+
+    /** Bu metot islem yapilacak elementin etrafina renkli cerceve cizerek belirgin hale getirir.
+     *
+     * @param locate islem yapilacak elementin cssSelector turunden locate string olarak girilmeli
+     */
+    public static void showElementWithFrame(String locate){
+        WebElement element = Driver.getDriver().findElement(By.cssSelector(""+locate+""));
+        String script = "arguments[0].style.border='3px solid red';";
+//        String script = "arguments[0].style.border='3px solid white';";
+//        String script = "arguments[0].style.border='3px solid yellow';";
+//        String script = "arguments[0].style.border='3px solid green';";
+        ((JavascriptExecutor) Driver.getDriver()).executeScript(script, element);
+
+    }
 }
