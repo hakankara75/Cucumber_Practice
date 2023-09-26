@@ -4,8 +4,8 @@ import com.github.javafaker.Faker;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.restassured.http.ContentType;
-import pages.manage.Kisi_Ekleme_Guncelleme_Modulu;
-import pages.manage.US04_US05_Dean_Ekleme_Guncelleme_Silme_Modulu;
+import pages.others1.Kisi_Ekleme_Guncelleme_Modulu;
+import pages.others1.US04_US05_Dean_Ekleme_Guncelleme_Silme_Modulu;
 import utilities.JdbcUtils;
 import utilities.ReusableMethods;
 

@@ -1,6 +1,5 @@
 package utilities;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -22,30 +21,30 @@ public class Driver {
             switch (ConfigReader.getProperty("browser")){
 
                 case "chrome":
-                    WebDriverManager.chromedriver().setup();
+
                     driver = new ChromeDriver();
                     break;
 
                 case "safari":
-                    WebDriverManager.safaridriver().setup();
+
                     driver = new SafariDriver();
                     break;
 
                 case "firefox":
-                    WebDriverManager.firefoxdriver().setup();
+
                     driver = new FirefoxDriver();
                     break;
                 case "edge":
-                    WebDriverManager.edgedriver().setup();
+
                     driver = new EdgeDriver();
                     break;
                 case "chrome-headless":
-                    WebDriverManager.chromedriver().setup();
+
                     driver = new ChromeDriver(new ChromeOptions().setHeadless(true));
                     //bu secenekte chrome acilmadan test kosulur
                     break;
                 default:
-                    WebDriverManager.edgedriver().setup();
+
                     driver = new EdgeDriver();
 
             }

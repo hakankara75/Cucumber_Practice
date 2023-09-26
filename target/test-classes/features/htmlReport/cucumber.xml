@@ -1,34 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Cucumber" time="48.143" tests="2" skipped="0" failures="0" errors="0">
-<testcase classname="US01 Cok satan edebiyat kitapları" name="TC01 cok satan edebiyat kitaplari sayfasi testi" time="14.571">
+<testsuite name="Cucumber" time="5.156" tests="1" skipped="0" failures="1" errors="0">
+<testcase classname="hepsiburada" name="hepsiburada" time="4.917">
+<failure type="org.openqa.selenium.InvalidSelectorException" message="invalid selector: An invalid or illegal selector was specified
+  (Session info: chrome=117.0.5938.92)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalid-selector-exception
+Build info: version: '4.12.1', revision: '8e34639b11'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.19'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [b3007ed9f74d0a34ffb4dab5544c79bd, findElement {using=css selector, value=//*[@id=&quot;SearchBoxOld_7df513ae-d111-4201-49f2-38ed86311d22&quot;]/div/div/div[1]/div[2]/input}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 117.0.5938.92, chrome: {chromedriverVersion: 117.0.5938.92 (67649b10b92b..., userDataDir: C:\Users\HAKANB~1.DES\AppDa...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63113}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:63113/devtoo..., se:cdpVersion: 117.0.5938.92, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: b3007ed9f74d0a34ffb4dab5544c79bd">
+<![CDATA[org.openqa.selenium.InvalidSelectorException: invalid selector: An invalid or illegal selector was specified
+  (Session info: chrome=117.0.5938.92)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalid-selector-exception
+Build info: version: '4.12.1', revision: '8e34639b11'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.19'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [b3007ed9f74d0a34ffb4dab5544c79bd, findElement {using=css selector, value=//*[@id="SearchBoxOld_7df513ae-d111-4201-49f2-38ed86311d22"]/div/div/div[1]/div[2]/input}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 117.0.5938.92, chrome: {chromedriverVersion: 117.0.5938.92 (67649b10b92b..., userDataDir: C:\Users\HAKANB~1.DES\AppDa...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63113}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:63113/devtoo..., se:cdpVersion: 117.0.5938.92, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: b3007ed9f74d0a34ffb4dab5544c79bd
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:52)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:196)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:171)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:602)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:359)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:353)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at com.sun.proxy.$Proxy26.sendKeys(Unknown Source)
+	at stepDefinitions.others2.Hepsiburada.arama_cubuguna_yaz(Hepsiburada.java:19)
+	at ✽.arama cubuguna "terlik" yaz(file:///C:/Users/HakanBatirhan/IdeaProjects/Batch129Cucumber_Practice/src/test/resources/features/directory05/hepsiburada.feature:5)
+]]>
+</failure>
 <system-out><![CDATA[
-Given Kullanici "url" e gider...............................................passed
-When kullanici cok satan kitaplar menusu ustune gelir.......................passed
-And 3 saniye bekleme yapar..................................................passed
-And cok satan edebiyat kitaplari linkini tiklar.............................passed
-]]></system-out>
-</testcase>
-<testcase classname="US01 Cok satan edebiyat kitapları" name="TC01 cok satan edebiyat kitaplari sayfasi testi" time="32.785">
-<system-out><![CDATA[
-Given Kullanici "url" e gider...............................................passed
-Then giris yap linkini tiklar...............................................passed
-And eposta kutusuna mailini girer...........................................passed
-And sifre kutusuna sifresini girer..........................................passed
-And giris yap butonunu tiklar...............................................passed
-Given kullanici cok satan kitaplar menusu ustune gelir......................passed
-Then Sayfanin resmini ceker.................................................passed
-And 3 saniye bekleme yapar..................................................passed
-Then acilan menude cok satan edebiyat kitaplari linki oldugunu dogrular.....passed
-And 1 saniye bekleme yapar..................................................passed
-And cok satan edebiyat kitaplari linkini tiklar.............................passed
-When kullanici cok satan edebiyat kitaplari sayfasinda oldugunu dogrular....passed
-And edebiyat butonunun secilmis oldugunu dogrular...........................passed
-Then edebiyat butonunun resmini ceker.......................................passed
-And satista olanlar checkboxinin secili oldugunu dogrular...................passed
-Then yirmi urun dropdownina tiklar..........................................passed
-And yuz urunu secer.........................................................passed
-And yuz urun seceneginin secildigini dogrular...............................passed
-And sayfada yuz urun gorundugunu dogrular...................................passed
+Given siteye git............................................................passed
+Then arama cubuguna "terlik" yaz............................................failed
 ]]></system-out>
 </testcase>
 </testsuite>

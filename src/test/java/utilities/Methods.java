@@ -1,6 +1,6 @@
 package utilities;
 
-import pages.manage.Login_Modulu;
+import pages.others1.Login_Modulu;
 
 public class Methods {
     Login_Modulu login = new Login_Modulu();

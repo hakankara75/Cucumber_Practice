@@ -1,72 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Cucumber" time="41.141" tests="2" skipped="0" failures="1" errors="0">
-<testcase classname="US01 Cok satan edebiyat kitapları" name="TC01 cok satan edebiyat kitaplari sayfasi testi" time="14.975">
+<testsuite name="Cucumber" time="5.519" tests="1" skipped="0" failures="0" errors="0">
+<testcase classname="hepsiburada" name="hepsiburada" time="5.32">
 <system-out><![CDATA[
-Given Kullanici "url" e gider...............................................passed
-When kullanici cok satan kitaplar menusu ustune gelir.......................passed
-And 3 saniye bekleme yapar..................................................passed
-And cok satan edebiyat kitaplari linkini tiklar.............................passed
-]]></system-out>
-</testcase>
-<testcase classname="US01 Cok satan edebiyat kitapları" name="TC01 cok satan edebiyat kitaplari sayfasi testi" time="25.706">
-<failure type="org.openqa.selenium.ElementClickInterceptedException" message="element click intercepted: Element &lt;select onchange=&quot;location = this.value;&quot;&gt;...&lt;/select&gt; is not clickable at point (1107, 402). Other element would receive the click: &lt;img width=&quot;380&quot; height=&quot;213&quot; alt=&quot;Cep Boy Kitaplarda Tek Fiyat 6,90 TL&quot; class=&quot;swiper-lazy swiper-lazy-loaded&quot; src=&quot;https://img.kitapyurdu.com/v1/getImage/fn:11731715/wi:380/wh:0228af0fe&quot;&gt;
-  (Session info: chrome=117.0.5938.63)
-Build info: version: '4.12.1', revision: '8e34639b11'
-System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '19.0.2'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [8974187fcaf70ccce53b17e943f9b410, clickElement {id=C34D6DB52B68D182F587947D502E5452_element_246}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 117.0.5938.63, chrome: {chromedriverVersion: 117.0.5938.88 (be6afae47212..., userDataDir: C:\Users\HAKANB~1.DES\AppDa...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62317}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:62317/devtoo..., se:cdpVersion: 117.0.5938.63, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on windows (8974187fcaf70ccce53b17e943f9b410)] -&gt; xpath: (//select[@onchange='location = this.value;'])[3]]
-Session ID: 8974187fcaf70ccce53b17e943f9b410">
-<![CDATA[org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element <select onchange="location = this.value;">...</select> is not clickable at point (1107, 402). Other element would receive the click: <img width="380" height="213" alt="Cep Boy Kitaplarda Tek Fiyat 6,90 TL" class="swiper-lazy swiper-lazy-loaded" src="https://img.kitapyurdu.com/v1/getImage/fn:11731715/wi:380/wh:0228af0fe">
-  (Session info: chrome=117.0.5938.63)
-Build info: version: '4.12.1', revision: '8e34639b11'
-System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '19.0.2'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [8974187fcaf70ccce53b17e943f9b410, clickElement {id=C34D6DB52B68D182F587947D502E5452_element_246}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 117.0.5938.63, chrome: {chromedriverVersion: 117.0.5938.88 (be6afae47212..., userDataDir: C:\Users\HAKANB~1.DES\AppDa...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62317}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:62317/devtoo..., se:cdpVersion: 117.0.5938.63, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on windows (8974187fcaf70ccce53b17e943f9b410)] -> xpath: (//select[@onchange='location = this.value;'])[3]]
-Session ID: 8974187fcaf70ccce53b17e943f9b410
-	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:67)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:484)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:52)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:196)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:171)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:602)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:224)
-	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:77)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
-	at jdk.proxy2/jdk.proxy2.$Proxy26.click(Unknown Source)
-	at stepDefinitions.CokSatanKitaplar_Hakan_StepDefinition.yirmiUrunDropdowninaTiklar(CokSatanKitaplar_Hakan_StepDefinition.java:55)
-	at ✽.yirmi urun dropdownina tiklar(file:///C:/Users/HakanBatirhan/IdeaProjects/Batch129Cucumber_Practice/src/test/resources/features/directory2/KitapYurdu.feature:31)
-]]>
-</failure>
-<system-out><![CDATA[
-Given Kullanici "url" e gider...............................................passed
-Then giris yap linkini tiklar...............................................passed
-And eposta kutusuna mailini girer...........................................passed
-And sifre kutusuna sifresini girer..........................................passed
-And giris yap butonunu tiklar...............................................passed
-Given kullanici cok satan kitaplar menusu ustune gelir......................passed
-Then Sayfanin resmini ceker.................................................passed
-And 3 saniye bekleme yapar..................................................passed
-Then acilan menude cok satan edebiyat kitaplari linki oldugunu dogrular.....passed
-And 1 saniye bekleme yapar..................................................skipped
-And cok satan edebiyat kitaplari linkini tiklar.............................passed
-When kullanici cok satan edebiyat kitaplari sayfasinda oldugunu dogrular....passed
-And edebiyat butonunun secilmis oldugunu dogrular...........................passed
-Then edebiyat butonunun resmini ceker.......................................passed
-And satista olanlar checkboxinin secili oldugunu dogrular...................passed
-Then yirmi urun dropdownina tiklar..........................................failed
-And yuz urunu secer.........................................................skipped
-And yuz urun seceneginin secildigini dogrular...............................skipped
-And sayfada yuz urun gorundugunu dogrular...................................skipped
+Given siteye git............................................................passed
+Then arama cubuguna "terlik" yaz............................................passed
 ]]></system-out>
 </testcase>
 </testsuite>

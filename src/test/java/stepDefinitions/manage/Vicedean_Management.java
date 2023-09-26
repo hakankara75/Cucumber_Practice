@@ -3,7 +3,7 @@ package stepDefinitions.manage;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import org.openqa.selenium.By;
-import pages.manage.Kisi_Ekleme_Guncelleme_Modulu;
+import pages.others1.Kisi_Ekleme_Guncelleme_Modulu;
 import utilities.Driver;
 import utilities.Methods;
 import utilities.ReusableMethods;

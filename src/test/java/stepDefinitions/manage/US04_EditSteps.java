@@ -5,9 +5,9 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.Keys;
-import pages.manage.Kisi_Ekleme_Guncelleme_Modulu;
-import pages.manage.Login_Modulu;
-import pages.manage.US04_US05_Dean_Ekleme_Guncelleme_Silme_Modulu;
+import pages.others1.Kisi_Ekleme_Guncelleme_Modulu;
+import pages.others1.Login_Modulu;
+import pages.others1.US04_US05_Dean_Ekleme_Guncelleme_Silme_Modulu;
 import utilities.Driver;
 import utilities.ReusableMethods;
 import utilities.US19_US20_US21_TeacherMeetingVeStudentNotesModulu;
@@ -24,11 +24,7 @@ public class US04_EditSteps {
     @And("Kullanici Dean List ini gorur")
     public void kullaniciDeanListIniGorur() {
         try{
-            ReusableMethods.pageDown();
-            ReusableMethods.arrowUp();
-            ReusableMethods.arrowUp();
-            ReusableMethods.arrowUp();
-            ReusableMethods.arrowUp();
+            ReusableMethods.scroll(dean.deanListBasligi);
             ReusableMethods.bekle(3);}
         catch (Exception e){
 

@@ -1,6 +1,7 @@
 package pojo.US04_US05_Pojos;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+import io.cucumber.core.internal.com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

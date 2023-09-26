@@ -3,7 +3,7 @@ package stepDefinitions.manage;
 import io.cucumber.java.en.Then;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import pages.manage.Dean_Listeleme_Silme;
+import pages.others1.Dean_Listeleme_Silme;
 import utilities.Driver;
 import utilities.ReusableMethods;
 

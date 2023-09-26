@@ -6,8 +6,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Wait;
-import pages.manage.Kisi_Ekleme_Guncelleme_Modulu;
-import pages.manage.Login_Modulu;
+import pages.others1.Kisi_Ekleme_Guncelleme_Modulu;
+import pages.others1.Login_Modulu;
 
 import java.time.Duration;
 

@@ -3,7 +3,7 @@ package stepDefinitions.manage;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
-import pages.manage.Kisi_Ekleme_Guncelleme_Modulu;
+import pages.others1.Kisi_Ekleme_Guncelleme_Modulu;
 import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.ReusableMethods;
@@ -82,7 +82,7 @@ public class Manage {
 
     @Then("Kullanici edit butonuna basar")
     public void kullaniciEditButonunaBasar() {
-        ReusableMethods.pageDown();
+        ReusableMethods.scroll(management.firstEditButton);
         management.firstEditButton.click();
     }
 

@@ -4,7 +4,7 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import org.openqa.selenium.By;
-import pages.manage.US04_US05_Dean_Ekleme_Guncelleme_Silme_Modulu;
+import pages.others1.US04_US05_Dean_Ekleme_Guncelleme_Silme_Modulu;
 import utilities.Driver;
 import utilities.ReusableMethods;
 import utilities.US04_US05_Methods;
@@ -46,7 +46,7 @@ public class US05_UI_DeanGuncelleme_Silme_StepDefinitions extends US04_US05_Meth
     public void admin_name_bilgilerini_gorur() {
         assertTrue(dean.nameSutunu.isDisplayed());
 
-        int sutunSayisi = ReusableMethods.satirSayisiBul("Name");
+       int sutunSayisi = ReusableMethods.satirSayisiBul("Name");
 
         int i = 1;
         do {
