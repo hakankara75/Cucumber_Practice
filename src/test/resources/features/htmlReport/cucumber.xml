@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Cucumber" time="5.519" tests="1" skipped="0" failures="0" errors="0">
-<testcase classname="hepsiburada" name="hepsiburada" time="5.32">
+<testsuite name="Cucumber" time="5.481" tests="1" skipped="0" failures="0" errors="0">
+<testcase classname="hepsiburada" name="hepsiburada" time="5.281">
 <system-out><![CDATA[
 Given siteye git............................................................passed
 Then arama cubuguna "terlik" yaz............................................passed
