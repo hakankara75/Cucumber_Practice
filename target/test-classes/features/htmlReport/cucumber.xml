@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Cucumber" time="5.32" tests="1" skipped="0" failures="0" errors="0">
-<testcase classname="hepsiburada" name="hepsiburada" time="5.106">
+<testsuite name="Cucumber" time="75.046" tests="1" skipped="0" failures="0" errors="0">
+<testcase classname="Data Table Test" name="Cicek Sepeti urun arama" time="74.623">
 <system-out><![CDATA[
-Given siteye git............................................................passed
-Then arama cubuguna "terlik" yaz............................................passed
+Given "cicek sepeti" sitesine gidilir.......................................passed
+When hediye linki tiklanir..................................................passed
+And dogum gunu linki tiklanir...............................................passed
+Then dogum gunu sayfasinda oldugu dogrulanir................................passed
+When renk drop down tiklanir................................................passed
+Then sirasiyla renkler secilir..............................................passed
 ]]></system-out>
 </testcase>
 </testsuite>
