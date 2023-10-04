@@ -15,7 +15,8 @@ import org.junit.runner.RunWith;
         features = "src/test/resources/features",
         glue = {"stepDefinitions","Hooks"},
         tags = "@dataTable",
-        dryRun = false
+        dryRun = false,
+        monochrome = false //false scenario adimlarini renkli gosterir
 
 )
 public class TestRunner {
