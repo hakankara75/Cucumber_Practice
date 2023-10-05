@@ -7,11 +7,13 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        plugin = { "html:src/test/resources/features/htmlReport/cucumberHooks.html",
-                "json:target/json-reports/cucumber.json",
-                "junit:src/test/resources/features/htmlReport/cucumber.xml",
+        plugin = {
+                "pretty", //console renkli yazdirmak icin
+                "html:TestOutput/htmlReport/cucumberHooks.html", //html report için
+                "json:target/json-reports/cucumber1.json",  //cucumber report için
+                "junit:TestOutput/htmlReport/cucumber.xml",//xml report için
                 "rerun:TestOutput/failed_scenario.txt",//rerun hata veren testleri kaydedip yeniden otomatik kosmak icin
-                "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"},
+                "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"},//spark report icin
         features = "src/test/resources/features",
         glue = {"stepDefinitions","Hooks"},
         tags = "@dataTable",
