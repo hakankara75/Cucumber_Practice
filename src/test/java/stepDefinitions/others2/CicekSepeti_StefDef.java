@@ -30,7 +30,7 @@ public class CicekSepeti_StefDef {
     public void dogumGunuLinkiTiklanir() {
         data.cerez.click();
         data.dogumGunu.click();
-        data.uyari.click();
+        //data.uyari.click();
     }
 
 
