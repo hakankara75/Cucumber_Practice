@@ -21,7 +21,7 @@ public class Driver {
             switch (ConfigReader.getProperty("browser")){
 
                 case "chrome":
-
+                    //System.setProperty("webdriver.chrome.driver","Drivers/chromedriver");
                     driver = new ChromeDriver();
                     break;
 
