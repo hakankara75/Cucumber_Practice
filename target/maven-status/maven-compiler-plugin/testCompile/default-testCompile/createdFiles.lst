@@ -1,5 +1,3 @@
-pages\AmazonPage.class
-utilities\ConfigReader.class
-stepDefinitions\AmazonStepDefinitions.class
 runners\TestRunner.class
 utilities\Driver.class
+utilities\ConfigReader.class

@@ -665,6 +665,17 @@ public class ReusableMethods {
         WebElement webElement = (WebElement) js.executeScript("return " + javascriptYolu + "");
         return webElement;
     }
+
+    /**
+     * bu metot ile JS yolu string olarak verilen elementi JavascriptExecutor kullanarak tiklayabilirim
+     * @param webElement click yapilacak webelement yolu string olarak verilir
+     */
+    public static void clickJSElementWithJavaScript(String javascriptYolu) {
+        JavascriptExecutor jse = (JavascriptExecutor) Driver.getDriver();
+        WebElement webElement = (WebElement) jse.executeScript("return " + javascriptYolu + "");
+        jse.executeScript("arguments[0].click();", webElement);
+
+    }
     public static void flash(WebElement element,WebDriver driver){
         JavascriptExecutor js= (JavascriptExecutor) driver;
         String elementColor=element.getCssValue("backgroundColor"); //locate alinan yerin  arka plan rengini alir

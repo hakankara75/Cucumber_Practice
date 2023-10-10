@@ -1,5 +1,57 @@
-C:\Users\HakanBatirhan\IdeaProjects\Batch129Cucumber_Practice\src\test\java\utilities\Driver.java
-C:\Users\HakanBatirhan\IdeaProjects\Batch129Cucumber_Practice\src\test\java\pages\AmazonPage.java
-C:\Users\HakanBatirhan\IdeaProjects\Batch129Cucumber_Practice\src\test\java\utilities\ConfigReader.java
-C:\Users\HakanBatirhan\IdeaProjects\Batch129Cucumber_Practice\src\test\java\runners\TestRunner.java
-C:\Users\HakanBatirhan\IdeaProjects\Batch129Cucumber_Practice\src\test\java\stepDefinitions\AmazonStepDefinitions.java
+C:\Users\Hakan Batirhan.DESKTOP-KA8SOKR\IdeaProjects\Batch129Cucumber_Practice\src\test\java\pages\others1\US04_US05_Dean_Ekleme_Guncelleme_Silme_Modulu.java
+C:\Users\Hakan Batirhan.DESKTOP-KA8SOKR\IdeaProjects\Batch129Cucumber_Practice\src\test\java\pages\others1\Login_KitapYurdu.java
+C:\Users\Hakan Batirhan.DESKTOP-KA8SOKR\IdeaProjects\Batch129Cucumber_Practice\src\test\java\pages\others2\CicekSepeti_Page.java
+C:\Users\Hakan Batirhan.DESKTOP-KA8SOKR\IdeaProjects\Batch129Cucumber_Practice\src\test\java\stepDefinitions\orhers1\AmazonStepDefinitions.java
+C:\Users\Hakan Batirhan.DESKTOP-KA8SOKR\IdeaProjects\Batch129Cucumber_Practice\src\test\java\utilities\ExcelUtils.java
+C:\Users\Hakan Batirhan.DESKTOP-KA8SOKR\IdeaProjects\Batch129Cucumber_Practice\src\test\java\utilities\US19_US20_US21_TeacherMeetingVeStudentNotesModulu.java
+C:\Users\Hakan Batirhan.DESKTOP-KA8SOKR\IdeaProjects\Batch129Cucumber_Practice\src\test\java\pages\others1\MynetPage.java
+C:\Users\Hakan Batirhan.DESKTOP-KA8SOKR\IdeaProjects\Batch129Cucumber_Practice\src\test\java\pojo\US04_US05_Pojos\US04Pojo.java
+C:\Users\Hakan Batirhan.DESKTOP-KA8SOKR\IdeaProjects\Batch129Cucumber_Practice\src\test\java\stepDefinitions\others2\CicekSepeti_StefDef.java
+C:\Users\Hakan Batirhan.DESKTOP-KA8SOKR\IdeaProjects\Batch129Cucumber_Practice\src\test\java\stepDefinitions\manage\Manage.java
+C:\Users\Hakan Batirhan.DESKTOP-KA8SOKR\IdeaProjects\Batch129Cucumber_Practice\src\test\java\utilities\ConfigReader.java
+C:\Users\Hakan Batirhan.DESKTOP-KA8SOKR\IdeaProjects\Batch129Cucumber_Practice\src\test\java\utilities\US04_US05_Methods.java
+C:\Users\Hakan Batirhan.DESKTOP-KA8SOKR\IdeaProjects\Batch129Cucumber_Practice\src\test\java\stepDefinitions\manage\US04_EditSteps.java
+C:\Users\Hakan Batirhan.DESKTOP-KA8SOKR\IdeaProjects\Batch129Cucumber_Practice\src\test\java\stepDefinitions\manage\US04_UI_AdminDeanEkleyebilmeli_StepDefinitions.java
+C:\Users\Hakan Batirhan.DESKTOP-KA8SOKR\IdeaProjects\Batch129Cucumber_Practice\src\test\java\utilities\JdbcUtils.java
+C:\Users\Hakan Batirhan.DESKTOP-KA8SOKR\IdeaProjects\Batch129Cucumber_Practice\src\test\java\stepDefinitions\manage\General_Management.java
+C:\Users\Hakan Batirhan.DESKTOP-KA8SOKR\IdeaProjects\Batch129Cucumber_Practice\src\test\java\stepDefinitions\orhers1\CokSatanKitaplar_Hakan_StepDefinition.java
+C:\Users\Hakan Batirhan.DESKTOP-KA8SOKR\IdeaProjects\Batch129Cucumber_Practice\src\test\java\runners\TestRunner.java
+C:\Users\Hakan Batirhan.DESKTOP-KA8SOKR\IdeaProjects\Batch129Cucumber_Practice\src\test\java\stepDefinitions\orhers1\Amazon_Classtan_Elemen_Secme.java
+C:\Users\Hakan Batirhan.DESKTOP-KA8SOKR\IdeaProjects\Batch129Cucumber_Practice\src\test\java\pages\others1\AmazonPage.java
+C:\Users\Hakan Batirhan.DESKTOP-KA8SOKR\IdeaProjects\Batch129Cucumber_Practice\src\test\java\pages\others1\Login_Modulu.java
+C:\Users\Hakan Batirhan.DESKTOP-KA8SOKR\IdeaProjects\Batch129Cucumber_Practice\src\test\java\stepDefinitions\db_stepdefs\US04_US05_DB_Admin_DeanleriEkleyebilmeli_GörebilmeliVeSilebilmeli.java
+C:\Users\Hakan Batirhan.DESKTOP-KA8SOKR\IdeaProjects\Batch129Cucumber_Practice\src\test\java\stepDefinitions\orhers1\KitapYurduStepDefinition.java
+C:\Users\Hakan Batirhan.DESKTOP-KA8SOKR\IdeaProjects\Batch129Cucumber_Practice\src\test\java\pojo\US04_US05_Pojos\US05Pojo.java
+C:\Users\Hakan Batirhan.DESKTOP-KA8SOKR\IdeaProjects\Batch129Cucumber_Practice\src\test\java\utilities\ObjectMapperUtils.java
+C:\Users\Hakan Batirhan.DESKTOP-KA8SOKR\IdeaProjects\Batch129Cucumber_Practice\src\test\java\stepDefinitions\orhers1\TwitterStepDefinitions.java
+C:\Users\Hakan Batirhan.DESKTOP-KA8SOKR\IdeaProjects\Batch129Cucumber_Practice\src\test\java\utilities\Driver.java
+C:\Users\Hakan Batirhan.DESKTOP-KA8SOKR\IdeaProjects\Batch129Cucumber_Practice\src\test\java\pages\others2\HepsiburadaPage.java
+C:\Users\Hakan Batirhan.DESKTOP-KA8SOKR\IdeaProjects\Batch129Cucumber_Practice\src\test\java\pojo\EdebiyatKitaplariPojo.java
+C:\Users\Hakan Batirhan.DESKTOP-KA8SOKR\IdeaProjects\Batch129Cucumber_Practice\src\test\java\stepDefinitions\api_stepdefs\US04_US05_API_StefDefinitions.java
+C:\Users\Hakan Batirhan.DESKTOP-KA8SOKR\IdeaProjects\Batch129Cucumber_Practice\src\test\java\stepDefinitions\orhers1\MynetStepDefinition.java
+C:\Users\Hakan Batirhan.DESKTOP-KA8SOKR\IdeaProjects\Batch129Cucumber_Practice\src\test\java\stepDefinitions\orhers1\CommonStepDefinitions.java
+C:\Users\Hakan Batirhan.DESKTOP-KA8SOKR\IdeaProjects\Batch129Cucumber_Practice\src\test\java\utilities\US04_05.java
+C:\Users\Hakan Batirhan.DESKTOP-KA8SOKR\IdeaProjects\Batch129Cucumber_Practice\src\test\java\pages\Hooks.java
+C:\Users\Hakan Batirhan.DESKTOP-KA8SOKR\IdeaProjects\Batch129Cucumber_Practice\src\test\java\stepDefinitions\api_stepdefs\US01_ApiStepDefs.java
+C:\Users\Hakan Batirhan.DESKTOP-KA8SOKR\IdeaProjects\Batch129Cucumber_Practice\src\test\java\pages\others1\Twitter.java
+C:\Users\Hakan Batirhan.DESKTOP-KA8SOKR\IdeaProjects\Batch129Cucumber_Practice\src\test\java\stepDefinitions\db_stepdefs\US01_DB_StepDefinition.java
+C:\Users\Hakan Batirhan.DESKTOP-KA8SOKR\IdeaProjects\Batch129Cucumber_Practice\src\test\java\stepDefinitions\orhers1\KitapYurdu_Login_StepDefinition.java
+C:\Users\Hakan Batirhan.DESKTOP-KA8SOKR\IdeaProjects\Batch129Cucumber_Practice\src\test\java\utilities\DataBaseUtils.java
+C:\Users\Hakan Batirhan.DESKTOP-KA8SOKR\IdeaProjects\Batch129Cucumber_Practice\src\test\java\pages\base_urls\ManagementOnSchoolsBaseUrl.java
+C:\Users\Hakan Batirhan.DESKTOP-KA8SOKR\IdeaProjects\Batch129Cucumber_Practice\src\test\java\pages\others1\Kisi_Ekleme_Guncelleme_Modulu.java
+C:\Users\Hakan Batirhan.DESKTOP-KA8SOKR\IdeaProjects\Batch129Cucumber_Practice\src\test\java\stepDefinitions\orhers1\KitapYurdu_Yayimcilar.java
+C:\Users\Hakan Batirhan.DESKTOP-KA8SOKR\IdeaProjects\Batch129Cucumber_Practice\src\test\java\utilities\US04_05_Methods.java
+C:\Users\Hakan Batirhan.DESKTOP-KA8SOKR\IdeaProjects\Batch129Cucumber_Practice\src\test\java\pages\others1\CokSatanKitaplar_Edebiyat_Kitapyurdu.java
+C:\Users\Hakan Batirhan.DESKTOP-KA8SOKR\IdeaProjects\Batch129Cucumber_Practice\src\test\java\stepDefinitions\manage\Dean_Listeleme_Silme_StepDefinition.java
+C:\Users\Hakan Batirhan.DESKTOP-KA8SOKR\IdeaProjects\Batch129Cucumber_Practice\src\test\java\stepDefinitions\manage\US05_UI_DeanGuncelleme_Silme_StepDefinitions.java
+C:\Users\Hakan Batirhan.DESKTOP-KA8SOKR\IdeaProjects\Batch129Cucumber_Practice\src\test\java\pages\others1\Dean_Listeleme_Silme.java
+C:\Users\Hakan Batirhan.DESKTOP-KA8SOKR\IdeaProjects\Batch129Cucumber_Practice\src\test\java\stepDefinitions\others2\Hepsiburada.java
+C:\Users\Hakan Batirhan.DESKTOP-KA8SOKR\IdeaProjects\Batch129Cucumber_Practice\src\test\java\pojo\US04_US05_Pojos\US05_DeletePojo.java
+C:\Users\Hakan Batirhan.DESKTOP-KA8SOKR\IdeaProjects\Batch129Cucumber_Practice\src\test\java\utilities\ManagementOnSchoolAuthorization.java
+C:\Users\Hakan Batirhan.DESKTOP-KA8SOKR\IdeaProjects\Batch129Cucumber_Practice\src\test\java\pojo\US04_US05_Pojos\US04_OuterPojo.java
+C:\Users\Hakan Batirhan.DESKTOP-KA8SOKR\IdeaProjects\Batch129Cucumber_Practice\src\test\java\utilities\Methods.java
+C:\Users\Hakan Batirhan.DESKTOP-KA8SOKR\IdeaProjects\Batch129Cucumber_Practice\src\test\java\stepDefinitions\E2E\US04_US05_E2E_StepDefinitions.java
+C:\Users\Hakan Batirhan.DESKTOP-KA8SOKR\IdeaProjects\Batch129Cucumber_Practice\src\test\java\utilities\ReusableMethods.java
+C:\Users\Hakan Batirhan.DESKTOP-KA8SOKR\IdeaProjects\Batch129Cucumber_Practice\src\test\java\pages\others1\KitapYurdu.java
+C:\Users\Hakan Batirhan.DESKTOP-KA8SOKR\IdeaProjects\Batch129Cucumber_Practice\src\test\java\EdebiyatKitaplariPojo.java
+C:\Users\Hakan Batirhan.DESKTOP-KA8SOKR\IdeaProjects\Batch129Cucumber_Practice\src\test\java\stepDefinitions\manage\Vicedean_Management.java
