@@ -30,7 +30,8 @@ public class CicekSepeti_StefDef {
     public void dogumGunuLinkiTiklanir() {
         data.cerez.click();
         data.dogumGunu.click();
-        //data.uyari.click();
+        ReusableMethods.visibleWait(data.uyari, 15);
+        data.uyari.click();
     }
 
 

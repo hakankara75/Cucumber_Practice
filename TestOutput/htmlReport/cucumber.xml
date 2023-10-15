@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Cucumber" time="34.61" tests="1" skipped="0" failures="1" errors="0">
-<testcase classname="Data Table Test" name="Cicek Sepeti urun arama" time="34.215">
+<testsuite name="Cucumber" time="27.22" tests="1" skipped="0" failures="1" errors="0">
+<testcase classname="Data Table Test" name="Cicek Sepeti urun arama" time="26.686">
 <failure type="org.junit.ComparisonFailure" message="expected:&lt;D[] (1000'den Fazla Hed...&gt; but was:&lt;D[oğum Günü Hediyeleri] (1000'den Fazla Hed...&gt;">
 <![CDATA[org.junit.ComparisonFailure: expected:<D[] (1000'den Fazla Hed...> but was:<D[oğum Günü Hediyeleri] (1000'den Fazla Hed...>
 	at org.junit.Assert.assertEquals(Assert.java:117)
 	at org.junit.Assert.assertEquals(Assert.java:146)
-	at stepDefinitions.others2.CicekSepeti_StefDef.dogumGunuSayfasindaOlduguDogrulanir(CicekSepeti_StefDef.java:41)
+	at stepDefinitions.others2.CicekSepeti_StefDef.dogumGunuSayfasindaOlduguDogrulanir(CicekSepeti_StefDef.java:42)
 	at ✽.dogum gunu sayfasinda oldugu dogrulanir(file:///C:/Users/Hakan%20Batirhan.DESKTOP-KA8SOKR/IdeaProjects/Batch129Cucumber_Practice/src/test/resources/features/directory06/cicekSepeti.feature:7)
 ]]>
 </failure>
