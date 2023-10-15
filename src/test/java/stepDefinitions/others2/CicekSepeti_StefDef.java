@@ -23,7 +23,7 @@ public class CicekSepeti_StefDef {
     public void hediye_linki_tiklanir() {
 
         data.hediye.click();
-      ReusableMethods.bekle(25);
+      ReusableMethods.bekle(5);
     }
 
     @When("dogum gunu linki tiklanir")
@@ -36,7 +36,7 @@ public class CicekSepeti_StefDef {
 
     @Then("dogum gunu sayfasinda oldugu dogrulanir")
     public void dogumGunuSayfasindaOlduguDogrulanir() {
-        String expectedTitle= "Doğum Günü Hediyeleri (1000'den Fazla Hediye Önerisi)";
+        String expectedTitle= "D (1000'den Fazla Hediye Önerisi)";
         String actualTitle= Driver.getDriver().getTitle();
         assertEquals(expectedTitle, Driver.getDriver().getTitle());
 

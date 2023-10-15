@@ -8,7 +8,8 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import utilities.Driver;
 
-import static pages.base_urls.ManagementOnSchoolsBaseUrl.setUp;
+import static pages.ManagementOnSchoolsBaseUrl.setUpAdmin;
+
 
 public class Hooks {
 
@@ -22,7 +23,7 @@ asagida hata alinirsa screenshot yapilacagina dair metot var
     //features/day30_IlkFeature/US003_RunnerKullanimi.feature dosyasi asagida ornek olarak calisildi
     @Before ("@Api") //before cucumber'da import edilmeli, @Api ile tum api testinden once baslar
     public void before(){
-       setUp();
+        setUpAdmin();
     }
     @Before ("All") //her testten once calisir
     public void setup(){

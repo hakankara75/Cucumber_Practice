@@ -4,6 +4,7 @@ import com.github.javafaker.Faker;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.restassured.http.ContentType;
+import io.restassured.response.Response;
 import pages.others1.Kisi_Ekleme_Guncelleme_Modulu;
 import pages.others1.US04_US05_Dean_Ekleme_Guncelleme_Silme_Modulu;
 import utilities.JdbcUtils;
@@ -16,7 +17,6 @@ import java.sql.Statement;
 
 import static org.hamcrest.CoreMatchers.hasItem;
 import static org.junit.Assert.assertEquals;
-import static stepDefinitions.api_stepdefs.US04_US05_API_StefDefinitions.response;
 import static utilities.JdbcUtils.closeConnectionAndStatement;
 import static utilities.JdbcUtils.executeQuery;
 
@@ -24,6 +24,7 @@ public class US04_US05_E2E_StepDefinitions extends Kisi_Ekleme_Guncelleme_Modulu
 
     US04_US05_Dean_Ekleme_Guncelleme_Silme_Modulu admin = new US04_US05_Dean_Ekleme_Guncelleme_Silme_Modulu();
     static Faker faker = new Faker();
+    public static Response response;
     static String name = faker.name().firstName();
     static String surname = faker.name().lastName();
     static String birthPlace = "Ardahan";

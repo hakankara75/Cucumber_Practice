@@ -5,7 +5,8 @@ import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import static io.restassured.RestAssured.given;
 import static org.junit.Assert.assertEquals;
-import static pages.base_urls.ManagementOnSchoolsBaseUrl.spec;
+import static pages.ManagementOnSchoolsBaseUrl.spec;
+
 
 public class US01_ApiStepDefs {
 
