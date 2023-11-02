@@ -130,11 +130,13 @@ public class AmazonStepDefinitions {
     @When("kullanici Başa dön yazisina kadar iner")
     public void kullaniciBasaDonYazisinaKadarIner() {
         ReusableMethods.scrollToElementWithWebElement(amazonPage.backToTop);
+        ReusableMethods.bekle(2);
     }
 
     @Then("Başa dön yazisina geldigini dogrular")
     public void basaDonYazisinaGeldiginiDogrular() {
         assertTrue(amazonPage.backToTop.isDisplayed());
+        ReusableMethods.bekle(2);
     }
 
 }
