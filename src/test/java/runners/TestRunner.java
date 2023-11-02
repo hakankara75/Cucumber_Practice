@@ -16,7 +16,7 @@ import org.junit.runner.RunWith;
                 "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"},//spark report icin
         features = "src/test/resources/features",
         glue = {"stepDefinitions","Hooks"},
-        tags = "@normalize",
+        tags = "@hakanCheckbox",
         dryRun = false,
         monochrome = false //false scenario adimlarini renkli gosterir
 
