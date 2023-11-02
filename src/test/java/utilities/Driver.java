@@ -22,11 +22,11 @@ public class Driver {
 
                 case "chrome":
                     //System.setProperty("webdriver.chrome.driver","Drivers/chromedriver");
-                    ChromeOptions options = new ChromeOptions();
-                    options.addArguments("--headless"); // Başsız modu etkinleştir
-                    options.addArguments("--disable-gpu"); // GPU kullanımını devre dışı bırak
-
-                    System.setProperty("webdriver.chrome.driver", "path/to/chromedriver.exe"); // Chrome sürücü yolunu belirtin
+//                    ChromeOptions options = new ChromeOptions();
+//                    options.addArguments("--headless"); // Başsız modu etkinleştir
+//                    options.addArguments("--disable-gpu"); // GPU kullanımını devre dışı bırak
+//
+//                    System.setProperty("webdriver.chrome.driver", "path/to/chromedriver.exe"); // Chrome sürücü yolunu belirtin
 
                     driver = new ChromeDriver();
                     break;
