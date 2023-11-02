@@ -28,7 +28,7 @@ public class Driver {
                     options.addArguments("--disable-gpu"); // GPU kullanımını devre dışı bırak
 
 
-                    driver = new ChromeDriver();
+                    driver = new ChromeDriver(options);
                     break;
 
                 case "safari":
