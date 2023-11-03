@@ -22,13 +22,13 @@ public class Driver {
 
                 case "chrome":
 
-    //asagideki 3 satirdaki kodlar testleri Headless (Jenkins gibi) kosmak istedigimiz yerlerde aktive edilebilir
+    //1-asagideki 3 satirdaki kodlar testleri Headless (Jenkins gibi) kosmak istedigimiz yerlerde aktive edilebilir
                     ChromeOptions options = new ChromeOptions();
                     options.addArguments("--headless"); // Başsız modu etkinleştir
                     options.addArguments("--disable-gpu"); // GPU kullanımını devre dışı bırak
 
-
-                    driver = new ChromeDriver(options);
+    //2- yukardaki options objesini ChromeDriver() icine parametre olarak atiyorum
+                    driver = new ChromeDriver();
                     break;
 
                 case "safari":
