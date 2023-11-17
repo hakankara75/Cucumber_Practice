@@ -503,11 +503,14 @@ public class ReusableMethods {
         js.executeScript("arguments[0].setAttribute('value','" + text + "')", element);
     }
 
-    //JS GetAttributeValue
-    public static void getValueByJS(String id, String attributeName) {
+    /** bu metot ile girilen attribute degerleri ile texti alabilirim
+     @param id girilmesi gereken id degeri
+     @param attributeName gonderilmesi gereken attribute ismi
+     */
+    public static void getValueByJavaScript(String id, String attributeName) {
         JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
-        String attribute_Value = (String) js.executeScript("return document.getElementById('" + id + "')." + attributeName);
-        System.out.println("Attribute Value: = " + attribute_Value);
+        String string = js.executeScript("return document.getElementById('" + id + "')." + attributeName).toString();
+        System.out.println(string);
     }
 
     /**
