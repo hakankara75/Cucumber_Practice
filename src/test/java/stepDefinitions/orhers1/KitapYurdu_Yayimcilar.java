@@ -39,7 +39,7 @@ public class KitapYurdu_Yayimcilar {
             String sayfaAdi = publisherFilter.getText();
             System.out.println("sayfaAdi = " + sayfaAdi);
 
-            ReusableMethods.excellSayfaAdiVerme(dosyaYolu,sayfaAdi);
+            ReusableMethods.excellSayfaAdiVerme(sayfaAdi, dosyaYolu);
 
             // Kitap elementlerinin sayısını al
             int kitapElementSayisi = kitapElements.size();
