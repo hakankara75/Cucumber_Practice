@@ -7,6 +7,7 @@ public class EdebiyatKitaplariPojo {
     }
 
     public EdebiyatKitaplariPojo(int id, String isim) {
+
         this.id = id;
         this.isim = isim;
     }
