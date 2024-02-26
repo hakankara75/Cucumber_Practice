@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Cucumber" time="0.348" tests="1" skipped="0" failures="1" errors="0">
-<testcase classname="Mynet sitesi" name="TC01 Mynet sitesi" time="0.035">
-<failure/>
-<system-out><![CDATA[
-Given kullanici "https://www.mynet.com/" sitesine gider.....................undefined
-]]></system-out>
-</testcase>
-</testsuite>
