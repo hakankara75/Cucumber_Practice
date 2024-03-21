@@ -10,7 +10,7 @@ pipeline {
         }
         stage('Repo Cloning') {
             steps {
-                git branch: 'main', credentialsId: '929fa78a7726', url: 'https://github.com/hakankara75/Cucumber_Ders_Program'
+                git branch: 'main', credentialsId: '929fa78a7726', url: 'https://github.com/hakankara75/Cucumber_Practice.git'
             }
         }
         stage('Build') {
