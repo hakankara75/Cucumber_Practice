@@ -9,9 +9,9 @@ public class CicekSepeti_Page {
     public CicekSepeti_Page(){
         PageFactory.initElements(Driver.getDriver(),this);
     }
-    @FindBy(xpath = "//a[@href='/dogum-gunu-hediyeleri']/span[@class='main-menu__text js-main-menu-text']")
+    @FindBy(css = "a[href='/dogum-gunu-hediyeleri']")
     public WebElement dogumGunu;
-    @FindBy(xpath = "//div[@class='item-extra']/a")
+    @FindBy(css = "button.home-page-switch__button > img.home-page-switch__extraImg")
     public WebElement hediye;
     @FindBy(xpath = "(//button[@class='ab-message-button'])[2]")
     public WebElement uyari;

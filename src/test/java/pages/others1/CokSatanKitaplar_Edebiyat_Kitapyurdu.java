@@ -13,8 +13,8 @@ public class CokSatanKitaplar_Edebiyat_Kitapyurdu {
         PageFactory.initElements(Driver.getDriver(),this);
     }
 
-    @FindBy(xpath = "(//li[@class='has-open-menu']/child::span)[1]")
-    public WebElement cokSatanKitaplar;
+    @FindBy(id = "cookiescript_accept")
+    public WebElement cookies;
     @FindBy(xpath = "//a[@href='index.php?route=product/best_sellers&list_id=16&filter_in_stock=1']")
     public WebElement cokSatanEdebiyat;
     @FindBy(xpath = "//a[@href='https://www.kitapyurdu.com/index.php?route=product/best_sellers&list_id=16&filter_in_stock=1']")

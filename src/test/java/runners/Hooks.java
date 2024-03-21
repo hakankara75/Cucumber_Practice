@@ -1,4 +1,4 @@
-package pages;
+package runners;
 
 
 import io.cucumber.java.After;

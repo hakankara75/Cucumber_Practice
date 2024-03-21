@@ -18,7 +18,6 @@ Feature: US1002 Kullanici ortak adimlari Background ile calistirir
 
     Given kullanici Amazon sayfasinda
 
-
     Scenario: TC04 kullanici Amazonda Nutella aratir
 
       Given kullanici Nutella icin arama yapar

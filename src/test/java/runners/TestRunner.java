@@ -15,8 +15,8 @@ import org.junit.runner.RunWith;
                 "rerun:TestOutput/failed_scenario.txt",//rerun hata veren testleri kaydedip yeniden otomatik kosmak icin
                 "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"},//spark report icin
         features = "src/test/resources/features",
-        glue = {"stepDefinitions","Hooks"},
-        tags = "@hakanCheckbox",
+        glue = {"stepDefinitions","runners"},
+        tags = "@kitapYurduCokSatanEdebiyat",
         dryRun = false,
         monochrome = false //false scenario adimlarini renkli gosterir
 
