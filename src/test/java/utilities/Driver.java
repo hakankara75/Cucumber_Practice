@@ -36,7 +36,7 @@ public class Driver {
 //                    options.setExperimentalOption("prefs", prefs);
                     //  driver = new ChromeDriver(options);  //bu satirdaki yorum slashlarini bir alt satira indirip calistirmaliyiz.
 
-                    driver = new ChromeDriver(options);
+                    driver = new ChromeDriver();
                     break;
 
                 case "safari":
