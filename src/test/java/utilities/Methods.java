@@ -9,6 +9,7 @@ public class Methods {
         login.login.click();
 
         switch (username){
+
             case "adminUsername":
 
                 login.username.sendKeys(ConfigReader.getProperty("adminUsername"));
