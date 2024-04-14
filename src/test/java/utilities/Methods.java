@@ -10,6 +10,7 @@ public class Methods {
 
         switch (username){
             case "adminUsername":
+
                 login.username.sendKeys(ConfigReader.getProperty("adminUsername"));
                 break;
             case "deanName":
