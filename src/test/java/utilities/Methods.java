@@ -7,9 +7,7 @@ public class Methods {
     public void loginMethod(String username, String password) {
         Driver.getDriver().get(ConfigReader.getProperty("manageUrl"));
         login.login.click();
-
         switch (username){
-
             case "adminUsername":
 
                 login.username.sendKeys(ConfigReader.getProperty("adminUsername"));
