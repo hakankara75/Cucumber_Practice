@@ -14,6 +14,7 @@ public class Methods {
             case "deanName":
                 login.username.sendKeys(ConfigReader.getProperty("deanName"));
                 break;
+
             case "deanUsername":
                 login.username.sendKeys(ConfigReader.getProperty("deanUsername"));
                 break;
